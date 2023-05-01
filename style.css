@@ -22,6 +22,10 @@ body {
 	display: flex;
 	justify-content: center;
 }
+.Icon-menu{
+	display: flex;
+	width: 100%;
+}
 .H_Back { 
 	box-shadow:14px 34px 29px rgba(0, 0, 0, 0.25);
 	background-color:rgba(255, 255, 255, 1);
@@ -41,6 +45,8 @@ body {
 }
 .H_Rigt {
 	display: flex;
+	position: relative;
+	right: 0;
 }
 .I_Home { 
 	display: flex;
@@ -96,6 +102,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	left: 50%;
 	color:rgba(0, 0, 0, 1);
 	width:85px;
 	height:40px;
