@@ -15,7 +15,7 @@ body {
 	box-shadow:14px 34px 29px rgba(0, 0, 0, 0.25);
 	background-color:rgba(255, 255, 255, 1);
 	width:90%;
-	height:82vh;
+	height:fit-content;
 	margin-top: 70px;
 	padding: 40px;
 	margin: 40px;
@@ -28,14 +28,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-}
-.content-box{
-	width: 100%;
-	margin-top: 40px;
-	background-color: rgba(204, 255, 0, 0.164);
-	height: 73vh;
-	text-align: center;
-	line-height: 70vh;
 }
 .H_Left {
 	display: flex;
@@ -92,9 +84,7 @@ body {
 }
 .I_Logo { 
 	text-align: center;
-	position: absolute;
 	top: 87px;
-	left: 915px;
 	color:rgba(0, 0, 0, 1);
 	width:85px;
 	height:40px;
@@ -125,4 +115,15 @@ body {
 	border-top-right-radius:15px;
 	border-bottom-left-radius:15px;
 	border-bottom-right-radius:15px;
+}
+
+.content-box{
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	margin-top: 40px;
+	background-color: rgba(204, 255, 0, 0.164);
+	height: fit-content;
+	text-align: center;
+	line-height: 70vh;
 }
