@@ -157,7 +157,7 @@ body {
   background-color: rgba(203.99998784065247, 255, 0, 0.3);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1000px) {
   .b_box_65_4 {
     display: flex;
 	justify-content: space-between;
