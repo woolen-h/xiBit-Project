@@ -155,6 +155,7 @@ body {
   left: 2em;
   width: calc(100% - 4em);
   height: 83%;
+  overflow: scroll;
   background-color: rgba(203.99998784065247, 255, 0, 0.3);
   display: flex;
 }
@@ -316,9 +317,7 @@ body {
 .scroll_9_139 { 
 	width:1562px;
 	height:642px;
-	position:absolute;
-	left:69px;
-	top:159px;
+	overflow: scroll;
 }
 .component_8_121_36 { 
 	width:1562px;
