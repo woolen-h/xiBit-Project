@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <script type="text/javascript" src="../js/script.js"></script> 
     <title>Document</title>
   </head>
   <body>
@@ -22,7 +23,7 @@
         <div  class="home_13_17">Home</div>
         <div  class="exhibition_13_18">Exhibition</div>
         <div  class="curator_13_19">Curator</div>
-        <div  class="event_13_20">Event</div>
+        <div  class="event_13_20">Notice</div>
         <div class=sign_up_82_67>
           <div  class="login_82_68"><a href="../member/loginForm.jsp">Login</a></div>
         </div>

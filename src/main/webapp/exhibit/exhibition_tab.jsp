@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="header.jsp" %>
+    <%@ include file="../header.jsp" %>
         <div class="content">
         <!-- 본문 시작 template.jsp -->
 		    <div class=content_120_3>
-            <div class=location_9_113><span  class="___9_114">지역</span></div>
-            <div class=genre_9_115><span  class="___9_116">장르</span></div>
+            <div class=location_9_113>
+              <button onclick="display_mn()" class="___9_114">위치</button>
+              <ul style="display: none;" id="drop_cont">
+                <li>서울</li>
+                <li>과천</li>
+                <li>덕수궁</li>
+                <li>청주</li>
+                <li>어린이미술관</li>
+              </ul>
+            </div>
+            
             <div class=continue_9_145><span  class="__________9_146">현재 진행중 전시</span></div>
             <div class=newest_9_143><span  class="____9_144">최신순</span></div>
             <div class=scroll_9_139>
@@ -43,4 +52,4 @@
           </div>          
         <!-- 본문 끝 -->
         </div>
-    <%@ include file="footer.jsp" %>
+    <%@ include file="../footer.jsp" %>
