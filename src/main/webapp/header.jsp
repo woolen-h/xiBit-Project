@@ -17,12 +17,12 @@
       <div class=b_box_65_4>
         <div  class="xibit_13_21">xiBit</div>
         <div class=sign_up_13_23>
-          <span  class="sign_up_13_24">Sign up</span>
+          <span  class="sign_up_13_24"><a href="../member/agreement.jsp">Sign up</a></span>
         </div>
         <div  class="home_13_17">Home</div>
         <div  class="exhibition_13_18">Exhibition</div>
         <div  class="curator_13_19">Curator</div>
         <div  class="event_13_20">Event</div>
         <div class=sign_up_82_67>
-          <div  class="login_82_68">Login</div>
+          <div  class="login_82_68"><a href="../member/loginForm.jsp">Login</a></div>
         </div>
