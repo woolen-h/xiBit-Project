@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="header.jsp" %>
-        <div class=content>
+        <div class="content">
         <!-- 본문 시작 template.jsp -->
 		    <div class=content_120_3>
             <div class=location_9_113><span  class="___9_114">지역</span></div>
