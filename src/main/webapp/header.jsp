@@ -26,11 +26,3 @@
         <div class=sign_up_82_67>
           <div  class="login_82_68">Login</div>
         </div>
-        <div class=content>
-
-          
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
