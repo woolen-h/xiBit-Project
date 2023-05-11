@@ -4,7 +4,7 @@
 <%@ include file="./ssi.jsp" %>
     
 <!-- 본문 시작 memberProc.jsp-->
-
+ 
 <h3>아이디 찾기 결과</h3>
 <br><br>
 <% 

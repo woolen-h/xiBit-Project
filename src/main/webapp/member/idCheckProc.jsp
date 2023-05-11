@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp" %>
-
+ 
 <!DOCTYPE html>
 <html>
 <head>

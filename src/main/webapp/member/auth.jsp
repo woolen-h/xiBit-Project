@@ -4,7 +4,7 @@
 <%-- auth.jsp 공통 페이지 --%>
 <%-- 로그인 상태 정보 확인(authorize) --%>
 
-<%
+<% 
 	String s_mid="";
 	String s_passwd="";
 	String s_mlevel="";
