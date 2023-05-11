@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,9 +22,9 @@
           <span  class="sign_up_13_24"><a href="../member/agreement.jsp">Sign up</a></span>
         </div>
         <div  class="home_13_17">Home</div>
-        <div  class="exhibition_13_18">Exhibition</div>
+        <div  class="exhibition_13_18"><a href="../exhibit/exhibition_tab.jsp">Exhibition</a></div>
         <div  class="curator_13_19">Curator</div>
-        <div  class="event_13_20">Notice</div>
+        <div  class="event_13_20"><a href="../notice/noticeList.jsp">Notice</a></div>
         <div class=sign_up_82_67>
           <div  class="login_82_68"><a href="../member/loginForm.jsp">Login</a></div>
         </div>
