@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%-- ssi.jsp 공통 페이지 --%>
 
-<%@ page import="java.sql.*"%>
+<%@ page import="java.sql.*"%> 
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.*"%>
 

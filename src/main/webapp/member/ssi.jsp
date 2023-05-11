@@ -4,7 +4,7 @@
 <%-- ssi.jsp 공통 페이지 --%>
 
 <%@ page import="java.sql.*" %>
-<%@ page import="java.io.*" %>
+<%@ page import="java.io.*" %> 
 <%@ page import="java.util.*" %>
 <%@ page import="net.utility.*" %>
 

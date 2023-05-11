@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ include file="./ssi.jsp" %>
-    
+     
 <!-- 본문 시작 memberProc.jsp-->
 
 <h3>회원가입 결과</h3>

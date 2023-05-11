@@ -4,7 +4,7 @@
 <%@ include file="ssi.jsp" %>
     
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<meta charset="UTF-8">
 	<title>idCheckProc.jsp</title>
