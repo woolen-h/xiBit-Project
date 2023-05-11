@@ -1,0 +1,12 @@
+/**
+ * booth.js
+ */
+
+ 
+/*function boothCheck {
+	
+	
+	
+	
+} */
+ 
