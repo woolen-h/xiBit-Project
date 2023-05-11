@@ -23,11 +23,11 @@ function pwCheck(){
 
 function loginCheck(){//로그인 유효성 검사(아이디, 비번)
 	//1)아이디 5~10글자 이내인지 검사
-	let id=document.getElementById("id").value;//아이디 가져오기
-	id=id.trim();
-	if(!(id.length>=5 && id.length<=10)){
+	let mid=document.getElementById("mid").value;//아이디 가져오기
+	mid=mid.trim();
+	if(!(mid.length>=5 && mid.length<=10)){
 		alert("아이디를 5~10글자 사이로 입력해주세요")
-		document.getElementById("id").focus();
+		document.getElementById("mid").focus();
 		return false;
 	}//if end
 	
@@ -69,11 +69,11 @@ function emailCheck(){//회원가입 이메일 중복 확인. 유효성 검사
 
 function memberCheck(){//회원가입 유효성 검사
 	//1)아이디 5~10글자 인지?
-	let id=document.getElementById("id").value;
-    id=id.trim();
-    if(!(id.length>=5 && id.length<=10)){
+	let mid=document.getElementById("mid").value;
+    mid=mid.trim();
+    if(!(mid.length>=5 && mid.length<=10)){
         alert("ID를 5~10글자 사이로 입력하세요");
-        document.getElementById("id").focus();
+        document.getElementById("mid").focus();
         return false;//전송하지 않음
     }//if end
     
@@ -112,15 +112,6 @@ function memberCheck(){//회원가입 유효성 검사
 		document.getElementById("email").focus();
 		return false;
 	}//if end	
-
-    //6)직업을 선택했는지?
-    let job=document.getElementById("job").value;
-    job=job.trim();
-    if(job()==""){
-        alert("직업을 선택해 주세요");
-        document.getElementById("job").focus();
-        return false;//전송하지 않음
-    }//if end
 	
 }//memberCheck() end
 
@@ -146,3 +137,6 @@ function findIDCheck(){
 	}//if end	    
     
 }//findIDCheck() end
+
+
+

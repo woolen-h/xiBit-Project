@@ -16,8 +16,13 @@
 	
 	String mlevel=dao.loginProc(dto);
 	if(mlevel==null){
-		out.println("<p>아이디/비밀번호를 다시 한번 확인해주세요</p>");
-		out.println("<p><a href='javascript:history.back()'>[다시시도]</a></p>");
+%>
+		<script type="text/javascript">
+		alert("비밀번호가 일치하지 않습니다.");		
+		location.href = "javascript:history.back()";
+		</script>		
+<%
+		//out.println("<p><a href='javascript:history.back()'>[다시시도]</a></p>");
 	}else{
 		//out.println("로그인 되었습니다.<br>");
 		//out.println("회원등급 : " + mlevel);

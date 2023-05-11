@@ -3,6 +3,7 @@
     
 	<%@ include file="auth.jsp" %>
 	<%@ include file="ssi.jsp" %>
+	
 	<%@ include file="../header.jsp" %>  
 	
         <div class=content style="text-align: center">
@@ -10,7 +11,7 @@
 		
 		<h3>L O G I N</h3>
 		<br>
-		<% if(s_mid.equals("guest") || s_passwd.equals("guest") || s_mlevel.equals("guest")) {
+		<% if(s_mid.equals("guest") || s_mlevel.equals("F1") || s_passwd.equals("guest") || s_mlevel.equals("guest")) {
 			//ID저장 쿠키 확인/////////////////////////////////////////////////////
 			Cookie[] cookies=request.getCookies();//사용자 PC에 저장된 모든 쿠키값 가져오기
 			String c_mid="";

@@ -19,7 +19,7 @@
 		</div>
 		<div>
 			<div>
-				<input type="hidden" name="id" id="id">
+				<input type="hidden" name="mid" value="<%=s_mid%>">
 				<input type="password" placeholder="비밀번호를 입력하세요." name="password" id="password" required>
 			</div>
 			<div>
