@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+/*----------------------------- 드롭다운 메뉴 구현 -----------------------------------*/
  function display_mn(){
 	 let click = document.getElementById("drop_cont");
 	 if(click.style.display === "none"){
@@ -10,6 +10,29 @@
 		 click.style.display = "none";
 	 }
  }
+<<<<<<< HEAD
+ 
+ /*----------------------------- 드롭다운 메뉴 구현 끝 -----------------------------------*/
+ /*----------------------------- 캐러셀 메뉴 구현 -----------------------------------*/
+const flexplz = document.querySelector(".flexplz");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next"); 
+const slideLength = document.querySelectorAll('.flexplz li').length;
+let currentSlide = 1;
+const IMAGE_WIDTH = 900;
+
+nextBtn.addEventListener('click', click);
+
+function click(e){
+	console.log(e.target);
+	if (currentSlide >= slideLength) {
+    currentSlide = 0;
+  }
+  flexplz.style.transform = `translateX(-${IMAGE_WIDTH * currentSlide}px)`;
+  currentSlide++;
+}
+ /*----------------------------- 캐러셀 메뉴 구현 끝 -----------------------------------*/
+=======
 
 function pwCheck(){	
     let passwd=document.getElementById("passwd").value;  //작성자 가져오기
@@ -149,3 +172,4 @@ function findIDCheck(){
 
 
 
+>>>>>>> bf5747448460ec4b4aae9b06194e93efa186d8d4
