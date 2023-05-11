@@ -99,4 +99,7 @@ set passwd=?
 where mname=? and email=?
 
 
---회원탈퇴
+--회원삭제
+delete from member
+where id=? and passwd=?
+

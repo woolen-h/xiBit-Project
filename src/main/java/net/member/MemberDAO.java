@@ -305,6 +305,66 @@ public class MemberDAO {
 	
 	
 	
+	public int memdelete(MemberDTO dto) {
+		int cnt=0;
+		try {
+			con=dbopen.getConnection();//오라클 데이터베이스 연결
+			
+			sql=new StringBuilder();
+			sql.append(" UPDATE member ");
+			sql.append(" SET mlevel='F1' ");
+			sql.append(" WHERE mid=? and passwd=?");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getMid());			
+			pstmt.setString(2, dto.getPasswd());
+			
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("회원탈퇴 실패 : "+e);
+		}finally {
+			DBClose.close(con, pstmt);
+		}//end
+		return cnt;
+	}//memupdate() end
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	public int memdelete(MemberDTO dto) {
+		int cnt=0;
+		try {
+			con=dbopen.getConnection();//오라클 데이터베이스 연결
+			
+			sql=new StringBuilder();
+			sql.append(" DELETE FROM member ");
+			sql.append(" WHERE mid=? and passwd=? ");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getMid());
+			pstmt.setString(2, dto.getPasswd());                                                                                                    
+			
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("회원탈퇴 실패 : "+e);
+		}finally {
+			DBClose.close(con, pstmt);
+		}//end
+		return cnt;
+	}//memdelete() end
+	*/
+	
+	
+	
 	////////////////////////////////////////////////////////////////////
 	//마이페이지 관련
 	public MemberDTO selectinfo(String id) {
