@@ -10,7 +10,6 @@
 		 click.style.display = "none";
 	 }
  }
-<<<<<<< HEAD
  
  /*----------------------------- 드롭다운 메뉴 구현 끝 -----------------------------------*/
  /*----------------------------- 캐러셀 메뉴 구현 -----------------------------------*/
@@ -32,8 +31,9 @@ function click(e){
   currentSlide++;
 }
  /*----------------------------- 캐러셀 메뉴 구현 끝 -----------------------------------*/
-=======
 
+
+/*----------------------------- 회원가입/로그인 유효성 시작 -----------------------------------*/
 function pwCheck(){	
     let passwd=document.getElementById("passwd").value;  //작성자 가져오기
     passwd=passwd.trim();
@@ -127,7 +127,7 @@ function memberCheck(){//회원가입 유효성 검사
 		return false;
 	}//if end	
 
-    //4)이름 두글자 이상 인지?
+    //4-1)이름 두글자 이상 인지?
     let mname=document.getElementById("mname").value;
     mname=mname.trim();
     if(mname.length<2){
@@ -135,6 +135,13 @@ function memberCheck(){//회원가입 유효성 검사
         document.getElementById("mname").focus();
         return false;//전송하지 않음
     }//if end
+    
+    //4-2)이름 한글로 들어갔는지?
+    //var nameRegExp = /^[가-힣]{2,4}$/;
+    //if (!nameRegExp.test(name)) {
+    //    alert("이름이 올바르지 않습니다.");
+    //    return false;
+    //}
 
     //5)이메일 5글자 인지?
     let email=document.getElementById("email").value;
@@ -170,6 +177,4 @@ function findIDCheck(){
     
 }//findIDCheck() end
 
-
-
->>>>>>> bf5747448460ec4b4aae9b06194e93efa186d8d4
+/*----------------------------- 회원가입/로그인 유효성 끝 -----------------------------------*/

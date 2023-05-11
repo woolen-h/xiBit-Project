@@ -10,7 +10,7 @@ F1: 탈퇴한 회원
 
 --콘솔창 정리
 set linesize 1000;
-col mid for a20;
+col mid for a10;
 col passwd for a10;
 col mname for a10;
 col jomin for a20;

@@ -19,7 +19,7 @@
 	out.println("<br><br>");
 	
 	if(cnt==0){
-		out.println("<p>사용 가능한 아이디 입니다.</p>");
+		out.println("<p>사용 가능한 이메일 입니다.</p>");
 %>
 	<!-- 사용 가능한 id를 부모창에 전달 -->
 	<a href="javascript:apply('<%=email%>')">[적용]</a>
