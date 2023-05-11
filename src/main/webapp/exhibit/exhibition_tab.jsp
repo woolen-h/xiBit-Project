@@ -5,16 +5,25 @@
         <div class="content">
         <!-- 본문 시작 exhibition_tab.jsp -->
 		    <div class=content_120_3>
-            <div class=location_9_113><span  class="___9_114">지역</span></div>
-            <div class=genre_9_115><span  class="___9_116">장르</span></div>
+            <div class=location_9_113>
+              <button onclick="display_mn()" class="___9_114">위치</button>
+              <ul style="display: none;" id="drop_cont">
+                <li>서울</li>
+                <li>과천</li>
+                <li>덕수궁</li>
+                <li>청주</li>
+                <li>어린이미술관</li>
+              </ul>
+            </div>
+            
             <div class=continue_9_145><span  class="__________9_146">현재 진행중 전시</span></div>
             <div class=newest_9_143><span  class="____9_144">최신순</span></div>
-<% 
-			ArrayList<ExhibitDTO> list = dao.list();
-			if(list==null){
-				out.println("자료없음");
-			}
-%>
+            <% 
+            ArrayList<ExhibitDTO> list = dao.list();
+            if(list==null){
+              out.println("자료없음");
+            }
+            %>
             <div class=scroll_9_139>
             <a href="exhibitForm.jsp">[게시하기]</a> <!-- 관리자만 보이게 -->
               <div class=component_8_121_36>
@@ -69,7 +78,6 @@
                 </div>
             </div>
           </div>
-                 
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>
