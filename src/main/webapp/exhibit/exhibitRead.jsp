@@ -68,12 +68,10 @@
 			</div>
 			<br>
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
-			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'" onsubmit="return DelCheck()">
-			<input type="button" value="예매하기" onclick="location.href=''">
+			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
 <%			
 		}
 %>
         <!-- 본문 끝 -->
         </div>
-        
     <%@ include file="../footer.jsp" %>

@@ -3,7 +3,7 @@
     <%@ include file="ssi.jsp" %>
     <%@ include file="../header.jsp" %>
         <div class="content">
-        <!-- 본문 시작 exhibitUpdate.jsp -->
+        <!-- 본문 시작 exhibitForm.jsp -->
 		<h3> * 전시 수정하기 * </h3>
 		<p><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>">[돌아가기]</a></p>
 <%
@@ -14,12 +14,12 @@
 		}else{
 %>
 			<form method="post" action="exhibitUpdateProc.jsp" enctype="multipart/form-data">
-			<input type="hidden" name="excode" value="<%=excode%>" readonly>
+			<input type="hidden" name="excode" value="<%=excode%>">
 			<table>
 			<tr>
 			    <th>전시코드</th>
 			    <td style="text-align: left">
-			    	<input type="text" name="excode" id="excode" size="10" maxlength="10" value="<%=dto.getExcode()%>" required autofocus readonly>
+			    	<input type="text" name="excode" id="excode" size="10" maxlength="10" value="<%=dto.getExcode()%>" required autofocus>
 			    </td>
 			    <th>전시장코드</th> <!-- select로 하면 편할듯..!  -->
 			    <td style="text-align: left">
@@ -91,6 +91,8 @@
 <%
 		}
 %>
+		
+		
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>

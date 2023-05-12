@@ -12,14 +12,13 @@
 	try{
 		//1)첨부된 파일 저장
 		String saveDirectory = application.getRealPath("/storage");
-		//String saveDirectory = request.getSession().getServletContext().getRealPath("/storage");
 		int maxPostSize = 1024 * 1024 * 10;
 		String encoding = "UTF-8";
 		MultipartRequest mr = new MultipartRequest(request, saveDirectory, maxPostSize, encoding, new DefaultFileRenamePolicy());
 		
 		//2) 1)에서 저장한 파일의 파일명, 파일크기 가져오기
-		String fileName = ""; //파일명
-		long fileSize = 0; //파일크기
+		String filename = ""; //파일명
+		//long fileSize = 0; //파일크기
 		File file = null; //실제 파일 담기
 		String item = ""; //name="filename"
 		
@@ -27,12 +26,12 @@
 		
 		while(files.hasMoreElements()){ //여러개의 파일을 첨부하는 경우에 한개씩 처리하기
 			item = (String)files.nextElement(); //name="filename"
-			fileName = mr.getFilesystemName(item);
-			if(fileName!=null){ //실제 파일명을 가져왔다면
+			filename = mr.getFilesystemName(item);
+			if(filename!=null){ //실제 파일명을 가져왔다면
 				file = mr.getFile(item); //mr에서 실제 파일 가져오기
-				if(file.exists()){ //파일이 존재한다면
-					fileSize = file.length(); //파일 크기 가져오기
-				}//if end
+				//if(file.exists()){ //파일이 존재한다면
+					//fileSize = file.length(); //파일 크기 가져오기
+				//}//if end
 			}//if end
 		}//while end
 		
@@ -48,7 +47,7 @@
 		int price = Integer.parseInt(mr.getParameter("price"));
 		String tel = mr.getParameter("tel").trim();
 		String contents = mr.getParameter("contents");
-		String filename = fileName;
+		filename = mr.getParameter("filename");
 				
 		dto.setExcode(excode);
 		dto.setBcode(bcode);
