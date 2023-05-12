@@ -118,6 +118,8 @@ public class ExhibitDTO {
 	public String toString() {
 		return "ExhibitDTO [excode=" + excode + ", bcode=" + bcode + ", explace=" + explace + ", exname=" + exname
 				+ ", author=" + author + ", exstart=" + exstart + ", exend=" + exend + ", excnt=" + excnt + ", price="
-				+ price + ", tel=" + tel + ", contents=" + contents + "]";
+				+ price + ", tel=" + tel + ", contents=" + contents + ", filename=" + filename + "]";
 	}
+
+	
 }
