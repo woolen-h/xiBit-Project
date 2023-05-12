@@ -2,12 +2,19 @@
 	pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp"%>
+<%@ include file="../member/auth.jsp"%>
 <%@ include file="../header.jsp" %>
 
 <div class="content">
 
 	<h3>공지사항 목록</h3>
+<% 		
+	if(s_mlevel.equals("A1")) {
+%>
 	<p><a href="noticeForm.jsp">[글쓰기]</a></p>
+<%
+	}
+%>
 	<div>
 		<table>
 			<tr>
