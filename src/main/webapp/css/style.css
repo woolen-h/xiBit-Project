@@ -246,7 +246,7 @@ body {
 /*********************************** 캐러셀 박스 구현 끝 ***********************************/
 @media (max-width: 1000px) {
   .b_box_65_4 {
-    display: flex;
+    display: flex;      
 	justify-content: space-between;
  }
   .home_13_17{

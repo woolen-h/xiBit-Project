@@ -32,9 +32,9 @@
 	        <div class="window">
 		        <div class="carousel_box">
 		        	<ul class="flexplz">
-		        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/901215il.jpg"/></li>
-		        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/219877fg.jpg"/></li>
-		        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/508486ld.jpg"/></li>
+			        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/901215il.jpg"/></li>
+			        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/219877fg.jpg"/></li>
+			        	<li><img class="c_img" alt="artwork" src="https://mdl.artvee.com/sftb/508486ld.jpg"/></li>
 				    </ul>
 		        </div>
 	        </div>
