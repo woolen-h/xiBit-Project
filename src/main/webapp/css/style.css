@@ -175,7 +175,7 @@ body {
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
-  /*------------------------------------------------------ 캐러셀 박스 구현 시작 */
+  /*********************************** 캐러셀 박스 구현 시작 ***********************************/
 .content-box {
   position: absolute;
   top: 100px;
@@ -185,8 +185,7 @@ body {
   overflow: scroll;
   background-color: rgba(203.99998784065247, 255, 0, 0.3);
   display: flex;
-  overflow: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .content-box::-webkit-scrollbar {
     width: 10px;
@@ -210,13 +209,20 @@ body {
 .window{
 	background: coral;
 	width: 100%;
-	height: 100%; 
+	height: 100%;
 }
-.c_img {
+.c_img1 {
 	width: 850px;
+}
+.c_img2 {
+	width: 900px;
+}
+.c_img3 {
+	width: 840px;
 }
 .prev {
   font-size: 7pt;
+  color: white;
   height: 20px;
   width: 80px;
   background-color: black;
@@ -239,14 +245,22 @@ body {
 	color: rgba(203.99998784065247, 255, 0);
 }
 .button-container {
-	position:relative;
-	top:96%;
+	position:static;
+	bottom:1%;
 	right: 38%;
+}
+.carousel_box ul li {
+	width: 850px;
+	height: 100%;
+}
+.carousel_box {
+	width: 850px;
+	height: 850px;
 }
 /*********************************** 캐러셀 박스 구현 끝 ***********************************/
 @media (max-width: 1000px) {
   .b_box_65_4 {
-    display: flex;      
+    display: flex;
 	justify-content: space-between;
  }
   .home_13_17{
