@@ -13,13 +13,11 @@
  /*----------------------------- 드롭다운 메뉴 구현 끝 -----------------------------------*/
  /*----------------------------- 캐러셀 메뉴 구현 -----------------------------------*/
 const flexplz = document.querySelector(".flexplz");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next"); 
 const slideLength = document.querySelectorAll('.flexplz li').length;
 let currentSlide = 1;
-const IMAGE_WIDTH = 850;
+const IMAGE_WIDTH = 650;
 
-nextBtn.addEventListener('click', click);
+flexplz.addEventListener('wheel', click);
 
 function click(e){
 	console.log(e.target);

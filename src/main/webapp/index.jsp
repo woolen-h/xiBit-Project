@@ -21,9 +21,9 @@
         <div class=sign_up_13_23>
           <span  class="sign_up_13_24"><a href="member/agreement.jsp">Sign up</a></span>
         </div>
-        <div  class="home_13_17">Home</div>
+        <div  class="home_13_17"><a href="index.jsp">Home</a></div>
         <div  class="exhibition_13_18"><a href="exhibit/exhibition_tab.jsp">Exhibition</a></div>
-        <div  class="info_13_19">Information</div>
+        <div  class="info_13_19"><a href="information/information_tab.jsp">Information</a></div>
         <div  class="event_13_20"><a href="notice/noticeList.jsp">Notice</a></div>
         <div class=sign_up_82_67>
           <div  class="login_82_68"><a href="member/loginForm.jsp">Login</a></div>
@@ -32,17 +32,22 @@
 	        <div class="window">
 		        <div class="carousel_box">
 		        	<ul class="flexplz">
-		        	<li><img class="c_img1" alt="artwork" src="https://mdl.artvee.com/sftb/703597an.jpg"/></li>
-		        	<li><img class="c_img2" alt="artwork" src="https://mdl.artvee.com/sftb/705139an.jpg"/></li>
-		        	<li><img class="c_img3" alt="artwork" src="https://mdl.artvee.com/sftb/701437an.jpg"/></li>
+			        	<li>
+			        	<!-- 각 전시의 포스터 이미지 -->
+			        	<img class="c_img1" alt="artwork" src="https://mdl.artvee.com/sftb/202837fg.jpg"/>
+			        	</li>
+			        	<li>
+			        	<!-- 각 전시의 포스터 이미지 -->
+			        	<img class="c_img2" alt="artwork" src="https://mdl.artvee.com/sftb/223059fg.jpg"/>
+			        	</li>
+			        	<li>
+			        	<!-- 각 전시의 포스터 이미지 -->
+			        	<img class="c_img3" alt="artwork" src="https://mdl.artvee.com/sftb/601146sl.jpg"/>
+			        	</li>
 				    </ul>
 		        </div>
 	        </div>
         </div>
-        <div class="button-container">
-		    <button class="prev">previous</button>
-		    <button class="next">next</button>
-	  	</div>
       </div>
     </div>
   </body>
