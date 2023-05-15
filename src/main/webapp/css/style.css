@@ -32,7 +32,7 @@ body::-webkit-scrollbar-track {
 .b_box_65_4 {
   background-color: rgba(255, 255, 255, 1);
   width: calc(100% - 100px);
-  height: calc(100% - 100px);
+  height: calc(100vh - 100px);
   border: 1px inset;
   position: absolute;
   left: 50px;
@@ -275,8 +275,7 @@ body::-webkit-scrollbar-track {
 	font-size: 12px;
 	letter-spacing: 0;	
   }
-}
-
+}/* 반응형 웹 end */
 /*********************************** EXHIBITION TAB STYLE *************************************************/
 .location_9_113 { 
   display: flex;
