@@ -47,8 +47,8 @@
 		int price = Integer.parseInt(mr.getParameter("price"));
 		String tel = mr.getParameter("tel").trim();
 		String contents = mr.getParameter("contents");
-		filename = mr.getParameter("filename");
-				
+		// filename = mr.getParameter("filename"); -> 이 코드 때문에 null값 들어감 주석 처리 혹은 삭제
+		
 		dto.setExcode(excode);
 		dto.setBcode(bcode);
 		dto.setExplace(explace);
@@ -61,7 +61,6 @@
 		dto.setTel(tel);
 		dto.setContents(contents);
 		dto.setFilename(filename);
-		
 		
 		int cnt = dao.create(dto);
 		
