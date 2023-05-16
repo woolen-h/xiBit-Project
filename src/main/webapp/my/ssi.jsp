@@ -13,6 +13,7 @@
 <jsp:useBean id="dao" class="net.order.OrderDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.order.OrderDTO" scope="page"></jsp:useBean>
 
+
 <%request.setCharacterEncoding("UTF-8"); %>
 
 <%
