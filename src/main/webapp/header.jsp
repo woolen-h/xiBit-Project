@@ -17,13 +17,13 @@
   <body>
     <div class=landing_page_13_15>
       <div class=b_box_65_4>
-        <div  class="xibit_13_21">xiBit</div>
+        <div  class="xibit_13_21"><a href="../index.jsp">xiBit</a></div>
         <div class=sign_up_13_23>
           <span  class="sign_up_13_24"><a href="../member/agreement.jsp">Sign up</a></span>
         </div>
         <div  class="home_13_17"><a href="../index.jsp">Home</a></div>
         <div  class="exhibition_13_18"><a href="../exhibit/exhibition_tab.jsp">Exhibition</a></div>
-        <div  class="info_13_19">Information</div>
+        <div  class="info_13_19"><a href="information/information_tab.jsp">Information</a></div>
         <div  class="event_13_20"><a href="../notice/noticeList.jsp">Notice</a></div>
         <div class=sign_up_82_67>
           <div  class="login_82_68"><a href="../member/loginForm.jsp">Login</a></div>

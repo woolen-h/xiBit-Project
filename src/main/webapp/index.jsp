@@ -12,12 +12,12 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>xiBit Web Develop Project</title>
   </head>
   <body>
     <div class=landing_page_13_15>
       <div class=b_box_65_4>
-        <div  class="xibit_13_21">xiBit</div>
+        <div  class="xibit_13_21"><a href="index.jsp">xiBit</a></div>
         <div class=sign_up_13_23>
           <span  class="sign_up_13_24"><a href="member/agreement.jsp">Sign up</a></span>
         </div>
