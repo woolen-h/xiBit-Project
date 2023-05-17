@@ -6,7 +6,6 @@
 <%@page import="java.text.SimpleDateFormat" %>    
 
 
-<%@ include file="auth.jsp" %>
 <%@ include file="ssi.jsp" %>    
 <%@ include file="../header.jsp" %>
 

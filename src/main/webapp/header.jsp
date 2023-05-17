@@ -27,10 +27,10 @@
         <div  class="event_13_20"><a href="../notice/noticeList.jsp">Notice</a></div>
   <%if (s_mid.equals("guest")) {%>
         <div class=sign_up_13_23>
-          <span  class="sign_up_13_24"><a href="member/agreement.jsp">Sign up</a></span>
+          <span  class="sign_up_13_24"><a href="../member/agreement.jsp">Sign up</a></span>
         </div>
         <div class=sign_up_82_67>
-          <div  class="login_82_68"><a href="member/loginForm.jsp">Login</a></div>
+          <div  class="login_82_68"><a href="../member/loginForm.jsp">Login</a></div>
         </div>
   <%} else{ %>
         <div class=sign_up_13_23>
