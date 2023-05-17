@@ -11,11 +11,13 @@
 <%@ include file="../header.jsp" %>
 
 
+
+
 <div class="content">
 <!-- 주문서 -->
 
 <%
-	dtoM=daoM.selectinfo(s_mid);
+	dtoM=daoM.read(s_mid);
 
 	String excode = request.getParameter("excode").trim();
 	dtoE=daoE.read(excode);
@@ -65,9 +67,15 @@
 	</tr>
 	</table>
 	</div>
-	
+
+<!------------------------------------------------------------------>
+
 	<div> <!-- 오른쪽 -->
 	<form name="ordfrm" id="ordfrm" action="orderProc.jsp" onsubmit="return orderCheck()" >
+	<div>
+	
+	
+	</div>
 	<input type="hidden" name="id" id="id" value="s_id">
 	<input type="hidden" name="excode" id="excode" value="<%=dtoE.getExcode() %>">	
 	
