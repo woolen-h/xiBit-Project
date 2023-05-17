@@ -12,23 +12,11 @@
 		    <th>전시장코드</th> <!-- select로 수정완료 -->
 		    <td>
 			    <select name="bcode" id="bcode">
-	                <option value="Seo" selected>SEO123</option>
-	                <option value="Gwa">GWA123</option>
-	                <option value="Deok">DEOK123</option>
-	                <option value="Cheong">CHEONG123</option>
-	                <option value="Kid">KID123</option>
-	            </select>
-            </td>
-		</tr>
-		<tr>
-		    <th>전시장소</th> <!-- select로 수정완료 -->
-		    <td>
-			    <select name="explace" id="explace">
-	                <option value="서울" selected>서울</option>
-	                <option value="과천">과천</option>
-	                <option value="덕수궁">덕수궁</option>
-	                <option value="청주">청주</option>
-	                <option value="어린이미술관">어린이미술관</option>
+	                <option value="Seo" selected>서울</option>
+	                <option value="Gwa">과천</option>
+	                <option value="Deok">덕수궁</option>
+	                <option value="Cheong">청주</option>
+	                <option value="Kid">어린이박물관</option>
 	            </select>
             </td>
 		</tr>
@@ -47,7 +35,7 @@
 		<tr>
 		    <th>전시 기한</th> <!-- 달력으로 수정완료 -->
 		    <td style="text-align: left">
-		    	<input type="date" name="exstart" id="exstart" required> - <input type="date" name="exend" id="exend" size="10" maxlength="20" required>
+		    	<input type="date" name="exstart" id="exstart" required> ~ <input type="date" name="exend" id="exend" required>
 		    </td>
 		</tr>
 		<tr>

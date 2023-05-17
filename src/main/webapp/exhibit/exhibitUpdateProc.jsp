@@ -7,8 +7,8 @@
         <div class="content">
         <!-- 본문 시작 UpdateProc.jsp -->
 <% 
-		int excode = Integer.parseInt(request.getParameter("excode"));
-		System.out.println(excode);
+		
+		//System.out.println(excode);
 		
 		try{
 			//1)첨부된 파일 저장
@@ -36,17 +36,18 @@
 			}//while end
 			
 			//3) exh_info 테이블에 저장하기
+			int excode = Integer.parseInt(mr.getParameter("excode"));
 			
-			String bcode = request.getParameter("bcode").trim();
-			String explace = request.getParameter("explace").trim();
-			String exname = request.getParameter("exname").trim();
-			String author = request.getParameter("author").trim();
-			String exstart = request.getParameter("exstart").trim();
-			String exend = request.getParameter("exend").trim();
-			int excnt = Integer.parseInt(request.getParameter("excnt"));
-			int price = Integer.parseInt(request.getParameter("price"));
-			String tel = request.getParameter("tel").trim();
-			String contents = request.getParameter("contents");
+			 String bcode = mr.getParameter("bcode").trim();
+	         String explace = mr.getParameter("explace").trim();
+	         String exname = mr.getParameter("exname").trim();
+	         String author = mr.getParameter("author").trim();
+	         String exstart = mr.getParameter("exstart").trim();
+	         String exend = mr.getParameter("exend").trim();
+	         int excnt = Integer.parseInt(mr.getParameter("excnt"));
+	         int price = Integer.parseInt(mr.getParameter("price"));
+	         String tel = mr.getParameter("tel").trim();
+	         String contents = mr.getParameter("contents");
 			
 			dto.setExcode(excode);
 			dto.setBcode(bcode);
@@ -69,7 +70,7 @@
 			}else{
 				out.println("<script>");
 				out.println("		alert('게시글이 수정되었습니다.');");
-				out.println(" 	location.href='exhibition_tab.jsp;");
+				out.println(" 	location.href='exhibition_tab.jsp';");
 				out.println("</script>");
 			}//if end
 			

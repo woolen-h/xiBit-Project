@@ -1,32 +1,26 @@
 --전시정보 테이블
 CREATE TABLE exh_info (
-   excode     NUMBER			   NOT NULL		// 수정
+   excode     NUMBER(5)   NOT NULL
   ,bcode      VARCHAR2(10)   NOT NULL
   ,explace    VARCHAR2(10)   NOT NULL
   ,exname     VARCHAR2(50)   NOT NULL
   ,author     VARCHAR2(50)   NOT NULL
-  ,exstart    VARCHAR2(10)   NOT NULL		// 수정
-  ,exend      VARCHAR2(10)   NOT NULL   // 수정	
+  ,exstart    DATE           NOT NULL
+  ,exend      DATE       	 NOT NULL   
   ,excnt      NUMBER(4)      NOT NULL
   ,price      NUMBER(10)     NOT NULL
   ,tel        VARCHAR2(14)   NOT NULL
   ,contents   CLOB           NOT NULL
-  ,filename   VARCHAR2(20)   NOT NULL		// 추가
+  ,filename   VARCHAR2(20)
   ,PRIMARY KEY(excode)
 );
+
+--23.05.17 테이블 수정 완료 (최종)
 
 --시퀀스
 create sequence exh_info_seq;
 
---전시이미지 테이블
-CREATE TABLE exh_image(
-     imageld       NUMBER(10)   NOT NULL
-    ,excode        VARCHAR2(10) NOT NULL
-    ,originName    VARCHAR2(50) NOT NULL
-    ,newName       VARCHAR2(20) NOT NULL
-    ,imagePath     VARCHAR2(50) NOT NULL
-    ,PRIMARY KEY(imageld)
-);
+
 
 --조회(전시정보테이블)
 SELECT excode, bcode, explace, exname, author, exstart, exend, excnt, price, tel, contents
