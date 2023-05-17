@@ -39,7 +39,6 @@
 			int excode = Integer.parseInt(mr.getParameter("excode"));
 			
 			 String bcode = mr.getParameter("bcode").trim();
-	         String explace = mr.getParameter("explace").trim();
 	         String exname = mr.getParameter("exname").trim();
 	         String author = mr.getParameter("author").trim();
 	         String exstart = mr.getParameter("exstart").trim();
@@ -51,7 +50,6 @@
 			
 			dto.setExcode(excode);
 			dto.setBcode(bcode);
-			dto.setExplace(explace);
 			dto.setExname(exname);
 			dto.setAuthor(author);
 			dto.setExstart(exstart);
