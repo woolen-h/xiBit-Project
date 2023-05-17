@@ -19,6 +19,7 @@
 
 <section>
 <div><h3>예약내역</h3></div> <!-- head -->
+<hr>
 <div><!-- 예약내역 -->
 	<div><!-- 관람정보 -->
 		<ul>
@@ -27,6 +28,7 @@
 			<li><a href="ticketList3.jsp">관람완료</a></li>
 		</ul>
 	</div>
+<hr>
 	<div>
 		<select>
 			<option value="1">최근 예매순</option>
