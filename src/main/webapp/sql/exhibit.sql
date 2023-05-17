@@ -1,6 +1,6 @@
 --전시정보 테이블
 CREATE TABLE exh_info (
-   excode     NUMBER			   NOT NULL		// 수정
+   excode     NUMBER		 NOT NULL		// 수정
   ,bcode      VARCHAR2(10)   NOT NULL
   ,explace    VARCHAR2(10)   NOT NULL
   ,exname     VARCHAR2(50)   NOT NULL

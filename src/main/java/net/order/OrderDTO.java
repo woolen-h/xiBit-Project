@@ -6,8 +6,17 @@ public class OrderDTO {
 	private String excode;
 	private int amount;
 	private int price;
+	private String sdate;
 	
 	public OrderDTO() {}
+	
+	public String getSdate() {
+		return sdate;
+	}
+
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
 
 	public String getMid() {
 		return mid;
@@ -52,8 +61,9 @@ public class OrderDTO {
 	@Override
 	public String toString() {
 		return "OrderDTO [mid=" + mid + ", ordernum=" + ordernum + ", excode=" + excode + ", amount=" + amount
-				+ ", price=" + price + "]";
+				+ ", price=" + price + ", sdate=" + sdate + "]";
 	}
+
 	
 	
 	
