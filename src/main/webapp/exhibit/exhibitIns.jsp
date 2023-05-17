@@ -36,7 +36,7 @@
 		}//while end
 		
 		//3) exh_info 테이블에 저장하기
-		String excode = mr.getParameter("excode").trim();
+		
 		String bcode = mr.getParameter("bcode").trim();
 		String explace = mr.getParameter("explace").trim();
 		String exname = mr.getParameter("exname").trim();
@@ -49,7 +49,6 @@
 		String contents = mr.getParameter("contents");
 		// filename = mr.getParameter("filename"); -> 이 코드 때문에 null값 들어감 주석 처리 혹은 삭제
 		
-		dto.setExcode(excode);
 		dto.setBcode(bcode);
 		dto.setExplace(explace);
 		dto.setExname(exname);
@@ -65,17 +64,17 @@
 		int cnt = dao.create(dto);
 		
 		if(cnt==0){
-			out.println("<p>사진 추가 실패</p>");
+			out.println("<p>전시 게시 실패</p>");
 			out.println("<p><a href='javascript:history.back();'>[다시시도]</a></p>");
 		}else{
 			out.println("<script>");
-			out.println(" 	alert('사진을 추가했습니다.');");
+			out.println(" 	alert('전시를 게시했습니다.');");
 			out.println(" 	location.href='exhibition_tab.jsp';");
 			out.println("</script>");
 		}
 	}catch(Exception e){
 		out.print(e);
-		out.print("<p>사진 올리기 실패!!</p>");
+		out.print("<p>게시 실패!!</p>");
 		out.print("<a href='javascript:history.back();'>[다시시도]</a>");
 	}
 %>

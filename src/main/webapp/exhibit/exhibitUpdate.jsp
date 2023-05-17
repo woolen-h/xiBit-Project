@@ -5,9 +5,9 @@
         <div class="content">
         <!-- 본문 시작 exhibitForm.jsp -->
 		<h3> * 전시 수정하기 * </h3>
-		<p><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>">[돌아가기]</a></p>
+		<p><a href="exhibition_tab.jsp">[목록으로]</a></p>
 <%
-		String excode = request.getParameter("excode");
+		int excode = Integer.parseInt(request.getParameter("excode"));
 		dto = dao.read(excode);
 		if(dto==null){
 			out.println("글 없음");
@@ -17,10 +17,6 @@
 			<input type="hidden" name="excode" value="<%=excode%>">
 			<table>
 			<tr>
-			    <th>전시코드</th>
-			    <td style="text-align: left">
-			    	<input type="text" name="excode" id="excode" size="10" maxlength="10" value="<%=dto.getExcode()%>" required autofocus>
-			    </td>
 			    <th>전시장코드</th> <!-- select로 하면 편할듯..!  -->
 			    <td style="text-align: left">
 			    	<input type="text" name="bcode" id="bcode" size="10" maxlength="10" value="<%=dto.getBcode()%>" required>
@@ -71,7 +67,7 @@
 			<tr>
 			    <th>작품설명</th>
 			    <td style="text-align: left">
-			    	<textarea rows="5" cols="30" name="contents" id="contents" ><%=dto.getContents()%> </textarea>
+			    	<textarea rows="5" cols="30" name="contents" id="contents"><%=dto.getContents()%></textarea>
 			    </td>
 			</tr>
 			<tr>
@@ -91,8 +87,6 @@
 <%
 		}
 %>
-		
-		
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>
