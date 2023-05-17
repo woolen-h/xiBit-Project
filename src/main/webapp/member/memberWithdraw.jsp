@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-	<%@ include file="auth.jsp" %>
 	<%@ include file="ssi.jsp" %>
 	<%@ include file="../header.jsp" %>  
         <div class=content style="text-align: center">
