@@ -19,7 +19,7 @@
             <div class=continue_9_145><span  class="__________9_146">현재 진행중 전시</span></div>
             <div class=newest_9_143><span  class="____9_144">최신순</span></div>
             <% 
-            ArrayList<ExhibitDTO> list = dao.list();
+            ArrayList<ExhibitDTO> list = dao.listNow();
             if(list==null){
               out.println("자료없음");
             }

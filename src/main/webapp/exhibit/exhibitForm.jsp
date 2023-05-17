@@ -6,23 +6,31 @@
 		<h3> * 전시 게시하기 * </h3>
 		<p><a href="exhibition_tab.jsp">[목록]</a></p>
 		
-		<form method="post" action="exhibitIns.jsp" enctype="multipart/form-data" onsubmit="return pdsCheck()">
+		<form name="exhibitfrm" method="post" action="exhibitIns.jsp" enctype="multipart/form-data" onsubmit="return pdsCheck()">
 		<table class="table">
 		<tr>
-		    <th>전시코드</th>
-		    <td style="text-align: left">
-		    	<input type="text" name="excode" id="excode" size="10" maxlength="10" required autofocus>
-		    </td>
-		    <th>전시장코드</th> <!-- select로 하면 편할듯..!  -->
-		    <td style="text-align: left">
-		    	<input type="text" name="bcode" id="bcode" size="10" maxlength="10" required>
-		    </td>
+		    <th>전시장코드</th> <!-- select로 수정완료 -->
+		    <td>
+			    <select name="bcode" id="bcode">
+	                <option value="Seo" selected>SEO123</option>
+	                <option value="Gwa">GWA123</option>
+	                <option value="Deok">DEOK123</option>
+	                <option value="Cheong">CHEONG123</option>
+	                <option value="Kid">KID123</option>
+	            </select>
+            </td>
 		</tr>
 		<tr>
-		    <th>전시장소</th>
-		    <td style="text-align: left">
-		    	<input type="text" name="explace" id="explace" size="10" maxlength="10" required>
-		    </td>
+		    <th>전시장소</th> <!-- select로 수정완료 -->
+		    <td>
+			    <select name="explace" id="explace">
+	                <option value="서울" selected>서울</option>
+	                <option value="과천">과천</option>
+	                <option value="덕수궁">덕수궁</option>
+	                <option value="청주">청주</option>
+	                <option value="어린이미술관">어린이미술관</option>
+	            </select>
+            </td>
 		</tr>
 		<tr>
 		    <th>전시명</th>
@@ -37,9 +45,9 @@
 		    </td>
 		</tr>
 		<tr>
-		    <th>전시 기한</th> <!-- 달력 select로 넣으면 편할까? -->
+		    <th>전시 기한</th> <!-- 달력으로 수정완료 -->
 		    <td style="text-align: left">
-		    	<input type="text" name="exstart" id="exstart" size="10" maxlength="20" required> - <input type="text" name="exend" id="exend" size="10" maxlength="20" required>
+		    	<input type="date" name="exstart" id="exstart" required> - <input type="date" name="exend" id="exend" size="10" maxlength="20" required>
 		    </td>
 		</tr>
 		<tr>

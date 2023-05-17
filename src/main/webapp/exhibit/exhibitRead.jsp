@@ -6,10 +6,9 @@
         <!-- 본문 시작 exhibitRead.jsp -->
 		<h3> * 전시 상세보기 * </h3>
 		<a href="exhibition_tab.jsp">[목록으로]</a>
-		<a href="exhibitForm.jsp">[게시하기]</a>
 		
 <%
-		String excode = request.getParameter("excode").trim();
+		int excode = Integer.parseInt(request.getParameter("excode"));
 		dto = dao.read(excode);
 		if(dto==null){
 			out.print("글 없음");
@@ -66,6 +65,7 @@
 			</tr>
 			</table>
 			</div>
+			<input type="button" value="예매하기" onclick="location.href='exhibitBook.jsp?excode=<%=excode%>'">
 			<br>
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
 			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 

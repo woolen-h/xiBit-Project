@@ -34,10 +34,10 @@ FROM exh_info
 ORDER BY exstart DESC
 
 --현재 전시중인 전시 조회 (이미지명, 전시명) --x
-SELECT info.exname, image.originName
-FROM exh_info info JOIN exh_image image
-ON info.excode = image.excode
-WHERE MONTH
+SELECT excode, bcode, explace, exname, author, exstart, exend, excnt, price, tel, contents, filename 
+FROM exh_info 
+WHERE exstart
+ORDER BY exstart ASC
 
 --상세보기
 SELECT excode, explace, exname, contents, author, exstart, exend, excnt, price, tel
