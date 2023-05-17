@@ -28,7 +28,7 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(" SELECT excode, bcode, explace, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
+			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
 			sql.append(" FROM exh_info ");
 			sql.append(" ORDER BY exstart ASC ");
 			
@@ -40,7 +40,6 @@ public class ExhibitDAO {
 					ExhibitDTO dto = new ExhibitDTO();
 					dto.setExcode(rs.getInt("excode"));
 					dto.setBcode(rs.getString("bcode"));
-					dto.setExplace(rs.getString("explace"));
 					dto.setExname(rs.getString("exname"));
 					dto.setAuthor(rs.getString("author"));
 					dto.setExstart(rs.getString("exstart"));
@@ -68,10 +67,10 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(" SELECT excode, bcode, explace, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
-			sql.append(" FROM exh_info ");
-			sql.append(" WHERE sysdate <= exend");
-			sql.append(" ORDER BY exstart ASC ");
+			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
+	         sql.append(" FROM exh_info ");
+	         sql.append(" WHERE sysdate-1 <= exend AND sysdate >= exstart");
+	         sql.append(" ORDER BY exstart ASC ");
 			
 			pstmt = con.prepareStatement(sql.toString());
 			rs = pstmt.executeQuery();
@@ -81,7 +80,6 @@ public class ExhibitDAO {
 					ExhibitDTO dto = new ExhibitDTO();
 					dto.setExcode(rs.getInt("excode"));
 					dto.setBcode(rs.getString("bcode"));
-					dto.setExplace(rs.getString("explace"));
 					dto.setExname(rs.getString("exname"));
 					dto.setAuthor(rs.getString("author"));
 					dto.setExstart(rs.getString("exstart"));
@@ -102,6 +100,8 @@ public class ExhibitDAO {
 		return list;
 	}//listNow end
 	
+	
+	
 	//행추가
 	public int create(ExhibitDTO dto) {
 		int cnt = 0;
@@ -110,26 +110,25 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(" INSERT INTO exh_info (excode, bcode, explace, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
-			sql.append(" VALUES(exh_info_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+			sql.append(" INSERT INTO exh_info (excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
+			sql.append(" VALUES(exh_info_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
 			pstmt = con.prepareStatement(sql.toString());
 			
 			pstmt.setString(1, dto.getBcode());
-			pstmt.setString(2, dto.getExplace());
-			pstmt.setString(3, dto.getExname());
-			pstmt.setString(4, dto.getAuthor());
-			pstmt.setString(5, dto.getExstart());
-			pstmt.setString(6, dto.getExend());
-			pstmt.setInt(7, dto.getExcnt());
-			pstmt.setInt(8, dto.getPrice());
-			pstmt.setString(9, dto.getTel());
-			pstmt.setString(10, dto.getContents());
-			pstmt.setString(11, dto.getFilename());
+			pstmt.setString(2, dto.getExname());
+			pstmt.setString(3, dto.getAuthor());
+			pstmt.setString(4, dto.getExstart());
+			pstmt.setString(5, dto.getExend());
+			pstmt.setInt(6, dto.getExcnt());
+			pstmt.setInt(7, dto.getPrice());
+			pstmt.setString(8, dto.getTel());
+			pstmt.setString(9, dto.getContents());
+			pstmt.setString(10, dto.getFilename());
 			
 			cnt = pstmt.executeUpdate();
 			
-			//System.out.println(dto.toString());
+			System.out.println(dto.toString());
 		}catch(Exception e) {
 			System.out.println("게시 실패 : " + e);
 		}finally {
@@ -146,7 +145,7 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 			
 			sql = new StringBuilder();
-			sql.append(" SELECT excode, bcode, explace, exname, contents, author, exstart, exend, excnt, price, tel, filename ");
+			sql.append(" SELECT excode, bcode, exname, contents, author, exstart, exend, excnt, price, tel, filename ");
 			sql.append(" FROM exh_info ");
 			sql.append(" WHERE excode = ? ");
 			
@@ -158,7 +157,6 @@ public class ExhibitDAO {
 				dto = new ExhibitDTO();
 				dto.setExcode(rs.getInt("excode"));
 				dto.setBcode(rs.getString("bcode"));
-				dto.setExplace(rs.getString("explace"));
 				dto.setExname(rs.getString("exname"));
 				dto.setContents(rs.getString("contents"));
 				dto.setAuthor(rs.getString("author"));
@@ -185,23 +183,22 @@ public class ExhibitDAO {
 			
 			StringBuilder sql = new StringBuilder();
 			sql.append(" UPDATE exh_info ");
-			sql.append(" SET bcode = ?, explace=?, exname=?, contents=?, author=?, exstart=?, exend=?, excnt=?, price=?, tel=? , filename=? ");
+			sql.append(" SET bcode = ?, exname=?, contents=?, author=?, exstart=?, exend=?, excnt=?, price=?, tel=? , filename=? ");
 			sql.append(" WHERE excode = ? ");
 			
 			pstmt = con.prepareStatement(sql.toString());
 			
 			pstmt.setString(1,dto.getBcode());
-			pstmt.setString(2,dto.getExplace());
-			pstmt.setString(3,dto.getExname());
-			pstmt.setString(4,dto.getContents());
-			pstmt.setString(5,dto.getAuthor());
-			pstmt.setString(6,dto.getExstart());
-			pstmt.setString(7,dto.getExend());
-			pstmt.setInt(8,dto.getExcnt());
-			pstmt.setInt(9,dto.getPrice());
-			pstmt.setString(10,dto.getTel());
-			pstmt.setString(11,dto.getFilename());
-			pstmt.setInt(12, dto.getExcode());
+			pstmt.setString(2,dto.getExname());
+			pstmt.setString(3,dto.getContents());
+			pstmt.setString(4,dto.getAuthor());
+			pstmt.setString(5,dto.getExstart());
+			pstmt.setString(6,dto.getExend());
+			pstmt.setInt(7,dto.getExcnt());
+			pstmt.setInt(8,dto.getPrice());
+			pstmt.setString(9,dto.getTel());
+			pstmt.setString(10,dto.getFilename());
+			pstmt.setInt(11, dto.getExcode());
 			
 			cnt = pstmt.executeUpdate();
 			

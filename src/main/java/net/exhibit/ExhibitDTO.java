@@ -3,7 +3,6 @@ package net.exhibit;
 public class ExhibitDTO {
 	private int excode; //시퀀스 사용을 위해 바꿨습니다 String->int
 	private String bcode;
-	private String explace;
 	private String exname;
 	private String author;
 	private String exstart;
@@ -37,19 +36,6 @@ public class ExhibitDTO {
 	public void setBcode(String bcode) {
 		this.bcode = bcode;
 	}
-
-
-
-	public String getExplace() {
-		return explace;
-	}
-
-
-
-	public void setExplace(String explace) {
-		this.explace = explace;
-	}
-
 
 
 	public String getExname() {
@@ -158,13 +144,12 @@ public class ExhibitDTO {
 		this.filename = filename;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "ExhibitDTO [excode=" + excode + ", bcode=" + bcode + ", explace=" + explace + ", exname=" + exname
-				+ ", author=" + author + ", exstart=" + exstart + ", exend=" + exend + ", excnt=" + excnt + ", price="
-				+ price + ", tel=" + tel + ", contents=" + contents + ", filename=" + filename + "]";
+		return "ExhibitDTO [excode=" + excode + ", bcode=" + bcode + ", exname=" + exname + ", author=" + author
+				+ ", exstart=" + exstart + ", exend=" + exend + ", excnt=" + excnt + ", price=" + price + ", tel=" + tel
+				+ ", contents=" + contents + ", filename=" + filename + "]";
 	}
+
 
 }

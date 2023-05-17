@@ -38,7 +38,6 @@
 		//3) exh_info 테이블에 저장하기
 		
 		String bcode = mr.getParameter("bcode").trim();
-		String explace = mr.getParameter("explace").trim();
 		String exname = mr.getParameter("exname").trim();
 		String author = mr.getParameter("author").trim();
 		String exstart = mr.getParameter("exstart").trim();
@@ -50,7 +49,6 @@
 		// filename = mr.getParameter("filename"); -> 이 코드 때문에 null값 들어감 주석 처리 혹은 삭제
 		
 		dto.setBcode(bcode);
-		dto.setExplace(explace);
 		dto.setExname(exname);
 		dto.setAuthor(author);
 		dto.setExstart(exstart);
