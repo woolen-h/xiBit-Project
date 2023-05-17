@@ -5,9 +5,9 @@
         <div class="content">
         <!-- 본문 시작 exhibitForm.jsp -->
 		<h3> * 전시 수정하기 * </h3>
-		<p><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>">[돌아가기]</a></p>
+		<p><a href="exhibition_tab.jsp">[목록으로]</a></p>
 <%
-		String excode = request.getParameter("excode");
+		int excode = Integer.parseInt(request.getParameter("excode"));
 		dto = dao.read(excode);
 		if(dto==null){
 			out.println("글 없음");
@@ -17,20 +17,15 @@
 			<input type="hidden" name="excode" value="<%=excode%>">
 			<table>
 			<tr>
-			    <th>전시코드</th>
-			    <td style="text-align: left">
-			    	<input type="text" name="excode" id="excode" size="10" maxlength="10" value="<%=dto.getExcode()%>" required autofocus>
-			    </td>
-			    <th>전시장코드</th> <!-- select로 하면 편할듯..!  -->
-			    <td style="text-align: left">
-			    	<input type="text" name="bcode" id="bcode" size="10" maxlength="10" value="<%=dto.getBcode()%>" required>
-			    </td>
-			</tr>
-			<tr>
-			    <th>전시장소</th>
-			    <td style="text-align: left">
-			    	<input type="text" name="explace" id="explace" size="10" maxlength="10" value="<%=dto.getExplace()%>" required>
-			    </td>
+			    <th>전시장코드</th>
+			    <td>
+			    <select name="bcode">
+                   <option value="Seo" <%if(dto.getBcode().equals("Seo")){ out.print("selected"); }%>>서울</option>
+                   <option value="Gwa" <%if(dto.getBcode().equals("Gwa")){ out.print("selected"); }%>>과천</option>
+                   <option value="Deok" <%if(dto.getBcode().equals("Deok")){ out.print("selected"); }%>>덕수궁</option>
+                   <option value="Cheong" <%if(dto.getBcode().equals("Cheong")){ out.print("selected"); }%>>청주</option>
+                   <option value="Kid" <%if(dto.getBcode().equals("Kid")){ out.print("selected"); }%>>어린이미술관</option>
+               </select>
 			</tr>
 			<tr>
 			    <th>전시명</th>
@@ -45,10 +40,10 @@
 			    </td>
 			</tr>
 			<tr>
-			    <th>전시 기한</th> <!-- 달력 select로 넣으면 편할까? -->
+			    <th>전시 기한</th>
 			    <td style="text-align: left">
-			    	<input type="text" name="exstart" id="exstart" size="10" maxlength="20" value="<%=dto.getExstart()%>" required> - <input type="text" name="exend" id="exend" size="10" maxlength="20" value="<%=dto.getExend()%>" required>
-			    </td>
+		    		<input type="date" name="exstart" id="exstart" value=<%=dto.getExstart()%> required> ~ <input type="date" name="exend" id="exend" value=<%=dto.getExend()%>required>
+		    	</td>
 			</tr>
 			<tr>
 			    <th>작품 수</th>
@@ -71,7 +66,7 @@
 			<tr>
 			    <th>작품설명</th>
 			    <td style="text-align: left">
-			    	<textarea rows="5" cols="30" name="contents" id="contents" ><%=dto.getContents()%> </textarea>
+			    	<textarea rows="5" cols="30" name="contents" id="contents"><%=dto.getContents()%></textarea>
 			    </td>
 			</tr>
 			<tr>
@@ -91,8 +86,6 @@
 <%
 		}
 %>
-		
-		
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>
