@@ -78,4 +78,32 @@ public class OrderDAO {
 		}
 		return cnt;
 	}
+	
+	public OrderDTO read(String mid) {
+		OrderDTO dto=null;
+		
+		try {
+			con=dbopen.getConnection();
+			
+			sql=new StringBuilder();
+			sql.append(" SELECT mid, passwd, mname, jomin1, jomin2, email, tel, mlevel, mdate ");		
+			sql.append(" FROM member ");		
+			sql.append(" WHERE mid=? ");		
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, mid);
+			
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				dto=new OrderDTO();
+				
+			}//if end			
+			
+		} catch (Exception e) {
+			System.out.println("회원정보보기 실패 : " + e);
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		}//end		
+		return dto;	
+	}//read() end
 }

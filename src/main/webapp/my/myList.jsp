@@ -16,7 +16,7 @@
 	</ul>
 </nav>
 <%
-	dtoM=daoM.selectinfo(s_mid);
+	dtoM=daoM.read(s_mid);
 %>
 <section>
 <h3>나의 페이지</h3> <!-- head -->
@@ -59,6 +59,7 @@
 				</li>
 				<li><span>관람인원</span>
 					<!-- 어린이, 성인, 어르신? -->
+					<!--  -->
 				</li>
 				<li><span>관람장소</span>
 					<p><%=dtoE.getExplace()%></p>

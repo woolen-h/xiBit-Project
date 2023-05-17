@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>달력 만들기</title>
+
+  <link rel="stylesheet" href="./reserve.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="./reserve.js"></script>
+
+</head>
+
+<body>
+  <div class="calendar-wrap">
+    <div class="calendar-middle-wrap">
+      <!-- 상단 -->
+      <div class="cal_nav">
+      	<!-- 이전 달 -->
+        <a href="javascript:;" class="nav-btn go-prev"></a>
+        <!-- 달력 월 표시 -->
+        <span class="year-month start-year-month"></span>
+        <!-- 다음 달 -->
+        <a href="javascript:;" class="nav-btn go-next"></a>
+      </div>
+      <!-- 달력시작 -->
+      <div class="cal_wrap">
+      	<!-- 요일 -->
+        <div class="days">
+          <div class="day">일</div>
+          <div class="day">월</div>
+          <div class="day">화</div>
+          <div class="day">수</div>
+          <div class="day">목</div>
+          <div class="day">금</div>
+          <div class="day">토</div>
+        </div>
+        <!-- 현재 월 달력 -->
+        <div class="dates start-calendar"></div>
+      </div>
+    </div>
+
+
+    <div class="checkInOutInfo">
+      <div>
+        <p>
+        <!-- 선택 날 표시 -->
+          <label id="check_in_day"></label>
+        </p>
+        <!-- <p class="space">~</p>
+        <p>
+          <span>체크아웃</span>
+          <label id="check_out_day"></label>
+        </p> -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
