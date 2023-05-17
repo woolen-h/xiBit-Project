@@ -6,10 +6,9 @@
         <!-- 본문 시작 exhibitRead.jsp -->
 		<h3> * 전시 상세보기 * </h3>
 		<a href="exhibition_tab.jsp">[목록으로]</a>
-		<a href="exhibitForm.jsp">[게시하기]</a>
 		
 <%
-		String excode = request.getParameter("excode").trim();
+		int excode = Integer.parseInt(request.getParameter("excode"));		
 		dto = dao.read(excode);
 		if(dto==null){
 			out.print("글 없음");
@@ -27,20 +26,25 @@
 				<td><%=dto.getExcode()%></td>
 			</tr>
 			<tr>
-				<th>전시장소</th>
-				<td><%=dto.getExplace()%></td>
-			</tr>
-			<tr>
 				<th>전시명</th>
 				<td><%=dto.getExname()%></td>
+			</tr>
+			<tr>
+				<th>전시장소</th>
+				<td><%if(dto.getBcode().equals("Seo")){out.print("서울");}else
+					  if(dto.getBcode().equals("Gwa")){out.print("과천");}else
+					  if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
+				      if(dto.getBcode().equals("Cheong")){out.print("청주");}else
+				      if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
+				
 			</tr>
 			<tr>
 				<th>내용</th>
 				<td>
 <%
-			//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
-			String content = Utility.convertChar(dto.getContents());
-			out.print(content);
+				//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
+				String content = Utility.convertChar(dto.getContents());
+				out.print(content);
 %>
 				</td>
 			</tr>
@@ -50,7 +54,7 @@
 			</tr>
 			<tr>
 				<th>전시기간</th>
-				<td><%=dto.getExstart()%> ~ <%=dto.getExend()%></td>
+				<td><%=dto.getExstart().substring(0,11)%> ~ <%=dto.getExend().substring(0,11)%></td>
 			</tr>
 			<tr>
 				<th>작품수</th>
@@ -66,11 +70,15 @@
 			</tr>
 			</table>
 			</div>
+<<<<<<< HEAD
 			
 			<!-- 예매버튼 -->
 			<input type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
 			
 			<!-- 버튼 -->
+=======
+			<input type="button" value="예매하기" onclick="location.href='exhibitBook.jsp?excode=<%=excode%>'">
+>>>>>>> branch 'my!!!!!!!!!!!!!' of https://github.com/woolen-h/xiBit-Project.git
 			<br>
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
 			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
