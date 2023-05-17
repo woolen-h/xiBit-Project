@@ -72,7 +72,7 @@
 			<tr>
 			    <th>첨부파일</th>
 			    <td style="text-align: left">
-			    	<input type="file" name="filename" id="filename" value="<%=dto.getFilename()%>">
+			    	<input type="file" name="filename" id="filename">
 			    </td>
 			</tr>
 			<tr>
