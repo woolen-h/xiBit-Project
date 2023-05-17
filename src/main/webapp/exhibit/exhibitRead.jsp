@@ -66,6 +66,11 @@
 			</tr>
 			</table>
 			</div>
+			
+			<!-- 예매버튼 -->
+			<input type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
+			
+			<!-- 버튼 -->
 			<br>
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
 			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
