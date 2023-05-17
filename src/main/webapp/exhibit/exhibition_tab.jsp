@@ -19,13 +19,15 @@
             <div class=continue_9_145><span  class="__________9_146">현재 진행중 전시</span></div>
             <div class=newest_9_143><span  class="____9_144">최신순</span></div>
             <% 
-            ArrayList<ExhibitDTO> list = dao.list();
+            ArrayList<ExhibitDTO> list = dao.listNow(); 
             if(list==null){
               out.println("자료없음");
             }
             %>
+            
             <div class=scroll_9_139>
-            <a href="exhibitForm.jsp">[게시하기]</a> <!-- 관리자만 보이게 -->
+            <a href="exhibitForm.jsp">[게시하기]</a>
+            <!-- 
               <div class=component_8_121_36>
                 <div class=component_1_121_35>
                   <div class="img"></div>
@@ -56,21 +58,21 @@
                   <div class=frame_8_i121_30_9_93><span  class="______________________i121_30_9_100">전시 제목 : 전시 제목 : 전시 제목</span></div>
                 </div>
               </div>
-              <div>
+              <div> -->
                 <table>
 		          <tr>
-		          	<th>전시장소</th>
-		          	<th>전시명</th>
-		          	<th>전시기간</th>
+		          	<th style="text-align: left">전시장소</th>
+		          	<th style="text-align: left">전시명</th>
+		          	<th style="text-align: left">전시기간</th>
 		          </tr>
 <%
 					for(int i=0; i<list.size(); i++){
 						dto = list.get(i);
 %>
 				  <tr>
-					<td style="text-align: left"><%=dto.getExplace()%></td>
+					<td style="text-align: left"><%=dto.getBcode()%></td>
 					<td style="text-align: left"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></td>
-					<td style="text-align: left"><%=dto.getExstart()%> ~ <%=dto.getExend()%></td>
+					<td style="text-align: left"><%=dto.getExstart().substring(0, 11)%> ~ <%=dto.getExend().substring(0, 11)%></td>
 <%
 					}
 %>

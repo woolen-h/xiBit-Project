@@ -27,8 +27,8 @@ public class NoticeDAO {
 			con = dbopen.getConnection();
 
 			sql = new StringBuilder();
-			sql.append(" INSERT INTO notice(noticeno, category, subject, content)");
-			sql.append(" VALUES(noticeno_seq.nextval, ?, ?, ?)");
+			sql.append(" INSERT INTO notice(category, subject, content, regdate)");
+			sql.append(" VALUES(?, ?, ?, now())");
 
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, dto.getCategory());
@@ -59,18 +59,17 @@ public class NoticeDAO {
 			if (word.length() == 0) {
 				sql.append(" SELECT *");
 				sql.append(" FROM (");
-				sql.append(" SELECT noticeno, category, subject, regdate, rownum AS r");
+				sql.append(" SELECT noticeno, category, subject, regdate, @RNUM := @RNUM + 1 AS r");
 				sql.append(" FROM (");
 				sql.append(" SELECT noticeno, category, subject, regdate");
 				sql.append(" FROM notice");
-				sql.append(" ORDER BY regdate DESC");
-				sql.append(" )");
-				sql.append(" )");
-				sql.append(" WHERE r >= " + startRow + "AND r <= " + endRow);
+				sql.append(" ) A, ( SELECT @RNUM := 0 ) B ORDER BY regdate DESC");
+				sql.append(" ) C");
+				sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
 			} else {
 				sql.append(" SELECT *");
 				sql.append(" FROM (");
-				sql.append(" SELECT noticeno, category, subject, regdate, rownum as r");
+				sql.append(" SELECT noticeno, category, subject, regdate, @RNUM := @RNUM + 1 AS r");
 				sql.append(" FROM (");
 				sql.append(" SELECT noticeno, category, subject, regdate");
 				sql.append(" FROM notice");
@@ -92,10 +91,9 @@ public class NoticeDAO {
 				
 				sql.append(search);
 				
-				sql.append(" ORDER BY regdate DESC");
-				sql.append(" )");
-				sql.append(" )");
-				sql.append(" WHERE r >= " + startRow + "AND r <= " + endRow);
+				sql.append(" ) A, ( SELECT @RNUM := 0 ) B ORDER BY regdate DESC");
+				sql.append(" ) C");
+				sql.append(" WHERE r >= " + startRow + " AND r <= " + endRow);
 			} // if end
 
 			pstmt = con.prepareStatement(sql.toString());
