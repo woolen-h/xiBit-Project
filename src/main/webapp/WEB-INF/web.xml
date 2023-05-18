@@ -9,10 +9,7 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-<<<<<<< Upstream, based on origin/main
-</web-app>
-=======
-  
+ 
     <!-- 세션 유지 시간 설정(60분) -->
   <session-config>
   	<session-timeout>60</session-timeout>
@@ -20,4 +17,3 @@
   
   
 </web-app>
->>>>>>> 62a67b4 [Test] test입니다
