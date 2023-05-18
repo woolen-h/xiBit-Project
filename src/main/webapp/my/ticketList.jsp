@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="auth.jsp" %>
 <%@ include file="ssi.jsp" %>
 <%@ include file="../header.jsp" %>
 
@@ -12,8 +11,7 @@
 		<li><a href="myList.jsp">홈</a></li>
 		<li><a href="ticketList.jsp">예약내역</a></li>
 		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="memberlevel.jsp">회원등급</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기·좋아요</a></li>
+		<li><a href="myFavoriteList.jsp">즐겨찾기</a></li>
 	</ul>
 </nav>	
 

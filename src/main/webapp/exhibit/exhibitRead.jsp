@@ -71,18 +71,19 @@
 			</table>
 			</div>
 <<<<<<< HEAD
+
 			
-			<!-- 예매버튼 -->
-			<input type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
+			
 			
 			<!-- 버튼 -->
-=======
-			<input type="button" value="예매하기" onclick="location.href='exhibitBook.jsp?excode=<%=excode%>'">
->>>>>>> branch 'my!!!!!!!!!!!!!' of https://github.com/woolen-h/xiBit-Project.git
 			<br>
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
 			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
 <%			
+			if(!s_mid.equals("guest")) {%><!-- 로그인했을때만 노출 -->	
+				<!-- 예매버튼 -->
+				<input type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
+<%			}		
 		}
 %>
         <!-- 본문 끝 -->

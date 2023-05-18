@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr class="num">
+	<th>성인</th>
+		<td>7000원</td>
+		<td class="count">
+			<a href="#" class="minus">-</a>
+			<span id="result">0</span>
+			<a href="#" class="plus">+</a>
+		</td>
+		<td class="totalcost"></td>	
+	</tr>
+	
+	<tr class="num">
+	<th>어린이</th>
+		<td>3000원</td>
+		<td class="count">
+			<a href="#" class="minus2">-</a>
+			<span id="result2">0</span>
+			<a href="#" class="plus2">+</a>
+		</td>
+		<td class="totalcost2"></td>
+	</tr>
+	
+	<tr>
+		<th>총금액</th>
+		<td class="totalprice"></td>
+	</tr>
+</table>
+	
+	<script>
+	let plus = document.querySelector(".plus");
+	let minus=document.querySelector(".minus");
+	let result=document.querySelector("#result");
+	let totalcost=document.querySelector(".totalcost");
+	let totalprice=document.querySelector(".totalprice");
+	
+	
+	let total=0;
+	let i=0;
+
+	
+
+	plus.addEventListener("click", () => {
+		i++;
+		result.textContent=i;
+		let totalcostNum=i*7000;
+		totalcost.textContent=totalcostNum.toLocaleString()+"원";
+		
+		total+=7000;
+		totalprice.textContent=total.toLocaleString()+"원";
+	})
+
+	minus.addEventListener("click", () => {
+		if(i>0){
+			i--;
+			result.textContent=i;
+			let totalcostNum=i*7000;
+			totalcost.textContent=totalcostNum.toLocaleString()+"원";
+			
+
+			total-=7000;
+			
+			totalprice.textContent=total.toLocaleString()+"원";
+		}else{
+			totalcost.textContent=0+"원";
+		}
+		
+	})
+	
+	let plus2 = document.querySelector(".plus2");
+	let minus2=document.querySelector(".minus2");
+	let result2=document.querySelector("#result2");
+	let totalcost2=document.querySelector(".totalcost2");
+	let j=0;
+	
+	plus2.addEventListener("click", () => {
+		j++;
+		result2.textContent=j;
+		let totalcostNum=j*3000;
+		totalcost2.textContent=totalcostNum.toLocaleString()+"원";
+
+		total+=3000;
+		
+		totalprice.textContent=total.toLocaleString()+"원";
+	})
+
+	minus2.addEventListener("click", () => {
+		if(j>0){
+			j--;
+			result2.textContent=j;
+			let totalcostNum=j*3000;
+			totalcost2.textContent=totalcostNum.toLocaleString()+"원";
+
+			total-=3000;			
+
+			totalprice.textContent=total.toLocaleString()+"원";
+		}else{
+			totalcost2.textContent=0+"원";
+		}
+		
+	})
+		
+	</script>
+
+</body>
+</html>
