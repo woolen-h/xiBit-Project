@@ -22,7 +22,7 @@
             ArrayList<ExhibitDTO> list = dao.listNow(); 
             if(list==null){
               out.println("자료없음");
-            }
+            }else{
             %>
             
             <div class=scroll_9_139>
@@ -58,7 +58,7 @@
                   <div class=frame_8_i121_30_9_93><span  class="______________________i121_30_9_100">전시 제목 : 전시 제목 : 전시 제목</span></div>
                 </div>
               </div>
-              <div> -->
+              <div>  -->
                 <table>
 		          <tr>
 		          	<th style="text-align: left">전시장소</th>
@@ -70,11 +70,20 @@
 						dto = list.get(i);
 %>
 				  <tr>
-					<td style="text-align: left"><%=dto.getBcode()%></td>
+
+					<td style="text-align: left">
+            <%if(dto.getBcode().equals("Seo")){out.print("서울");}else
+					    if(dto.getBcode().equals("Gwa")){out.print("과천");}else
+					    if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
+				      if(dto.getBcode().equals("Cheong")){out.print("청주");}else
+				      if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%>
+           </td>
 					<td style="text-align: left"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></td>
 					<td style="text-align: left"><%=dto.getExstart().substring(0, 11)%> ~ <%=dto.getExend().substring(0, 11)%></td>
+          </tr>
 <%
 					}
+            }
 %>
           		</table>   
                 </div>

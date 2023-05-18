@@ -60,21 +60,22 @@ public class ExhibitDAO {
 		return list;
 	}// list end
 
-	public ArrayList<ExhibitDTO> listNow() {
+	
+	public ArrayList<ExhibitDTO> listNow(){
 		ArrayList<ExhibitDTO> list = null;
-
+		
 		try {
 			con = dbopen.getConnection();
-
+			
 			StringBuilder sql = new StringBuilder();
 			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
-			sql.append(" FROM exh_info ");
-			sql.append(" WHERE sysdate-1 <= exend AND sysdate >= exstart");
-			sql.append(" ORDER BY exstart ASC ");
-
+	         sql.append(" FROM exh_info ");
+	         sql.append(" WHERE now() <= exend AND now() >= exstart");
+	         sql.append(" ORDER BY exstart ASC ");
+			
 			pstmt = con.prepareStatement(sql.toString());
 			rs = pstmt.executeQuery();
-			if (rs.next()) {
+			if(rs.next()) {
 				list = new ArrayList<>();
 				do {
 					ExhibitDTO dto = new ExhibitDTO();
@@ -89,18 +90,19 @@ public class ExhibitDAO {
 					dto.setTel(rs.getString("tel"));
 					dto.setContents(rs.getString("contents"));
 					dto.setFilename(rs.getString("filename"));
-					list.add(dto);
-				} while (rs.next());
-			}
-		} catch (Exception e) {
+					list.add(dto);					
+				}while(rs.next());
+			}else {
+				list = null;
+			}			
+		}catch(Exception e) {
 			System.out.println("목록 조회 실패 : " + e);
-		} finally {
+		}finally {
 			DBClose.close(con, pstmt, rs);
 		}
 		return list;
-	}// listNow end
+	}//listNow end
 
-	// 행추가
 	public int create(ExhibitDTO dto) {
 		int cnt = 0;
 
@@ -108,8 +110,7 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 
 			StringBuilder sql = new StringBuilder();
-			sql.append(
-					" INSERT INTO exh_info (excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
+			sql.append(" INSERT INTO exh_info (excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
 			sql.append(" VALUES(exh_info_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
 			pstmt = con.prepareStatement(sql.toString());
@@ -134,7 +135,8 @@ public class ExhibitDAO {
 			DBClose.close(con, pstmt);
 		}
 		return cnt;
-	}// create() end
+
+	}//create() end
 
 	// 상세보기
 	public ExhibitDTO read(int excode) {
@@ -149,8 +151,9 @@ public class ExhibitDAO {
 			sql.append(" WHERE excode = ? ");
 
 			pstmt = con.prepareStatement(sql.toString());
-			pstmt.setInt(1, excode);
-
+      
+			pstmt.setInt(1,excode);
+			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				dto = new ExhibitDTO();
@@ -182,37 +185,39 @@ public class ExhibitDAO {
 
 			StringBuilder sql = new StringBuilder();
 			sql.append(" UPDATE exh_info ");
-			sql.append(
-					" SET bcode = ?, exname=?, contents=?, author=?, exstart=?, exend=?, excnt=?, price=?, tel=? , filename=? ");
+
+			sql.append(" SET bcode = ?, exname=?, contents=?, author=?, exstart=?, exend=?, excnt=?, price=?, tel=? , filename=? ");
 			sql.append(" WHERE excode = ? ");
 
 			pstmt = con.prepareStatement(sql.toString());
-
-			pstmt.setString(1, dto.getBcode());
-			pstmt.setString(2, dto.getExname());
-			pstmt.setString(3, dto.getContents());
-			pstmt.setString(4, dto.getAuthor());
-			pstmt.setString(5, dto.getExstart());
-			pstmt.setString(6, dto.getExend());
-			pstmt.setInt(7, dto.getExcnt());
-			pstmt.setInt(8, dto.getPrice());
-			pstmt.setString(9, dto.getTel());
-			pstmt.setString(10, dto.getFilename());
+      
+			pstmt.setString(1,dto.getBcode());
+			pstmt.setString(2,dto.getExname());
+			pstmt.setString(3,dto.getContents());
+			pstmt.setString(4,dto.getAuthor());
+			pstmt.setString(5,dto.getExstart());
+			pstmt.setString(6,dto.getExend());
+			pstmt.setInt(7,dto.getExcnt());
+			pstmt.setInt(8,dto.getPrice());
+			pstmt.setString(9,dto.getTel());
+			pstmt.setString(10,dto.getFilename());
 			pstmt.setInt(11, dto.getExcode());
-
+			
 			cnt = pstmt.executeUpdate();
-
+			
 			System.out.println(dto);
-		} catch (Exception e) {
+		}catch(Exception e) {
+
 			System.out.println("수정 실패 : " + e);
 		} finally {
 			DBClose.close(con, pstmt);
 		}
 		return cnt;
-	}// update() end
+	}//update() end
 
 	// 삭제
 	public int delete(int excode, String saveDir) {
+
 		int cnt = 0;
 		try {
 			String filename = "";
