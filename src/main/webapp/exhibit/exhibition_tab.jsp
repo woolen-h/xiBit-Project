@@ -27,7 +27,9 @@
             
             <div class=scroll_9_139>
             <a href="exhibitForm.jsp">[게시하기]</a>
-             <!-- 
+
+            <!-- 
+>>>>>>> refs/remotes/origin/exhibit
               <div class=component_8_121_36>
                 <div class=component_1_121_35>
                   <div class="img"></div>
@@ -58,7 +60,9 @@
                   <div class=frame_8_i121_30_9_93><span  class="______________________i121_30_9_100">전시 제목 : 전시 제목 : 전시 제목</span></div>
                 </div>
               </div>
+<<<<<<< HEAD
               <div>  -->
+
                 <table>
 		          <tr>
 		          	<th style="text-align: left">전시장소</th>
