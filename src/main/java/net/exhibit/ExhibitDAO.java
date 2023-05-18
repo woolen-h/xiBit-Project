@@ -51,7 +51,9 @@ public class ExhibitDAO {
 					dto.setFilename(rs.getString("filename"));
 					list.add(dto);					
 				}while(rs.next());
-			}			
+			}else {
+				list = null;
+			}
 		}catch(Exception e) {
 			System.out.println("목록 조회 실패 : " + e);
 		}finally {
@@ -69,7 +71,7 @@ public class ExhibitDAO {
 			StringBuilder sql = new StringBuilder();
 			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
 	         sql.append(" FROM exh_info ");
-	         sql.append(" WHERE sysdate-1 <= exend AND sysdate >= exstart");
+	         sql.append(" WHERE now() <= exend AND now() >= exstart");
 	         sql.append(" ORDER BY exstart ASC ");
 			
 			pstmt = con.prepareStatement(sql.toString());
@@ -91,6 +93,8 @@ public class ExhibitDAO {
 					dto.setFilename(rs.getString("filename"));
 					list.add(dto);					
 				}while(rs.next());
+			}else {
+				list = null;
 			}			
 		}catch(Exception e) {
 			System.out.println("목록 조회 실패 : " + e);
@@ -110,21 +114,23 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 			
 			StringBuilder sql = new StringBuilder();
-			sql.append(" INSERT INTO exh_info (excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
-			sql.append(" VALUES(exh_info_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+			 sql.append(" INSERT INTO exh_info (bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
+	         sql.append(" VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+
 
 			pstmt = con.prepareStatement(sql.toString());
 			
 			pstmt.setString(1, dto.getBcode());
 			pstmt.setString(2, dto.getExname());
-			pstmt.setString(3, dto.getAuthor());
-			pstmt.setString(4, dto.getExstart());
-			pstmt.setString(5, dto.getExend());
-			pstmt.setInt(6, dto.getExcnt());
-			pstmt.setInt(7, dto.getPrice());
-			pstmt.setString(8, dto.getTel());
-			pstmt.setString(9, dto.getContents());
-			pstmt.setString(10, dto.getFilename());
+	        pstmt.setString(3, dto.getAuthor());
+	        pstmt.setString(4, dto.getExstart());
+	        pstmt.setString(5, dto.getExend());
+	        pstmt.setInt(6, dto.getExcnt());
+	        pstmt.setInt(7, dto.getPrice());
+	        pstmt.setString(8, dto.getTel());
+	        pstmt.setString(9, dto.getContents());
+	        pstmt.setString(10, dto.getFilename());
+
 			
 			cnt = pstmt.executeUpdate();
 			
