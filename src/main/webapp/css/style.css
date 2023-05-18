@@ -149,6 +149,19 @@ body::-webkit-scrollbar-track {
   font-size: 12px;
   letter-spacing: 0;
 }
+  .booth_13_21{
+  color: rgba(0, 0, 0, 1);
+  width: 32px;
+  height: 15px;
+  position: absolute;
+  left: 32em;
+  top: 4em;
+  font-family: Inter;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0;
+  }
+
 .sign_up_82_67 {
   background-color: rgba(203.99998784065247, 255, 0, 1);
   width: 100px;
@@ -258,6 +271,15 @@ body::-webkit-scrollbar-track {
     letter-spacing: 0;
   }
   .event_13_20{
+    color: rgba(0, 0, 0, 1);
+    width: 56px;
+    height: 15px;
+    font-family: Inter;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+  .booth_13_21{
     color: rgba(0, 0, 0, 1);
     width: 56px;
     height: 15px;
