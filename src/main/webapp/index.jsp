@@ -20,9 +20,6 @@
     <div class=landing_page_13_15>
       <div class=b_box_65_4>
         <div  class="xibit_13_21">xiBit</div>
-        <div class=sign_up_13_23>
-          <span  class="sign_up_13_24"><a href="member/agreement.jsp">Sign up</a></span>
-        </div>
         <div  class="home_13_17"><a href="index.jsp">Home</a></div>
         <div  class="exhibition_13_18"><a href="exhibit/exhibition_tab.jsp">Exhibition</a></div>
         <div  class="info_13_19"><a href="information/information_table.jsp">Information</a></div>
