@@ -34,9 +34,9 @@
         </div>
   <%} else{ %>
         <div class=sign_up_13_23>
-          <span  class="sign_up_13_24"><a href="my/myList.jsp">MyPage</a></span>
+          <span  class="sign_up_13_24"><a href="../my/myList.jsp">MyPage</a></span>
         </div>
         <div class=sign_up_82_67>
-          <div  class="login_82_68"><a href="member/logout.jsp">Logout</a></div>
+          <div  class="login_82_68"><a href="../member/logout.jsp">Logout</a></div>
         </div>
   <%} %>  
