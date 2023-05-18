@@ -4,17 +4,24 @@
 <%@ include file="ssi.jsp" %>
 <%@ include file="../header.jsp" %>
 
-<div class="content">
-<!-- 예매상세 -->
-<nav><!-- side -->
-	<ul>
-		<li><a href="myList.jsp">홈</a></li>
-		<li><a href="ticketList.jsp.jsp">예약내역</a></li>
-		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기</a></li>
-	</ul>
-</nav>	
 
+<div class="in_content">
+	<div class="info_content">
+		<div class="info_tb_list">
+		<ul>
+			<li class="fa_qna"><a>마이페이지</a></li>
+		</ul>
+		<ul>
+			<li class="info_qna_h"><a href="myList.jsp">홈</a></li>
+			<li class="info_qna_h"><a href="ticketList.jsp">예약내역</a></li>
+			<li class="info_qna_h">개인정보</li>
+			<li class="info_qna_d"><a href="pwCheck.jsp">개인정보수정</a></li>
+			<li class="info_qna_d"><a href="../member/memberWithdraw.jsp">회원탈퇴</a></li>
+			<li class="info_qna_h"><a href="myFavoriteList.jsp">즐겨찾기</a></li>
+		</ul>
+		</div>
+	<div class="info_tb_container">
+<!-- 예매상세 -->
 <div>
 <h3>전시예매내역</h3> <!-- head -->
 <div><!-- 상세내역 -->
