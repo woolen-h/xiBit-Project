@@ -1,73 +1,74 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ include file="auth.jsp" %>
 <%@ include file="ssi.jsp" %>
 <%@ include file="../header.jsp" %>
 
-<div class="content">
-<!-- 관람예정 -->
-<nav><!-- side -->
-	<ul>
-		<li><a href="myList.jsp">홈</a></li>
-		<li><a href="ticketList.jsp">예약내역</a></li>
-		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="memberlevel.jsp">회원등급</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기·좋아요</a></li>
-	</ul>
-</nav>	
-
-<section>
-<div><h3>예약내역</h3></div> <!-- head -->
-<div><!-- 예약내역 -->
-	<div><!-- 관람정보 -->
+<!-- 예약내역 -->
+<div class="in_content">
+	<div class="info_content">
+		<div class="info_tb_list">
 		<ul>
-			<li><a href="ticketList.jsp">관람예정</a></li>
-			<li><a href="ticketList2.jsp">취소/환불0건</a></li>
-			<li><a href="ticketList3.jsp">관람완료</a></li>
+			<li class="fa_qna"><a>마이페이지</a></li>
 		</ul>
-	</div>
-	<div>
-		<select>
-			<option value="1">최근 예매순</option>
-			<option value="2">최근 전시순</option>
-		</select>
-	</div>
-	<div><!-- 예매내역 -->
-<%-- <%
-	int recordPerPage=2;
-
-	ArrayList<OrderDTO> list=dao.list(nowPage, recordPerPage, s_id);
-	//오늘날짜 < 예약날짜
-	
-	if(list==null){
-		out.println("<div>예매하신 내역이 없습니다.</div>");
-	}else{
-		for(int i=0; i<list.size(); i++){
-			dto=list.get(i);		
-%> --%>
-			<div>
-			<ul>
-				<div><img><!-- 포스터 --></div> <!-- 왼쪽 -->
-				<div>					      <!-- 오른쪽 -->
-					<div>
-						<span>예매번호</span>
-						<p><!-- 예매번호 --></p>
-					</div>
-				<p><!-- 전시회제목 --></p>	
-				<ul>
-					<li><span>관람일시</span><!-- 관람일시 --></li>
-					<li><span>관람인원</span><!-- 가격+관람인원 --></li>
-					<li><span>관람장소</span><!-- 전시장 --></li>
-				</ul>
-				<div>
-					<a href="ticketRead.jsp">상세/변경/취소</a>
-				</div>
-				</div> 
-			</ul>
-			</div>
+		<ul>
+			<li class="info_qna_h"><a href="myList.jsp">홈</a></li>
+			<li class="info_qna_h"><a href="ticketList.jsp">예약내역</a></li>
+			<li class="info_qna_h">개인정보</li>
+			<li class="info_qna_d"><a href="pwCheck.jsp">개인정보수정</a></li>
+			<li class="info_qna_d"><a href="../member/memberWithdraw.jsp">회원탈퇴</a></li>
+			<li class="info_qna_h"><a href="myFavoriteList.jsp">즐겨찾기</a></li>
+		</ul>
+		</div>
+	<div class="info_tb_container">
+<%
+	dto=dao.read(s_mid);
+%>
+	<table class="info_tb">
+<!--------------------예매내역--------------------->
+		<tr>
+			<td><a href="#">관람예정</a></td>
+			<td><a href="#">취소/환불</a></td>
+			<td><a href="#">관람완료</a></td>
+			<td>
+				<select>
+					<option value="1">최근 예매순</option>
+					<option value="2">최근 전시순</option>
+				</select>
+			</td>		
+		</tr>
+		<tr>
+<%--
+		ArrayList<OrderDTO> list=dao.list(s_mid);
+		int excode=dto.getExcode();
+		if(list==null){
+			out.println("<td>예매하신 내역이 없습니다.</td>");
+		}else{
+			for(int i=0; i<list.size(); i++){
+				dto=list.get(i);
+				dtoE=daoE.read(excode);	
+--%>
+		<th width="30%">사진</th>
+		<td><%-- <img src="../storage/<%=dtoE.getFilename()%>"> --%></td>
+		</tr>
+		<tr>
+			<th>전시명</th>
+			<td><%-- <a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%> --%></a></td>
+		</tr>
+		<tr>
+			<th>관람장소</th>
+			<td><%-- <%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
+				  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
+				  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
+			      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
+			      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%> --%></td>
+		</tr>
+	</table>
+<%--
+			}
+		}
+--%>
 	</div>
 </div>
-</section>
 </div>
 <!-- 본문 끝 -->

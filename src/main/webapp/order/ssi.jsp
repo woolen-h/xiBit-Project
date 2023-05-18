@@ -8,19 +8,18 @@
 <%@ page import="java.util.*" %>
 <%@ page import="net.utility.*" %>
 <%@ page import="net.order.*" %>
+<%@ page import="net.member.*" %>
+<%@ page import="net.exhibit.*" %>
 
 <jsp:useBean id="dao" class="net.order.OrderDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.order.OrderDTO" scope="page"></jsp:useBean>
 
-<<<<<<< HEAD
-=======
 <jsp:useBean id="daoE" class="net.exhibit.ExhibitDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dtoE" class="net.exhibit.ExhibitDTO" scope="page"></jsp:useBean>
 
 <jsp:useBean id="daoM" class="net.member.MemberDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dtoM" class="net.member.MemberDTO" scope="page"></jsp:useBean>
 
->>>>>>> branch 'main' of https://github.com/woolen-h/xiBit-Project.git
 
 <%request.setCharacterEncoding("UTF-8"); %>
 

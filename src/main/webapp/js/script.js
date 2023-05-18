@@ -164,3 +164,27 @@ function findIDCheck(){
 	}//if end	    
     
 }//findIDCheck() end
+
+
+
+////////////////////////////////////////////////////////////////
+//예매관련
+function selectDate(){ //아이디 중복확인
+	//날짜 선택 창
+	window.open("reserve.html", "idwin", "width=500, height=350");
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

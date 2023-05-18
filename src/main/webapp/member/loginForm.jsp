@@ -4,12 +4,34 @@
 	<%@ include file="auth.jsp" %>
 	<%@ include file="ssi.jsp" %>
 	
-	<%@ include file="../header.jsp" %>  
+	<!-- header 시작 -->
+	
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <meta charset="UTF-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	    <link
+	      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
+	      rel="stylesheet"/>
+	    <link rel="stylesheet" href="../css/reset.css" />
+	    <link rel="stylesheet" href="../css/login_style.css" />
+	    <script type="text/javascript" src="../js/script.js"></script> 
+	    
+	    <title>Login</title>
+	  </head>
+	  
+	  <body>
+	    <div class=landing_page_13_15>
+	      <div class=b_box_65_4>
+	
+	<!-- header 끝 -->
 	
         <div class=content style="text-align: center">
 		<!-- 본문 시작 loginForm.jsp-->
 		
-		<h3>L O G I N</h3>
+		
 		<br>
 		<% if(s_mid.equals("guest") || s_mlevel.equals("F1") || s_passwd.equals("guest") || s_mlevel.equals("guest")) {
 			//ID저장 쿠키 확인/////////////////////////////////////////////////////
@@ -27,25 +49,31 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-				<div class="form-field">
-					<input type="text" name="mid" id="mid" value="<%=c_mid %>" placeholder="아이디" maxlength="10" required>
-				</div>
-				<div class="form-field">
-					<input type="password" name="passwd" id="passwd" placeholder="비밀번호" maxlength="10" required>
-				</div>
-		
+			<h5>L O G I N</h5>
+			<br><br><br>
+			
+			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
+			<br><br>
+			<div>
+				<input class="loginform" type="text" name="mid" id="mid" value="<%=c_mid %>" placeholder="ID" maxlength="10" required>
+			</div>
 			<br>
-				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID저장</label>
-			<br>
-				&nbsp;&nbsp;&nbsp;
-				<a href="agreement.jsp">회원가입</a>
-				&nbsp;&nbsp;&nbsp;
-				<a href="findID.jsp">아이디/비밀번호 찾기</a>
+			<div>
+				<input class="loginform" type="password" name="passwd" id="passwd" placeholder="PASSWORD" maxlength="10" required>
+			</div>
+	
+			<br><br>
+				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID memory</label>
+			<br><br>
+
+				<input class="button" type="button" value="Find ID/Password" onclick="location.href='findID.jsp'">
 				
-			<br>
-			<br>
-				<input type="submit" value="login" class="btn btn-primary">
+				
+				
+				&nbsp;&nbsp;
+				<input class="button" type="submit" value="login" class="btn btn-primary">
 		</form>
+		<form>
 		<%
 		}else{
 			//로그인 성공했다면	
@@ -57,13 +85,19 @@
 			<input type='button' value='logout' class='btn btn-warning' onclick="location.href='logout.jsp'">
 		
 			<br><br>
+			<a href='../my/myList.jsp?mid=<%=s_mid%>'>[마이페이지]</a>
+			<br>
+			&nbsp;&nbsp;
 			<a href='memberModify.jsp?mid=<%=s_mid%>'>[회원정보수정]</a>
+			<br>
 			&nbsp;&nbsp;
 			<a href='memberWithdraw.jsp?mid=<%=s_mid%>'>[회원탈퇴]</a>
 		<%
 		}//if end
 		%>
+		</form>
         <!-- 본문 끝 -->
         </div>
+
         
     <%@ include file="../footer.jsp" %>

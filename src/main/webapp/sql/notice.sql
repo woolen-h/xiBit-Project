@@ -3,10 +3,10 @@
 1) 테이블 생성
 create table notice(
      noticeno   number           not null  -- 일련번호
-    ,category	varchar2(2)		 not null  -- 카테고리
+    ,category	  varchar2(2)		 		 not null  -- 카테고리
     ,subject    varchar2(255)    not null  -- 제목
     ,content    varchar2(4000)   not null  -- 내용
-    ,regdt      date    default  sysdate   -- 작성일
+    ,regdate    date    default  sysdate   -- 작성일
     ,primary key(noticeno)                 -- noticeno 기본키
 );
 

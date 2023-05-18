@@ -56,7 +56,7 @@
 		//첫페이지로 이동
 		//http://localhost:9090/sideProject/index.jsp
 		String root=Utility.getRoot();//sideProject반환
-		response.sendRedirect(root+"/member/loginForm.jsp");
+		response.sendRedirect(root+"/index.jsp");
 
 	}//if end
 

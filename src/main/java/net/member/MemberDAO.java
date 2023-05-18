@@ -367,33 +367,7 @@ public class MemberDAO {
 	
 	////////////////////////////////////////////////////////////////////
 	//마이페이지 관련
-	public MemberDTO selectinfo(String id) {
-		MemberDTO dto=null;
-		
-		try {
-			con=dbopen.getConnection();
-			sql=new StringBuilder();
-			sql.append(" SELECT mname, email");
-			sql.append(" FROM member ");
-			sql.append(" WHERE id=? ");
-			
-			pstmt=con.prepareStatement(sql.toString());
-			pstmt.setString(1, id);
-			
-			rs=pstmt.executeQuery();
-			if(rs.next()) {
-				dto=new MemberDTO();
-				dto.setMname(rs.getString("mname"));
-				dto.setMname(rs.getString("email"));
-			}
-		
-		} catch (Exception e) {
-			System.out.println("회원정보가져오기 실패:"+e);
-		} finally {
-			DBClose.close(con, pstmt);
-		}
-		return dto;
-	}
+	
 	
 
 }//class end
