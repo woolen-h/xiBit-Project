@@ -3,7 +3,7 @@ package net.order;
 public class OrderDTO {
 	private String mid;
 	private String ordernum;
-	private String excode;
+	private int excode;
 	private int amount;
 	private int price;
 	private String sdate;
@@ -34,11 +34,11 @@ public class OrderDTO {
 		this.ordernum = ordernum;
 	}
 
-	public String getExcode() {
+	public int getExcode() {
 		return excode;
 	}
 
-	public void setExcode(String excode) {
+	public void setExcode(int excode) {
 		this.excode = excode;
 	}
 

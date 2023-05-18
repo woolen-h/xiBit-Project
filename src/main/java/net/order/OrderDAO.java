@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import net.order.OrderDTO;
 import net.utility.DBClose;
 import net.utility.DBOpen;
 
@@ -40,7 +39,7 @@ public class OrderDAO {
 				list=new ArrayList<OrderDTO>();
 				do {
 					OrderDTO dto = new OrderDTO();
-					dto.setExcode(rs.getString("excode"));
+					dto.setExcode(rs.getInt("excode"));
 					list.add(dto);
 				}while(rs.next());
 			}
@@ -58,16 +57,17 @@ public class OrderDAO {
 			con=dbopen.getConnection();
 			
 			sql=new StringBuilder();
-			sql.append(" INSERT INTO order(mid, ordernum, excode, amount, price) ");
+			sql.append(" INSERT INTO exh_order(mid, ordernum, excode, amount, price, sdate) ");
 	        sql.append(" VALUES (?,?,?,?,?) ");
 	      
 	         
 	        pstmt=con.prepareStatement(sql.toString());
 	        pstmt.setString(1, dto.getMid());
 	        pstmt.setString(2, dto.getOrdernum());
-	        pstmt.setString(3, dto.getExcode());
+	        pstmt.setInt(3, dto.getExcode());
 	        pstmt.setInt(4, dto.getAmount());
 	        pstmt.setInt(5, dto.getPrice());                                                                                                    
+	        pstmt.setString(5, dto.getSdate());                                                                                                    
 	         
 			cnt=pstmt.executeUpdate();
 			
@@ -79,31 +79,59 @@ public class OrderDAO {
 		return cnt;
 	}
 	
-	public OrderDTO read(String mid) {
+	public OrderDTO read(String ordernum) {
 		OrderDTO dto=null;
 		
 		try {
 			con=dbopen.getConnection();
 			
 			sql=new StringBuilder();
-			sql.append(" SELECT mid, passwd, mname, jomin1, jomin2, email, tel, mlevel, mdate ");		
-			sql.append(" FROM member ");		
-			sql.append(" WHERE mid=? ");		
+			sql.append(" SELECT mid, ordernum, excode, amount, price, sdate ");		
+			sql.append(" FROM exh_order ");		
+			sql.append(" WHERE ordernum=? ");		
 			
 			pstmt=con.prepareStatement(sql.toString());
-			pstmt.setString(1, mid);
+			pstmt.setString(1, ordernum);
 			
 			rs=pstmt.executeQuery();
 			if(rs.next()){
 				dto=new OrderDTO();
+				dto.setMid(rs.getString("mid"));
+				dto.setOrdernum(rs.getString("ordernum"));
+				dto.setExcode(rs.getInt("excode"));
+				dto.setAmount(rs.getInt("amount"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setSdate(rs.getString("sdate"));
 				
 			}//if end			
 			
 		} catch (Exception e) {
-			System.out.println("회원정보보기 실패 : " + e);
+			System.out.println("주문서보기 실패 : " + e);
 		} finally {
 			DBClose.close(con, pstmt, rs);
 		}//end		
 		return dto;	
 	}//read() end
+	
+	
+	public int delete(OrderDTO dto) {
+		int cnt=0;
+		try {
+			con=dbopen.getConnection();
+			
+			sql=new StringBuilder();
+			sql.append(" DELETE FROM exh_order ");
+			sql.append(" WHERE ordernum=? ");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getOrdernum());
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("예매취소 실패 :"+e);
+		} finally {
+			DBClose.close(con, pstmt);
+		}
+		return cnt;
+	}
 }

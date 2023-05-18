@@ -7,13 +7,13 @@
 <div class="content">
 <!-- 본문 시작 주문서.jsp -->
 <% 
-   String id    = request.getParameter("id").trim();
+   String mid    = request.getParameter("mid").trim();
    String ordernum    = request.getParameter("ordernum").trim();
-   String excode = request.getParameter("excode").trim();
+   int excode = Integer.parseInt(request.getParameter("excode"));
    int amount = Integer.parseInt(request.getParameter("amount").trim());
    int price = Integer.parseInt(request.getParameter("price").trim());
 
-   dto.setMid(id);
+   dto.setMid(mid);
    dto.setOrdernum(ordernum);
    dto.setExcode(excode);
    dto.setAmount(amount);

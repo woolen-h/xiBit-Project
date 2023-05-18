@@ -11,8 +11,7 @@
 		<li><a href="myList.jsp">홈</a></li>
 		<li><a href="ticketList.jsp">예약내역</a></li>
 		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="memberlevel.jsp">회원등급</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기·좋아요</a></li>
+		<li><a href="myFavoriteList.jsp">즐겨찾기</a></li>
 	</ul>
 </nav>	
 

@@ -1,127 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@page import="java.util.Date" %>
-<%@page import="java.text.SimpleDateFormat" %>    
-
-<%@ include file="ssi.jsp" %>    
-<%@ include file="ordheader.jsp" %>
-
-<div class="content">
-<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
-<input type="hidden" name="mid" id="mid" value="s_id">
-
-<!-- 주문서번호 생성 -->
-<!-- <input type="hidden" name="ordernum" id="ordernum" value=""> -->
 	
-<!-- 주문서 -->
-<!-- 왼쪽 -->
-<!-----------전시정보------------------------------------------------------------------>
-<%
-	dtoM=daoM.read(s_mid);
-
-	int excode = Integer.parseInt(request.getParameter("excode"));
-	dtoE=daoE.read(excode);
-	if(dtoE==null){
-		out.print("글 없음");
-	}else{
-%>
-	<div> <!-- 왼쪽 -->
+   	<div class="content">
+	<form name="ordfrm" id="ordfrm" action="orderProc.jsp"  >
+	<input type="hidden" name="excode" id="excode" value="1234">
+	<input type="hidden" name="ordernum" id="ordernum" value="9876">
+	<input type="hidden" name="mid" id="mid" value="itwill">
+	
 	<table>
+	
 	<tr>
 		<th width="30%">사진</th>
-		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+		<td></td>
 	</tr>
 	<tr>
 		<th>전시명</th>
-		<td><%=dtoE.getExname()%></td>
+		<td>사회</td>
 	</tr>
 	<tr>
 		<th>전시장소</th>
-		<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
-			  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
-			  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
-		      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
-		      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
+		<td>서울국현미</td>
 	</tr>
 	<tr>
 		<th>내용</th>
 		<td>
-<%
-	//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
-	String content = Utility.convertChar(dtoE.getContents());
-	out.print(content);
-%>
 		</td>
 	</tr>
 	<tr>
 		<th>작가</th>
-		<td><%=dtoE.getAuthor()%></td>
+		<td>홍길동</td>
 	</tr>
 	<tr>
 		<th>전시기간</th>
-		<td><%=dtoE.getExstart().substring(0,11)%> ~ <%=dtoE.getExend().substring(0,11)%></td>
+		<td>2023-03-21~2023-04-12</td>
 	</tr>
 	<tr>
 		<th>작품수</th>
-		<td><%=dtoE.getExcnt()%></td>
+		<td>30</td>
 	</tr>
 	<tr>
 		<th>문의번호</th>
-		<td><%=dtoE.getTel()%></td>
+		<td>02-002-233</td>
 	</tr>
 	</table>
-	</div>
 	<hr>
-
-<!-- 오른쪽 -->
-<!-----------금액정보------------------------------------------------------------------>
-<div class="calendar-wrap">
-    <div class="calendar-middle-wrap">
-      <!-- 상단 -->
-      <div class="cal_nav">
-      	<!-- 이전 달 -->
-        <a href="javascript:;" class="nav-btn go-prev"></a>
-        <!-- 달력 월 표시 -->
-        <span class="year-month start-year-month"></span>
-        <!-- 다음 달 -->
-        <a href="javascript:;" class="nav-btn go-next"></a>
-      </div>
-      <!-- 달력시작 -->
-      <div class="cal_wrap">
-      	<!-- 요일 -->
-        <div class="days">
-          <div class="day">일</div>
-          <div class="day">월</div>
-          <div class="day">화</div>
-          <div class="day">수</div>
-          <div class="day">목</div>
-          <div class="day">금</div>
-          <div class="day">토</div>
-        </div>
-        <!-- 현재 월 달력 -->
-        <div class="dates start-calendar"></div>
-      </div>
-    </div>
-
-
-    <div class="checkInOutInfo">
-      <div>
-        <p>
-        <!-- 선택 날 표시 -->
-          <label id="check_in_day"></label>
-        </p>
-      </div>
-    </div>
-</div>
-
-<!-----------금액정보------------------------------------------------------------------>
-	<div>
+	
+	<!----------------------------------------------------------------------------->
+	
 	<table>
 	<tr class="num">
 	<th>성인</th>
-		<td><%=dtoE.getPrice() %>
-			<input type="hidden" id="aprice" value="<%=dtoE.getPrice() %>">
+		<td>7,000원
+			<input type="hidden" id="aprice" value="7000">
 		</td>
 		<td class="count">
 			<a href="#" class="minus">-</a>
@@ -134,8 +64,8 @@
 	</tr>
 	<tr class="num">
 	<th>어린이</th>
-		<td><%=dtoE.getPrice() %>*0.5
-			<input type="hidden" id="aprice" value="<%=dtoE.getPrice() %>*0.5">
+		<td>3,000원
+			<input type="hidden" id="cprice" value="3000">			
 		</td>
 		<td class="count">
 			<a href="#" class="minus2">-</a>
@@ -147,12 +77,12 @@
 		<td class="totalcost2"></td>
 	</tr>
 	</table>
-	</div>
 	<hr>
+
 	
-<!-----------주문정보------------------------------------------------------------------>
 	
-	<div>
+	<!----------------------------------------------------------------------------->
+	
 	<table>
 	<!-- 예매정보 -->
 	<tr>
@@ -169,15 +99,15 @@
 	</tr>
 	<tr>
 		<td>예매자</td>
-		<td><input type="text" name="name" id="name" value="<%=dtoM.getMname()%>"></td>
+		<td><input type="text" name="name" id="name" value="문지오"></td>
 	</tr>
 	<tr>
 		<td>연락처</td>
-		<td><input type="text" name="tel" id="tel" value="<%=dtoM.getTel()%>"></td>
+		<td><input type="text" name="tel" id="tel" value="010-7554-5626"></td>
 	</tr>
 	<tr>
 		<td>이메일</td>
-		<td><input type="text" name="email" id="email" value="<%=dtoM.getEmail()%>"></td>
+		<td><input type="text" name="email" id="email" value="wldh0906@naver.com"></td>
 	</tr>
 	<!-- 취소/환불 규정 -->
 	<tr>
@@ -191,15 +121,17 @@
 		<td>이용 당일</td>
 		<td>취소 불가</td>
 	</tr>
+	<tr>
+    <td>
+        <input type="submit" value="결제하기"/>
+    </td>
+	</tr>
 	</table>
-	</div>
-	<input type="submit" value="결제하기">
 	</form>
 	</div>
    	
-<!----------------------------------------------------------------------------->  
-	
-<script>
+   	
+   	<script>
    	let aprice=parseInt(document.getElementById("aprice").value);
    	let cprice=parseInt(document.getElementById("cprice").value);
 	
@@ -283,11 +215,9 @@
 		}
 		
 	})
-</script>
-<%			
-	}
-%>
-<!-- 본문 끝 -->
+	</script>
+   	
+   	
    	
    	
 <%@ include file="../footer.jsp" %>

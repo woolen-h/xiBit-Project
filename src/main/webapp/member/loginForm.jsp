@@ -49,9 +49,11 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-			<h3>L O G I N</h3>
+			<h5>L O G I N</h5>
 			<br><br><br>
-	
+			
+			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
+			<br><br>
 			<div>
 				<input class="loginform" type="text" name="mid" id="mid" value="<%=c_mid %>" placeholder="ID" maxlength="10" required>
 			</div>
@@ -63,11 +65,12 @@
 			<br><br>
 				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID memory</label>
 			<br><br>
-				<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
-				&nbsp;&nbsp;
+
 				<input class="button" type="button" value="Find ID/Password" onclick="location.href='findID.jsp'">
-			<br>
-			<br>
+				
+				
+				
+				&nbsp;&nbsp;
 				<input class="button" type="submit" value="login" class="btn btn-primary">
 		</form>
 		<form>
