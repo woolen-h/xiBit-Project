@@ -45,12 +45,13 @@
 	</tr>
 <%
 		ArrayList<OrderDTO> list=dao.list(s_mid);
+		int excode=dto.getExcode();
 		if(list==null){
 			out.println("예매하신 내역이 없습니다.");
 		}else{
 			for(int i=0; i<list.size(); i++){
 				dto=list.get(i);
-				dtoE=daoE.read(dto.getExcode());	
+				dtoE=daoE.read(excode);	
 %>
 	<tr>
 		<th width="30%">사진</th>

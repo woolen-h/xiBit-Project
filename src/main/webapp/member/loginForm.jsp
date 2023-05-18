@@ -14,80 +14,10 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	    <link
 	      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
-	      rel="stylesheet"
-	    />
+	      rel="stylesheet"/>
 	    <link rel="stylesheet" href="../css/reset.css" />
+	    <link rel="stylesheet" href="../css/login_style.css" />
 	    <script type="text/javascript" src="../js/script.js"></script> 
-	    
-	    <style type="text/css">
-	    
-	    .landing_page_13_15 {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100vw;
-			height: 100vh;
-			position: absolute;
-			background-image: url(../images/landing_page.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-	    
-	    .b_box_65_4 {
-			box-shadow: 14px 34px 29px rgba(0, 0, 0, 0.25);
-			background-color: rgba(255, 255, 255, 1);
-			width: calc(100% - 500px);
-			height: calc(100% - 400px);
-			border-top-left-radius: 15px;
-			border-top-right-radius: 15px;
-			border-bottom-left-radius: 15px;
-			border-bottom-right-radius: 15px;
-		}
-	    
-	    .loginform {
-			background-color: rgba(255, 255, 255, 1);
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
-			border-bottom-left-radius: 30px;
-			border-bottom-right-radius: 30px;
-			padding: 10px;
-		 
-		}
-	    
-	    .content {
-	    	display: flex;
-	    	justify-content: center;
-	    	align-items: center;
-			position: absolute;
-			top: 100px;
-			left: 2em;
-			width: calc(100% - 4em);
-			height: 83%;
-			overflow: scroll;
-			overflow-x: hidden;
-			font-family: Inter;
-		}
-		
-	    .button {
-	      	background-color: rgba(203.99998784065247, 255, 0, 1);
-
-			margin: 0;
-			padding: 0.5rem 1rem;
-			
-			font-family: Inter;
-			font-size: .8rem;
-			font-weight: 400;
-			text-align: center;
-			text-decoration: none;
-			
-			display: inline-block;
-			width: auto;
-			
-			border: none;
-			border-radius: 20px;
-		}
-	    
-	    </style>	    
 	    
 	    <title>Login</title>
 	  </head>
@@ -119,9 +49,11 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-			<h3>L O G I N</h3>
+			<h5>L O G I N</h5>
 			<br><br><br>
-	
+			
+			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
+			<br><br>
 			<div>
 				<input class="loginform" type="text" name="mid" id="mid" value="<%=c_mid %>" placeholder="ID" maxlength="10" required>
 			</div>
@@ -131,16 +63,17 @@
 			</div>
 	
 			<br><br>
-				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID저장</label>
-			<br>
-				&nbsp;&nbsp;&nbsp;
-				<a href="agreement.jsp">회원가입</a>
-				&nbsp;&nbsp;&nbsp;
-				<a href="findID.jsp">아이디/비밀번호 찾기</a>
-			<br>
-			<br>
+				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID memory</label>
+			<br><br>
+
+				<input class="button" type="button" value="Find ID/Password" onclick="location.href='findID.jsp'">
+				
+				
+				
+				&nbsp;&nbsp;
 				<input class="button" type="submit" value="login" class="btn btn-primary">
 		</form>
+		<form>
 		<%
 		}else{
 			//로그인 성공했다면	
@@ -153,13 +86,16 @@
 		
 			<br><br>
 			<a href='../my/myList.jsp?mid=<%=s_mid%>'>[마이페이지]</a>
+			<br>
 			&nbsp;&nbsp;
 			<a href='memberModify.jsp?mid=<%=s_mid%>'>[회원정보수정]</a>
+			<br>
 			&nbsp;&nbsp;
 			<a href='memberWithdraw.jsp?mid=<%=s_mid%>'>[회원탈퇴]</a>
 		<%
 		}//if end
 		%>
+		</form>
         <!-- 본문 끝 -->
         </div>
 
