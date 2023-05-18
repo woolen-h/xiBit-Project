@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp"%>
-<%@ include file="../member/auth.jsp"%>
 <%@ include file="../header.jsp"%>
 
 <div class="in_content">
