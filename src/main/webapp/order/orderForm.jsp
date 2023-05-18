@@ -117,6 +117,11 @@
 
 <!-----------금액정보------------------------------------------------------------------>
 	<div>
+<%
+	int price=dtoE.getPrice();
+	double disprice=price*0.5;
+	int priceee=(int)disprice;
+%>
 	<table>
 	<tr class="num">
 	<th>성인</th>
@@ -134,8 +139,8 @@
 	</tr>
 	<tr class="num">
 	<th>어린이</th>
-		<td><%=dtoE.getPrice() %>*0.5
-			<input type="hidden" id="aprice" value="<%=dtoE.getPrice() %>*0.5">
+		<td><%=priceee %>
+			<input type="hidden" id="cprice" value="<%=priceee %>">
 		</td>
 		<td class="count">
 			<a href="#" class="minus2">-</a>
