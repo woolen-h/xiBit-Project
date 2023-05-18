@@ -10,101 +10,96 @@
 		<li><a href="myList.jsp">홈</a></li>
 		<li><a href="ticketList.jsp">예약내역</a></li>
 		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="memberlevel.jsp">회원등급</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기·좋아요</a></li>
+		<li><a href="myFavoriteList.jsp">즐겨찾기</a></li>
 	</ul>
 </nav>
 <%
 	dtoM=daoM.read(s_mid);
 %>
-<section>
-<h3>나의 페이지</h3> <!-- head -->
+<div>
+<h3>나의 페이지</h3>
+<!----------개인정보----------->
 <hr>
-<div><!-- 개인정보 -->
-	<div><!-- 개인정보 -->
-		<p><%-- 이름 --%><%=dtoM.getMname() %></p>
-		<p><%-- 이메일 --%><%=dtoM.getEmail() %></p>
-		<ul>
-		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="../member/memberWithdraw.jsp">회원탈퇴</a></li>
-		<li><strong>회원등급</strong><p><%=dtoM.getMlevel() %></p></li>
-		</ul>
-	</div>
+<div>
+	<table>
+	<tr>
+		<th><%=dtoM.getMname() %></th><!-- 이름 -->
+	</tr>
+	<tr>
+		<th><%=dtoM.getEmail() %></th><!-- 이메일 -->
+	</tr>
+	<tr>
+		<td><a href="pwCheck.jsp">개인정보수정</a></td>
+		<td><a href="../member/memberWithdraw.jsp">회원탈퇴</a></td>
+	</tr>
+	<tr>
+		<th>회원등급</th>
+		<td><%=dtoM.getMlevel() %></td>
+	</tr>
+	</table>
 <hr>
-	<div><!-- 예매 -->
-		<div>
-			<h4>최근예매</h4>
-			<button onclick="location.href='ticketList.jsp';">더보기+</button>
-		</div>
-		<div>
+	<table>
+	<tr>
+		<th>예매내역</th>
+		<td><button onclick="location.href='ticketList.jsp';">더보기+</button></td>
+	</tr>
 <%
 		ArrayList<OrderDTO> list=dao.list(s_mid);
+		int excode=dto.getExcode();
 		if(list==null){
 			out.println("예매하신 내역이 없습니다.");
 		}else{
 			for(int i=0; i<list.size(); i++){
 				dto=list.get(i);
-				dtoE=daoE.read(dto.getExcode());	
+				dtoE=daoE.read(excode);	
 %>
-		<ul>
-		<li> <!-- 예약 내역  -->
-			<div>사진<%=dtoE.getFilename()%></div>
-			<div>
-				<p>관람 예정일로부터 D-<!-- 관람선택일 - 현재 날짜 --></p>
-				<p><%=dtoE.getExname()%></p>
-				<ul>
-				<li><span>관람일시</span>
-					<!-- 관람선택일 선택 시간 -->
-				</li>
-				<li><span>관람인원</span>
-					<!-- 어린이, 성인, 어르신? -->
-					<!--  -->
-				</li>
-				<li><span>관람장소</span>
-					<p><%=dtoE.getExplace()%></p>
-				</li>
-				</ul>
-				<!-- QR관람권 -->
+	<tr>
+		<th width="30%">사진</th>
+		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+	</tr>
+	<tr>
+		<th>전시명</th>
+		<td><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></td>
+	</tr>
+	<tr>
+		<th>관람 예정일로부터 D-</th>
+	</tr>
+	<tr>
+		<th>관람장소</th>
+		<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
+			  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
+			  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
+		      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
+		      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
+	</tr>
+	</table>
+
 <%
 			}
 		}
 %>
-			</div>
-		</li>
-		</ul>
-		</div>
 	</div>
 	<hr>
-	<div><!-- 즐겨찾기 -->
-		<div>
-			<h4>즐겨찾기 전시</h4>
-			<button>더보기+</button>
-		</div>
-		<div>
-			<ul>
-				<li>즐겨찾기</li>
-				<li>좋아요</li>
-			</ul>
-		</div>
-		<div>
-			<table border="1">
-			<thead>
-				<tr>
-					<th>구분</th>
-					<th>제목</th>
-					<th>등록날짜</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td colspan="3">즐겨찾기 및 좋아요 내역이 없습니다.</td>
-				</tr>
-			</tbody>
-			</table>
-		</div>
+<!------------------즐겨찾기-------------------->	
+	<div>
+	<table>
+		<tr>
+			<th>즐겨찾기 전시</th>
+			<td><button>더보기+</button></td>
+		</tr>
+		<tr>
+			<td>즐겨찾기</td>
+		</tr>
+		<tr>
+			<th>구분</th>
+			<th>제목</th>
+			<th>등록날짜</th>
+		</tr>
+		<tr>
+			<td colspan="3">즐겨찾기 및 좋아요 내역이 없습니다.</td>
+		</tr>
+	</table>
 	</div>
 </div>
-</section>
 </div>
-
 <%@ include file="../footer.jsp" %>

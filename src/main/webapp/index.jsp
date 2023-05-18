@@ -25,7 +25,7 @@
         </div>
         <div  class="home_13_17"><a href="index.jsp">Home</a></div>
         <div  class="exhibition_13_18"><a href="exhibit/exhibition_tab.jsp">Exhibition</a></div>
-        <div  class="info_13_19"><a href="information/information_tab.jsp">Information</a></div>
+        <div  class="info_13_19"><a href="information/information_table.jsp">Information</a></div>
         <div  class="event_13_20"><a href="notice/noticeList.jsp">Notice</a></div>
   <%if (s_mid.equals("guest")) {%>
         <div class=sign_up_13_23>

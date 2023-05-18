@@ -11,81 +11,116 @@
 		<li><a href="myList.jsp">홈</a></li>
 		<li><a href="ticketList.jsp.jsp">예약내역</a></li>
 		<li><a href="pwCheck.jsp">개인정보수정</a></li>
-		<li><a href="memberlevel.jsp">회원등급</a></li>
-		<li><a href="myFavoriteList.jsp">즐겨찾기·좋아요</a></li>
+		<li><a href="myFavoriteList.jsp">즐겨찾기</a></li>
 	</ul>
 </nav>	
 
-<section>
-<div><h3>전시예매내역</h3></div> <!-- head -->
+<div>
+<h3>전시예매내역</h3> <!-- head -->
 <div><!-- 상세내역 -->
-<%-- <%
-	dto=dao.read(s_id);
-	if(list==null){
+<%
+	String ordernum = request.getParameter("ordernum");
+	dto=dao.read(ordernum);
+	
+	if(dto==null){
 		out.println("<div>예매내역 불러오기 실패.</div>");
 	}else{
-		for(int i=0; i<list.size(); i++){
-			dto=list.get(i);		
-%> --%>
-		<div>
-			<div><!-- 맨위 -->
-				<ul>
-					<div><img><!-- 포스터 --></div> <!-- 왼쪽 -->
-					<div>					      <!-- 오른쪽 -->
-						<div>
-							<span>예매번호</span>
-							<p><!-- 예매번호 --></p>
-						</div>
-					<p><!-- 전시회제목 --></p>	
-					<ul>
-						<li><span>관람일시</span><!-- 관람일시 --></li>
-						<li><span>관람인원</span><!-- 가격+관람인원 --></li>
-						<li><span>관람장소</span><!-- 전시장 --></li>
-					</ul>
-					</div> 
-				</ul>
-			</div>
-			<div><!-- 예매정보 -->
-				<h3>예매정보</h3>
-				<ul>
-					<li><strong>예매자</strong><div><!-- 이름 --></div></li>
-					<li><strong>휴대폰</strong><div><!-- 휴대폰 --></div></li>
-					<li><strong>예매일시</strong><div><!-- 예매일시 --></div></li>
-					<li><strong>예매상태</strong><div><!-- 관람상태 --></div></li>
-				</ul>
-			</div>
-			<div><!-- 결제정보 -->
-				<h3>결제정보</h3>
-				<ul>
-					<li><strong>티켓금액</strong><div><!-- 금액 --></div></li>
-					<li><strong>티켓매수</strong><div><!-- 매수 --></div></li>
-					<li><strong>총 결제금액 <span><!-- 총금액 -->원</span></strong>
-				</ul>
-			</div>
-			<div><!-- 유의사항 -->
-				<div>취소 마감시간 및 유의사항</div>
-				<dl>
-					<dt>취소 마감 시간 : <!-- ex)2023.5.18. 17:50 --> 까지
-						<span>(취소 마감시간 이후에는 취소가 불가합니다.)</span>
-					</dt>
-					<dd>・이용회차 입장시간 10분 전까지 취소시 100% 환불</dd>
-					<dd>・이용회차 입장 마감시간 이후 취소/환불 불가</dd>
-					<dd>・방문이 힘드신 경우&nbsp;타인을 배려하기 위해&nbsp;반드시 예약 취소 부탁드립니다.</dd>
-				</dl>
-			</div>
-			<div><!-- 버튼 -->
-			<form method="post" action="ticketList.jsp" onsubmit="return delCheck()">
-				<button type="submit">예매취소</button>
-				<button type="button" onclick="location.href='ticketList.jsp'">예매목록</button>
-			</form>
-			</div>
+		dtoM=daoM.read(s_mid);
+		dtoE=daoE.read(dto.getExcode());
+%>
+	
+	<table>
+	<tr>
+		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+	</tr>
+	<tr>
+		<td>예매번호</td>
+		<td><%=dto.getOrdernum() %></td>
+	</tr>
+	<tr>
+		<th><%=dtoE.getExname()%></th>
+	</tr>
+	<tr>
+		<td>관람일시</td>
+		<td><%=dto.getSdate() %></td>
+	</tr>
+	<tr>
+		<td>관람인원</td>
+		<td><%=dto.getAmount() %></td>
+	</tr>
+	<tr>
+		<td>관람장소</td>
+		<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
+			  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
+			  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
+		      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
+		      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
+	</tr>
+	</table>
+<!------------------예매정보------------------>
+	<h4>예매정보</h4>
+	<hr>
+	<table>
+	<tr>
+		<th>예매자</th>
+		<td><%=dtoM.getMname() %></td>
+	</tr>
+	<tr>
+		<th>휴대폰</th>
+		<td><%=dtoM.getTel() %></td>
+	</tr>
+	<!-- 
+	<tr>
+		<th>예매일시</th>
+		<td></td>
+	</tr>
+	-->
+	</table>
+<!------------------결제정보------------------>		
+	<h4>결제정보</h4>
+	<hr>
+	<table>
+	<tr>
+		<th>티켓금액</th>
+		<td><%=dtoE.getPrice() %></td>
+	</tr>
+	<tr>
+		<th>티켓매수</th>
+		<td><%=dto.getAmount() %></td>
+	</tr>
+	<tr>
+		<th>총 결제금액</th>
+		<td><%=dto.getPrice() %></td>
+	</tr>
+	</table>
+
+<!------------------유의사항------------------>		
+	<hr>
+	<div><!-- 유의사항 -->
+		<div>취소 마감시간 및 유의사항</div>
+		<dl>
+			<dd>・이용 1일 전까지 결제금액에 대한 취소 수수료 없음</dd>
+			<dd>・이용 당일은 취소/환불 불가</dd>
+			<dd>・방문이 힘드신 경우&nbsp;타인을 배려하기 위해&nbsp;반드시 예약 취소 부탁드립니다.</dd>
+		</dl>
+	</div>
+<!------------------버튼------------------>
+	<form  method="post" action="orderDelProc.jsp" onsubmit="return delCheck()">
+		<input type="hidden" name="bbsno" value="<%=ordernum%>">
+		<input type="submit" value="예매취소">
+		<input type="button" value="예매목록" onclick="location.href='ticketList.jsp'">
+	</form>
+	
+<%
+	}
+%>
 	</div>
 </div>
-</section>
 </div>
+
 <script>
 function delCheck(){
-    let message="쿠폰 등 기타결제 수단의 사용기한이 지난 경우 복원되지 않습니다.\n취소하기 전 사용기간을 꼭 확인하세요.\n\n예매를 취소하시겠습니까?";
+    let message="예매를 취소하시겠습니까?";
     if(confirm(message)){ //확인true, 취소false
 		return true;
 	}else{
