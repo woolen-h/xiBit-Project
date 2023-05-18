@@ -1,14 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="java.util.Date" %>
+<%@page import="java.text.SimpleDateFormat" %>    
+
+<%@ include file="ssi.jsp" %>    
+<%@ include file="ordheader.jsp" %>
+
+<div class="content">
+<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
+<input type="hidden" name="mid" id="mid" value="s_id">
+
+<!-- 주문서번호 생성 -->
+<!-- <input type="hidden" name="ordernum" id="ordernum" value=""> -->
 	
-   	<div class="content">
-	<form name="ordfrm" id="ordfrm" action="orderProc.jsp"  >
-	<input type="hidden" name="excode" id="excode" value="1234">
-	<input type="hidden" name="ordernum" id="ordernum" value="9876">
-	<input type="hidden" name="mid" id="mid" value="itwill">
-	
+<!-- 주문서 -->
+<!-- 왼쪽 -->
+<!-----------전시정보------------------------------------------------------------------>
+
+	<div> <!-- 왼쪽 -->
 	<table>
-	
 	<tr>
 		<th width="30%">사진</th>
 		<td></td>
@@ -43,10 +54,52 @@
 		<td>02-002-233</td>
 	</tr>
 	</table>
+	</div>
 	<hr>
-	
-	<!----------------------------------------------------------------------------->
-	
+
+<!-- 오른쪽 -->
+<!-----------금액정보------------------------------------------------------------------>
+<div class="calendar-wrap">
+    <div class="calendar-middle-wrap">
+      <!-- 상단 -->
+      <div class="cal_nav">
+      	<!-- 이전 달 -->
+        <a href="javascript:;" class="nav-btn go-prev"></a>
+        <!-- 달력 월 표시 -->
+        <span class="year-month start-year-month"></span>
+        <!-- 다음 달 -->
+        <a href="javascript:;" class="nav-btn go-next"></a>
+      </div>
+      <!-- 달력시작 -->
+      <div class="cal_wrap">
+      	<!-- 요일 -->
+        <div class="days">
+          <div class="day">일</div>
+          <div class="day">월</div>
+          <div class="day">화</div>
+          <div class="day">수</div>
+          <div class="day">목</div>
+          <div class="day">금</div>
+          <div class="day">토</div>
+        </div>
+        <!-- 현재 월 달력 -->
+        <div class="dates start-calendar"></div>
+      </div>
+    </div>
+
+
+    <div class="checkInOutInfo">
+      <div>
+        <p>
+        <!-- 선택 날 표시 -->
+          <label id="check_in_day"></label>
+        </p>
+      </div>
+    </div>
+</div>
+
+<!-----------금액정보------------------------------------------------------------------>
+	<div>
 	<table>
 	<tr class="num">
 	<th>성인</th>
@@ -77,12 +130,12 @@
 		<td class="totalcost2"></td>
 	</tr>
 	</table>
+	</div>
 	<hr>
-
 	
+<!-----------주문정보------------------------------------------------------------------>
 	
-	<!----------------------------------------------------------------------------->
-	
+	<div>
 	<table>
 	<!-- 예매정보 -->
 	<tr>
@@ -127,11 +180,13 @@
     </td>
 	</tr>
 	</table>
+	</div>
 	</form>
 	</div>
    	
-   	
-   	<script>
+<!----------------------------------------------------------------------------->  
+	
+<script>
    	let aprice=parseInt(document.getElementById("aprice").value);
    	let cprice=parseInt(document.getElementById("cprice").value);
 	
@@ -215,9 +270,9 @@
 		}
 		
 	})
-	</script>
-   	
-   	
+</script>
+
+<!-- 본문 끝 -->
    	
    	
 <%@ include file="../footer.jsp" %>
