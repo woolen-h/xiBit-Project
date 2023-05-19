@@ -175,8 +175,20 @@ function selectDate(){ //아이디 중복확인
 	
 }
 
+////////////////////////////////////////////////////////////////
+/**
+ * 공지 관련 
+ */
+function searchCheck() { // 검색
+	let word = document.getElementById("word").value;
+	word = word.trim();
 
-
+	if (word.length == 0) {
+		alert("검색어를 입력해 주세요.");
+		return false;
+	} // if end
+	return true;
+} // searchCheck() end
 
 
 
