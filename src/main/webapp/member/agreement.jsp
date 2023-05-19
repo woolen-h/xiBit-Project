@@ -4,13 +4,9 @@
 	        <div class="content">	 
 	        
 			<!-- 본문시작 agreement.jsp-->
-			<div style="text-align: center">* 회/원/약/관 *</div>
-			<br>	    
-			<!--
-			    onsubmit 이벤트는 form이 submit이 될 때 발생함.
-			    실행된 함수가 false를 리턴하면 submit을 하지 않음.
-			-->
 			<form action="memberForm.jsp" onsubmit="return send()"><!-- JavaScript는 현재페이지에 작성 -->
+			<div id="font" style="text-align: center">Agreement</div>
+			<br>
 			<table border="0" cellspacing="0" cellpadding="2"  align="center">
 			    <tr align="center" height="10"> 
 			        <td>
@@ -201,9 +197,9 @@
 			<div style="text-align: center">
 			  <label><input type="checkbox" name="agree" id="agree">&nbsp;&nbsp;약관에 동의합니다</label>
 			  <br><br>
-			  <input type="submit" value="회원가입" class="btn btn-primary"> 
+			  <input class="button" type="submit" value="sign up"> 
 			  &nbsp;&nbsp;
-			  <input type="button" value="취소"    class="btn btn-primary" onclick="javascript:history.back()">
+			  <input class="button" type="button" value="back" onclick="javascript:history.back()">
 			</div>
 			</form>
 			
