@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%-- ssi.jsp 공통 페이지 --%>
 
-<%@ page import="java.sql.*"%>
+<%@ page import="java.sql.*"%> 
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.*"%>
 
@@ -11,22 +12,20 @@
 <jsp:useBean id="dao" class="net.notice.NoticeDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.notice.NoticeDTO" scope="page"></jsp:useBean>
 
-<%
-request.setCharacterEncoding("UTF-8");
-%>
+<%request.setCharacterEncoding("UTF-8");%>
 
 <%
-// 검색
-String word = request.getParameter("word"); // 검색어
-String col = request.getParameter("col"); // 검색컬럼
-
-word = Utility.checkNull(word); // 문자열값이 null이면 빈 문자열로 치환
-col = Utility.checkNull(col);
-
-// 현재 페이지
-int nowPage = 1;
-
-if (request.getParameter("nowPage") != null) {
-	nowPage = Integer.parseInt(request.getParameter("nowPage"));
-} // if end
+	// 검색
+	String word = request.getParameter("word"); // 검색어
+	String col = request.getParameter("col"); // 검색컬럼
+	
+	word = Utility.checkNull(word); // 문자열값이 null이면 빈 문자열로 치환
+	col = Utility.checkNull(col);
+	
+	// 현재 페이지
+	int nowPage = 1;
+	
+	if (request.getParameter("nowPage") != null) {
+		nowPage = Integer.parseInt(request.getParameter("nowPage"));
+	} // if end
 %>

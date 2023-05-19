@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp"%>
 <%@ include file="../header.jsp"%>
 
 <div class="in_content">
+	<!-- 본문 시작 information_table.jsp -->
 	<div class="info_content">
-	
 		<div class="info_tb_list">
 			<ul>
 				<li class="fa_qna"><a>공지사항</a></li>
@@ -23,12 +24,10 @@
 				<li class="info_qna_d"><a>전시 1</a></li>
 				<li class="info_qna_d"><a>전시 2</a></li>
 			</ul>
-		</div> <!-- info_tb_list end -->
-		
+		</div>
 		<div class="info_tb_container">
-		
 			<div class="info_tb_search">
-				<!-- info_tb_search -->
+				<!-- 검색 시작 -->
 				<form action="noticeList.jsp" onsubmit="return searchCheck()">
 					<div>
 						<select name="col">
@@ -40,8 +39,7 @@
 						<input type="submit" value="검색">
 					</div>
 				</form>
-			</div> <!-- info_tb_search end -->
-			
+			</div>
 			<table>
 				<tr>
 					<th>카테고리</th>
@@ -80,17 +78,16 @@
 						} // if end
 						%>
 					</td>
-					<td style="text-align: left">
-						<a href="noticeRead.jsp?noticeno=<%=dto.getNoticeno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>"><%=dto.getSubject()%></a> 
+					<td style="text-align: left"><a
+						href="noticeRead.jsp?noticeno=<%=dto.getNoticeno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>"><%=dto.getSubject()%></a>
 						<%
-							// 오늘 작성한 글 제목 뒤에 new이미지 출력
-							// 작성일(regdt)에서 "년월일" 자르기
-							String regdt = dto.getRegdate().substring(0, 10);
-							if (regdt.equals(today)) { // 작성일이 오늘 날짜와 같다면
-								out.println("<img src='../images/new.gif'>");
-							} // if end
-						%>
-					</td>
+						// 오늘 작성한 글 제목 뒤에 new이미지 출력
+						// 작성일(regdt)에서 "년월일" 자르기
+						String regdt = dto.getRegdate().substring(0, 10);
+						if (regdt.equals(today)) { // 작성일이 오늘 날짜와 같다면
+							out.println("<img src='../images/new.gif'>");
+						} // if end
+						%></td>
 					<td style="text-align: center;"><%=dto.getRegdate().substring(0, 10)%></td>
 				</tr>
 				<%
@@ -116,9 +113,8 @@
 				} // if end
 				%>
 			</table>
-		</div> <!-- info_tb_container end -->
-	</div> <!-- info_content end -->
-	
+		</div>
+	</div>
 	<%
 	if (s_mlevel.equals("A1")) {
 	%>
@@ -126,9 +122,9 @@
 		<a href="noticeForm.jsp">[글쓰기]</a>
 	</p>
 	<%
-	} // if end
+	}
 	%>
-	
-</div> <!-- in_content end -->
+	<!-- 본문 끝 -->
+</div>
 
 <%@ include file="../footer.jsp"%>
