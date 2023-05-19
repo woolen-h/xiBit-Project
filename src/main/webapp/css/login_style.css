@@ -21,76 +21,99 @@ body::-webkit-scrollbar-track {
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
   }
-  /********************* 바디 스크롤바 설정 끝 *********************/
-.landing_page_13_15 {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  
-}
-/********************* 백그라운드 박스 설정 시작 *********************/
-  .b_box_65_4 {
-box-shadow: 14px 34px 29px rgba(0, 0, 0, 0.25);
-background-color: rgba(255, 255, 255, 1);
-width: calc(100% - 500px);
-height: calc(100% - 400px);
-border-top-left-radius: 15px;
-border-top-right-radius: 15px;
-border-bottom-left-radius: 15px;
-border-bottom-right-radius: 15px;
-}
-/********************* 백그라운드 박스 설정 끝 *********************/
-	    .landing_page_13_15 {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100vw;
-			height: 100vh;
-			position: absolute;
-			background-image: url(../images/landing_page.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-	    
-	    .loginform {
-			background-color: rgba(255, 255, 255, 1);
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
-			border-bottom-left-radius: 30px;
-			border-bottom-right-radius: 30px;
-			padding: 10px;
-		 
-		}
-	    
-	    .content {
-	    	display: flex;
-	    	justify-content: center;
-	    	align-items: center;
-			position: absolute;
-			top: 100px;
-			left: 2em;
-			width: calc(100% - 4em);
-			height: 83%;
-			overflow: scroll;
-			overflow-x: hidden;
-			font-family: Inter;
-		}
-		
-	    .button {
-	      	background-color: rgba(203.99998784065247, 255, 0, 1);
+/********************* 바디 스크롤바 설정 끝 *********************/
 
-			margin: 0;
-			padding: 0.5rem 1rem;
-			
-			font-family: Inter;
-			font-size: .8rem;
-			font-weight: 400;
-			text-align: center;
-			text-decoration: none;
-			
-			display: inline-block;
-			width: auto;
-			
-			border: none;
-			border-radius: 20px;
-		}
+/********************* 로그인 박스 설정 시작 *********************/
+.login_box {
+	box-shadow: 14px 34px 29px rgba(0, 0, 0, 0.25);
+	background-color: rgba(255, 255, 255, 1);
+	width: 30%;
+	height: 60%;
+	margin: 0 auto;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-position: center center;
+}
+/********************* 로그인 박스 설정 끝 *********************/
+.landing_page_13_15 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-image: url(../images/landing_page.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+   
+.loginform {
+	background-color: rgba(255, 255, 255, 1);
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	padding: 10px;
+	border: solid 0.1rem #000000;
+	margin-bottom: 1rem;
+}
+   
+.content_login {
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+	position: absolute;
+	top: 50px;
+	left: 2em;
+	width: calc(100% - 4em);
+	height: 83%;
+	overflow: scroll;
+	overflow-x: hidden;
+	font-family: Inter;
+	
+}
+
+.button {
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+
+	margin: 0;
+	padding: 0.5rem 1rem;
+	
+	font-family: Inter;
+	font-size: .8rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	
+	display: inline-block;
+	width: auto;
+	
+	border: none;
+	border-radius: 20px;
+}
+.button2 {
+	margin: 0rem 12rem 2rem 12rem;
+    width: calc(100% - 24rem);
+    height: 4.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2125;
+    color: #000000;
+    font-family: Inter, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+    border-radius: 5rem;
+    flex-shrink: 0;
+}
+
+#font{
+	font-family: Inter, 'Source Sans Pro';
+	}

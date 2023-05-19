@@ -19,29 +19,31 @@
 	    <link rel="stylesheet" href="../css/login_style.css" />
 	    <script type="text/javascript" src="../js/script.js"></script> 
 	    
-	    <title>Login</title>
+	    <title>Find ID/PW</title>
 	  </head>
 	  
 	  <body>
 	    <div class=landing_page_13_15>
-	      <div class=b_box_65_4>
+	      <div class=login_box>
 	
 	<!-- header 끝 -->
 	
-        <div class=content style="text-align: center">
+        <div class=content_login style="text-align: center">
 		<!-- 본문 시작 findID.jsp -->
 		
 		<form name="findID" id="findID" method="post" action="findIDProc.jsp" onsubmit="return findIDCheck()">
-			<h3>아이디/비밀번호 찾기</h3>
-			<br>
+			<h6 id="font" style="font-size:20px;">Find ID/Password</h6>
+			<br><br><br>
 				<div class="form-field">
-					<input type="text" name="mname" id="mname" placeholder="이름" maxlength="10" required>
+					<input class="loginform" type="text" name="mname" id="mname" placeholder="Type your ID" maxlength="10" required>
 				</div>
 				<div class="form-field">
-					<input type="email" name="email" id="email" placeholder="이메일" required>
+					<input class="loginform" type="email" name="email" id="email" placeholder="Type your Email" required>
 				</div>
-					<input type="submit" value="아이디/비밀번호 찾기" class="btn btn-primary">
-					<input type="reset" value="취소" class="btn btn-warning">
+					<input class="button" type="submit" value="Find ID/PW">
+					<input class="button" type="reset" value="reset">
+					<br><br><br>
+					<input class="button" type='button' value='HOME' onclick="location.href='../index.jsp'">
 		
 		</form>
 		

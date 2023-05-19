@@ -24,11 +24,11 @@
 	  
 	  <body>
 	    <div class=landing_page_13_15>
-	      <div class=b_box_65_4>
+	      <div class=login_box>
 	
 	<!-- header 끝 -->
 	
-        <div class=content style="text-align: center">
+        <div class=content_login style="text-align: center">
 		<!-- 본문 시작 loginForm.jsp-->
 		
 		
@@ -49,7 +49,7 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-			<h5>L O G I N</h5>
+			<h6 id="font" style="font-size:20px;">Login</h6>
 			<br><br><br>
 			
 			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
@@ -57,19 +57,12 @@
 			<div>
 				<input class="loginform" type="text" name="mid" id="mid" value="<%=c_mid %>" placeholder="ID" maxlength="10" required>
 			</div>
-			<br>
 			<div>
 				<input class="loginform" type="password" name="passwd" id="passwd" placeholder="PASSWORD" maxlength="10" required>
 			</div>
-	
-			<br><br>
-				<label><input type="checkbox" name="c_mid" value="SAVE">&nbsp;&nbsp;ID memory</label>
-			<br><br>
-
+				<label><input type="checkbox" name="c_mid" value="SAVE" style="font-size: 5px">&nbsp;&nbsp;ID memory</label>
+			<br><br><br><br>
 				<input class="button" type="button" value="Find ID/Password" onclick="location.href='findID.jsp'">
-				
-				
-				
 				&nbsp;&nbsp;
 				<input class="button" type="submit" value="login" class="btn btn-primary">
 		</form>

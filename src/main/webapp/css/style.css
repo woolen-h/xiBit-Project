@@ -195,6 +195,32 @@ body::-webkit-scrollbar-track {
   overflow: scroll;
   overflow-x: hidden;
 }
+.content_login {
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+	position: absolute;
+	top: 50px;
+	left: 2em;
+	width: calc(100% - 4em);
+	height: 83%;
+	overflow: scroll;
+	overflow-x: hidden;
+	font-family: Inter;	
+}
+.content_member {
+   	display: flex;
+   	justify-content: center;
+   	align-items: center;
+	position: absolute;
+	top: 50px;
+	left: 2em;
+	width: calc(100% - 4em);
+	height: 83%;
+	overflow: scroll;
+	overflow-x: hidden;
+	font-family: Inter;	
+}
 .content::-webkit-scrollbar {
     width: 10px;
 }
@@ -636,4 +662,32 @@ th, td {
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: flex-end;
+}
+.button {
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+
+	margin: 0;
+	padding: 0.5rem 1rem;
+	
+	font-family: Inter;
+	font-size: .8rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	
+	display: inline-block;
+	width: auto;
+	
+	border: none;
+	border-radius: 20px;
+}
+.loginform {
+	background-color: rgba(255, 255, 255, 1);
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	padding: 10px;
+	border: solid 0.1rem #000000;
+	margin-bottom: 1rem;
 }
