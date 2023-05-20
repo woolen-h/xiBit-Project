@@ -705,3 +705,26 @@ th, td {
 	border: solid 0.1rem #000000;
 	margin-bottom: 1rem;
 }
+
+/* notice */
+select::-ms-expand { 
+	display: none;
+}
+
+.select {
+	-o-appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
+	background-size: 20px;
+	padding: 5px 30px 5px 10px;
+	border-radius: 4px;
+	outline: 0 none;
+}
+
+.select option {
+	background: black;
+	color: #fff;
+	padding: 3px 0;
+}
