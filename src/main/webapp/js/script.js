@@ -15,7 +15,7 @@
 const flexplz = document.querySelector(".flexplz");
 const slideLength = document.querySelectorAll('.flexplz li').length;
 let currentSlide = 1;
-const IMAGE_WIDTH = 650;
+const IMAGE_WIDTH = 930;
 
 flexplz.addEventListener('wheel', click);
 

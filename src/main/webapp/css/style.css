@@ -1,7 +1,11 @@
 /*************************************contents**********************************/
+*{
+	box-sizing: border-box;
+}
 /* 바디 스크롤 및 크기 설정 */
 body {
-	overflow: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
 	width: 100%;
 	height: 100%;
 	font-size: 11pt;
@@ -23,69 +27,56 @@ body::-webkit-scrollbar-track {
   }
   /********************* 바디 스크롤바 설정 끝 *********************/
 .landing_page_13_15 {
+	display: flex;
+	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 }
-.back_13_25 {
-	background-color: rgba(
-    225.24999797344208,
-    225.24999797344208,
-    225.24999797344208,
-    1);
-	width: 1563px;
-	height: 650px;
-	position: absolute;
-	left: 70px;
-	top: 148px;
+.logo {
+	position: relative;
+	top: 30px;
+	left: 45px;
 }
 .xibit_13_21 {
 	color: rgba(0, 0, 0, 1);
   	width: 44px;
   	height: 24px;
-  	position: absolute;
-  	left: 50%;
-  	top: 2em;
   	font-family: Inter;
   	text-align: center;
-  	font-size: 20px;
+  	font-size: 60pt;
   	letter-spacing: 0;
 }
-.sign_up_13_23 {
-	background-color: rgba(
-    201.8750050663948,
-    201.8750050663948,
-    201.8750050663948,
-    1);
-  	width: 100px;
-  	height: 40px;
-  	position: absolute;
-	right: 9.5em;
-	top: 2em;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+hr{
+	position: relative;
+	top: 110px;
+	width: 95%;
 }
-.sign_up_13_24 {
-  color: rgba(0, 0, 0, 1);
-  width: 41px;
-  height: 13px;
-  position: absolute;
-  left: 30px;
-  top: 13px;
-  font-family: Inter;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 0;
+.nav {
+	width: 100%;
+	height: 60px;
+	position: relative;
+	top: 120px;
+	z-index: -10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 30px;
+	padding-left: 45px;
+	padding-right: 45px;
+	padding-bottom: 45px;
+}
+.nav_1{
+	width: 500px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .home_13_17 {
   color: rgba(0, 0, 0, 1);
   width: 34px;
   height: 15px;
-  position: absolute;
-  left: 4em;
-  top: 4em;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -95,9 +86,6 @@ body::-webkit-scrollbar-track {
   color: rgba(0, 0, 0, 1);
   width: 56px;
   height: 15px;
-  position: absolute;
-  left: 10em;
-  top: 4em;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -107,9 +95,6 @@ body::-webkit-scrollbar-track {
   color: rgba(0, 0, 0, 1);
   width: 43px;
   height: 15px;
-  position: absolute;
-  left: 18em;
-  top: 4em;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -119,9 +104,6 @@ body::-webkit-scrollbar-track {
   color: rgba(0, 0, 0, 1);
   width: 32px;
   height: 15px;
-  position: absolute;
-  left: 26em;
-  top: 4em;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -131,22 +113,46 @@ body::-webkit-scrollbar-track {
   color: rgba(0, 0, 0, 1);
   width: 32px;
   height: 15px;
-  position: absolute;
-  left: 32em;
-  top: 4em;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
   letter-spacing: 0;
   }
+.nav_2{
+	display: flex;
+	flex-direction: row;
+}
+.sign_up_13_23 {
+	background-color: rgba(
+    201.8750050663948,
+    201.8750050663948,
+    201.8750050663948,
+    1);
+  	width: 100px;
+  	height: 40px;
+  	margin-right: 10px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.sign_up_13_24 {
+  color: rgba(0, 0, 0, 1);
+  width: 41px;
+  height: 13px;
+  position: relative;
+  left: 30px;
+  top: 11px;
+  font-family: Inter;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0;
+}
 
 .sign_up_82_67 {
   background-color: rgba(203.99998784065247, 255, 0, 1);
   width: 100px;
   height: 40px;
-  position: absolute;
-  right: 2em;
-  top: 2em;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -156,7 +162,7 @@ body::-webkit-scrollbar-track {
   color: rgba(0, 0, 0, 1);
   width: 30px;
   height: 13px;
-  position: absolute;
+  position: relative;
   left: 35px;
   top: 13px;
   font-family: Inter;
@@ -214,20 +220,18 @@ body::-webkit-scrollbar-track {
     box-shadow: inset 0px 0px 5px white;
   }
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
-.window{
-  	position: absolute;
-  	top: 20px;
-  	left: 48px;
-  }
 .content-box {
 	width: 100%;
-  	position: absolute;
-  	top: 100px;
   	display: flex;
+}
+.window{
+	position: relative;
+	top: 150px;
+	left: 45px;
 }
 .carousel_box {
 	width: 930px;
-	height: 750px;
+	height: 930px;
 	overflow: hidden;
 	margin:0 auto;
 }
