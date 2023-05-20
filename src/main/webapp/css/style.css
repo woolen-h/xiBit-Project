@@ -236,7 +236,7 @@ body::-webkit-scrollbar-track {
     box-shadow: inset 0px 0px 5px white;
   }
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
-  .window{
+.window{
   	position: absolute;
   	top: 20px;
   	left: 48px;
@@ -261,12 +261,24 @@ body::-webkit-scrollbar-track {
 	object-fit: cover;
 }
 /*********************************** 캐러셀 박스 구현 끝 ***********************************/
-@media (max-width: 1000px) {
-  .b_box_65_4 {
-    display: flex;
-	justify-content: space-between;
- }
-  .home_13_17{
+
+/******************** 반응형 웹 구현 시작(미디어 쿼리) *************************************************/
+@media screen and (max-width: 1400px), (max-height: 800px) {
+	.carousel_box {
+		width: 400px;
+		height: 400px;
+		overflow: hidden;
+		margin:0 auto;
+	}
+	.flexplz img {
+		width: 400px;	
+		object-fit: cover;
+	}
+	.b_box_65_4 {
+	    display: flex;
+		justify-content: space-between;
+	 }
+	.home_13_17{
     color: rgba(0, 0, 0, 1);
     width: 56px;
     height: 15px;
@@ -325,7 +337,9 @@ body::-webkit-scrollbar-track {
 	font-size: 12px;
 	letter-spacing: 0;	
   }
-}/* 반응형 웹 end */
+}
+/******************** 반응형 웹 구현 끝 *************************************************/
+
 /*********************************** EXHIBITION TAB STYLE *************************************************/
 .location_9_113 { 
   display: flex;
