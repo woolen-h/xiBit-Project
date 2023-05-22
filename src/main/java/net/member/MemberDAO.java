@@ -130,7 +130,7 @@ public class MemberDAO {
 			pstmt.setString(2, dto.getPasswd());
 			pstmt.setString(3, dto.getMname());
 			pstmt.setString(4, dto.getJomin1());
-			pstmt.setString(5, dto.getJomin1());
+			pstmt.setString(5, dto.getJomin2());
 			pstmt.setString(6, dto.getEmail());                                                                                          
 			pstmt.setString(7, dto.getTel());	
 			
