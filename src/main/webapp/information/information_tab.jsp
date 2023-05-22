@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="../header.jsp" %>
-        <div class="in_content">
+        <div class="content">
         <!-- 본문 시작 information_table.jsp -->
 	        <div class="info_content">
 		        <div class="info_tb_list">
