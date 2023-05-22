@@ -8,6 +8,7 @@
 	String ordernum=request.getParameter("ordernum").trim();
 	
 	dto.setOrdernum(ordernum);
+	dto.setMid(s_mid);
 	
 	int cnt=dao.delete(dto); 
 	if(cnt==0){
