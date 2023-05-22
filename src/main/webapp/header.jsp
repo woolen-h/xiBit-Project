@@ -23,11 +23,11 @@
     	<hr>
     	<div class="nav">
 	    	<div class="nav_1">
-				<div  class="home_13_17"><a href="../index.jsp">Home</a></div>
-			    <div  class="exhibition_13_18"><a href="../exhibit/exhibition_tab.jsp">Exhibition</a></div>
-			    <div  class="info_13_19"><a href="../information/information_tab.jsp">Information</a></div>
-			    <div  class="event_13_20"><a href="../notice/noticeList.jsp">Notice</a></div>
-			    <div  class="booth_13_21"><a href="../booth/boothList.jsp">Booth</a></div>
+				<a href="../index.jsp"><div class="home_13_17">Home</div></a>
+			    <a href="../exhibit/exhibition_tab.jsp"><div  class="exhibition_13_18">Exhibition</div></a> 
+			    <a href="../information/information_tab.jsp"><div  class="info_13_19">Information</div></a> 
+			    <a href="../notice/noticeList.jsp"><div  class="event_13_20">Notice</div></a>
+			    <a href="../booth/boothList.jsp"><div  class="booth_13_21">Booth</div></a>
 			</div>
 			<div class="nav_2">
 			  	<%if (s_mid.equals("guest")) {%>
