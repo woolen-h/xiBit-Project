@@ -217,18 +217,18 @@ hr{
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
 .content-box {
 	width: 100%;
+	height: 2000px;
   	display: flex;
-}
-.window{
-	position: relative;
-	top: 150px;
-	left: 45px;
+  	padding-top: 35px;
+  	padding-left: 45px;
+  	padding-right: 45px;
+  	justify-content: space-between;
+  	overflow-y: scroll;
 }
 .carousel_box {
 	width: 930px;
 	height: 930px;
 	overflow: hidden;
-	margin:0 auto;
 }
 .flexplz{
 	display: flex;
@@ -318,8 +318,6 @@ hr{
 .ex_top_bar {
 	width: 100%;
 	height: 80px;
-	padding-left: 45px;
-	padding-right: 45px;
 	padding-bottom: 10px;
 	display: flex;
 	justify-content: space-between;
