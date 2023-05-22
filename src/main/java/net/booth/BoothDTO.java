@@ -19,7 +19,7 @@ public class BoothDTO {
 		public String getBcode() {
 			return bcode;
 		}
-		public void setBcode(String bcode) {
+		public void setBcode(int bcode) {
 			this.bcode = bcode;
 		}
 		public String getBname() {
