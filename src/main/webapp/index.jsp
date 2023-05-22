@@ -19,7 +19,7 @@
   </head>
   <body>
     <div class="landing_page_13_15">
-    	<a href="index.jsp"><div class="logo">
+    	<a href="index.jsp" class="logo"><div class="logo">
     		<div  class="xibit_13_21">xiBit</div>
     	</div></a>
     	<hr>
@@ -69,6 +69,9 @@
 			        	</li>
 				    </ul>
 		        </div>
+	        </div>
+	        <div class="content-scr">
+	        전시가 있어용
 	        </div>
         </div>
       </div>
