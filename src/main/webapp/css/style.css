@@ -28,42 +28,43 @@ body::-webkit-scrollbar-track {
 	display: flex;
 	flex-direction: column;
 	width: 100vw;
-	height: 100vh;
 	position: fixed;
 }
+/* 로고 스타일링 및 위치 지정 시작 */
 .logo {
 	position: relative;
-	top: 30px;
-	left: 45px;
+	width: 100%;
+	height: 120px;
+	padding-top: 45px;
+	padding-left: 45px;	
+	padding-bottom: 45px;
+	display: flex;
+	align-items: center;
 }
 .xibit_13_21 {
 	color: rgba(0, 0, 0, 1);
-  	width: 44px;
-  	height: 24px;
   	font-family: "fit-extra-wide", sans-serif;
 	font-weight: 400;
 	font-style: normal;
-  	text-align: center;
+  	text-align: left;
   	font-size: 60pt;
   	letter-spacing: 0;
 }
+/* 로고 스타일링 및 위치 지정 끝 */
 hr{
-	position: relative;
-	top: 110px;
 	width: 100%;
 }
 .nav {
 	width: 100%;
-	height: 60px;
+	height: 80px;
 	position: relative;
-	top: 120px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 30px;
 	padding-left: 45px;
 	padding-right: 45px;
-	padding-bottom: 45px;
+	padding-bottom: 30px;
 }
 .nav_2 a div {
 	font-size: 12pt;
@@ -119,6 +120,7 @@ hr{
   }
 .nav_2{
 	display: flex;
+	align-items: center;
 	flex-direction: row;
 }
 .sign_up_13_23 {
@@ -166,14 +168,24 @@ hr{
   letter-spacing: 0;
 }
 .content {
-  position: absolute;
-  top: 300px;
-  left: 2em;
-  width: calc(100% - 4em);
-  height: 83%;
-  overflow: scroll;
-  overflow-x: hidden;
+  width: calc(100%-45px);
+  height: 100%;
+  overflow: auto;
 }
+.content::-webkit-scrollbar {
+    width: 10px;
+}
+.content::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.content::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 .content_login {
    	display: flex;
    	justify-content: center;
@@ -200,20 +212,6 @@ hr{
 	overflow-x: hidden;
 	font-family: Inter;	
 }
-.content::-webkit-scrollbar {
-    width: 10px;
-}
-.content::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-}
-.content::-webkit-scrollbar-track {
-    background-color: grey;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
-  }
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
 .content-box {
 	width: 100%;
@@ -315,6 +313,16 @@ hr{
 /******************** 반응형 웹 구현 끝 *************************************************/
 
 /*********************************** EXHIBITION TAB STYLE *************************************************/
+.ex_top_bar {
+	width: 100%;
+	height: 80px;
+	padding-left: 45px;
+	padding-right: 45px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .location_9_113 { 
   display: flex;
   justify-content: center;
@@ -322,9 +330,6 @@ hr{
 	background-color:rgba(255, 255, 255, 1);
 	width:120px;
 	height:25px;
-	position:fixed;
-	left:2em;
-	top:250px;
 	border-top-left-radius:36px;
 	border-top-right-radius:36px;
 	border-bottom-left-radius:36px;
@@ -354,9 +359,6 @@ hr{
 	align-items: center;
 	width:250px;
 	height:35px;
-	position:fixed;
-	left:43%;
-	top:250px;
 	font-size: 20pt;
 	border-top-left-radius:36px;
 	border-top-right-radius:36px;
@@ -378,9 +380,6 @@ hr{
 	background-color:rgba(255, 255, 255, 1);
 	width:120px;
 	height:25px;
-	position:fixed;
-	right:2em;
-	top:250px;
 	border-top-left-radius:36px;
 	border-top-right-radius:36px;
 	border-bottom-left-radius:36px;
@@ -396,8 +395,10 @@ hr{
 	letter-spacing:0;
 }
 .scroll_9_139 { 
-	width:100%;
+	width: 100%;
 	height: 100vh;
+	padding-left: 45px;
+	padding-right: 45px;
 	display: flex;
 	flex-direction: column;
 }

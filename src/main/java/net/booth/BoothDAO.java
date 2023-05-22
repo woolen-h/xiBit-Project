@@ -57,7 +57,7 @@ public class BoothDAO {
 			try {
 				con = dbopen.getConnection();
 				
-				sql = new StringBuilder();
+				StringBuilder sql = new StringBuilder();
 	            sql.append(" SELECT bcode, bname, baddr, bdays, bhour, boffday, btel ");
 	            sql.append(" FROM exh_booth ");
 	            //sql.append(" ORDER BY noticeno DESC ");
