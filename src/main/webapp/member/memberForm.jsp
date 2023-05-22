@@ -4,7 +4,7 @@
         <div class="content">
 		<!-- 본문 시작 memberForm.jsp-->
 		<form name="memfrm" id="memfrm" method="post" action="memberProc.jsp" onsubmit="return memberCheck()"><!-- myscript.js -->
-		<h6 id="font" style="font-size:20px; text-align: center">Sign up</h6>
+		<div id="font" style="padding-top: 50px; padding-bottom: 40px; font-size:30px; text-align: center; font-size: 30px;"><h6>Sign up</h6></div>
 		<br><br><br>
 			<div style="padding-left: 30%">
 				<input class="loginform" type="text" name="mid" id="mid" size="30" maxlength="10" placeholder="Type your ID" readonly>&nbsp;&nbsp;
