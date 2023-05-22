@@ -31,6 +31,15 @@ body::-webkit-scrollbar-track {
 	height: 1000px;
 	position: fixed;
 }
+.content-box {
+	width: 100%;
+  	display: flex;
+  	padding-top: 35px;
+  	padding-left: 45px;
+  	padding-right: 45px;
+  	justify-content: space-between;
+  	overflow-y: scroll;
+}
 .content-box::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -230,15 +239,6 @@ body::-webkit-scrollbar-track {
 	font-family: Inter;	
 }
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
-.content-box {
-	width: 100%;
-  	display: flex;
-  	padding-top: 35px;
-  	padding-left: 45px;
-  	padding-right: 45px;
-  	justify-content: space-between;
-  	overflow-y: scroll;
-}
 .carousel_box {
 	width: 930px;
 	height: 930px;
@@ -682,10 +682,9 @@ select::-ms-expand {
 	border-radius: 4px;
 	outline: 0 none;
 }
-
-.select option {
+select option {
+	color: white;
 	background: black;
-	color: #fff;
 	padding: 3px 0;
 }
 /* notice css end */
