@@ -36,7 +36,6 @@
 		}//while end
 		
 		//3) exh_info 테이블에 저장하기
-		
 		String bcode = mr.getParameter("bcode").trim();
 		String exname = mr.getParameter("exname").trim();
 		String author = mr.getParameter("author").trim();
@@ -47,7 +46,7 @@
 		String tel = mr.getParameter("tel").trim();
 		String contents = mr.getParameter("contents");
 		// filename = mr.getParameter("filename"); -> 이 코드 때문에 null값 들어감 주석 처리 혹은 삭제
-		
+
 		dto.setBcode(bcode);
 		dto.setExname(exname);
 		dto.setAuthor(author);
