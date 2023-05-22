@@ -3,26 +3,26 @@
 <%@ include file="../header.jsp"%>
 <div class="content">
 	<!-- 본문 시작 exhibition_tab.jsp -->
-	<div class=content_120_3>
-		<div>
-			<select class="location_9_113">
-				<option class="___9_114">위치</option>
-				<option class="___9_114">서울</option>
-				<option class="___9_114">과천</option>
-				<option class="___9_114">덕수궁</option>
-				<option class="___9_114">청주</option>
-				<option class="___9_114">어린이미술관</option>
-			</select>
-		</div>
-		<div class="continue_9_145">
-			<span class="__________9_146"> 현재 진행중 전시 </span>
-		</div>
-		<div>
-			<select class="newest_9_143">
-				<option class="____9_144">최신순</option>
-				<option class="____9_144">예매순</option>
-			</select>
-		</div>
+	    <div class=content_120_3>
+           <div class=ex_top_bar>
+           	<select class="location_9_113">
+              <option class="___9_114">위치</option>
+              <option class="___9_114">서울</option>
+              <option class="___9_114">과천</option>
+              <option class="___9_114">덕수궁</option>
+              <option class="___9_114">청주</option>
+              <option class="___9_114">어린이미술관</option>
+           	</select>
+            <div class="continue_9_145">
+	            <span  class="__________9_146">
+	            	현재 진행중 전시
+	            </span>
+            </div>
+	        <select class="newest_9_143">
+            	<option class="____9_144">최신순</option>
+            	<option class="____9_144">예매순</option>
+	        </select>
+           </div>
 		<%
 		ArrayList<ExhibitDTO> list = dao.listNow();
 		if (list == null) {
@@ -53,10 +53,10 @@
 				} // for end
 				} // if end
 				%>
+			</div>
 				<div class="exh_write">
 					<a href="exhibitForm.jsp">[게시하기]</a>
 				</div>
-			</div>
 		</div>
 	</div>
 	<!-- 본문 끝 -->
