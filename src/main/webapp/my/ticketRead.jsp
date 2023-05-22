@@ -22,9 +22,6 @@
 		</div>
 	<div class="info_tb_container">
 <!-- 예매상세 -->
-<div>
-<h3>전시예매내역</h3> <!-- head -->
-<div><!-- 상세내역 -->
 <%
 	String ordernum = request.getParameter("ordernum");
 	dto=dao.read(ordernum);
@@ -36,27 +33,31 @@
 		dtoE=daoE.read(dto.getExcode());
 %>
 	
-	<table>
+	<table class="info_tb">
 	<tr>
-		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+		<th colspan="2">전시정보</th>
 	</tr>
 	<tr>
-		<td>예매번호</td>
+		<td colspan="2"><img src="../storage/<%=dtoE.getFilename()%>"></td>
+	</tr>
+	<tr>
+		<th>예매번호</th>
 		<td><%=dto.getOrdernum() %></td>
 	</tr>
 	<tr>
-		<th><%=dtoE.getExname()%></th>
+		<th>전시명</th>
+		<td><%=dtoE.getExname()%></td>
 	</tr>
 	<tr>
-		<td>관람일시</td>
+		<th>관람일시</th>
 		<td><%=dto.getSdate() %></td>
 	</tr>
 	<tr>
-		<td>관람인원</td>
+		<th>관람인원</th>
 		<td><%=dto.getAmount() %></td>
 	</tr>
 	<tr>
-		<td>관람장소</td>
+		<th>관람장소</th>
 		<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
 			  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
 			  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
@@ -65,9 +66,10 @@
 	</tr>
 	</table>
 <!------------------예매정보------------------>
-	<h4>예매정보</h4>
-	<hr>
-	<table>
+	<table class="info_tb">
+	<tr>
+		<th  colspan="2">예매정보</th>
+	</tr>
 	<tr>
 		<th>예매자</th>
 		<td><%=dtoM.getMname() %></td>
@@ -83,10 +85,11 @@
 	</tr>
 	-->
 	</table>
-<!------------------결제정보------------------>		
-	<h4>결제정보</h4>
-	<hr>
-	<table>
+<!------------------결제정보------------------>	
+	<table class="info_tb">
+	<tr>
+		<th  colspan="2">결제정보</th>
+	</tr>
 	<tr>
 		<th>티켓금액</th>
 		<td><%=dtoE.getPrice() %></td>
@@ -102,19 +105,22 @@
 	</table>
 
 <!------------------유의사항------------------>		
-	<hr>
-	<div><!-- 유의사항 -->
-		<div>취소 마감시간 및 유의사항</div>
-		<dl>
-			<dd>・이용 1일 전까지 결제금액에 대한 취소 수수료 없음</dd>
-			<dd>・이용 당일은 취소/환불 불가</dd>
-			<dd>・방문이 힘드신 경우&nbsp;타인을 배려하기 위해&nbsp;반드시 예약 취소 부탁드립니다.</dd>
-		</dl>
-	</div>
+	<table class="info_tb">
+	<tr>
+		<th>취소 마감시간 및 유의사항</th>
+	</tr>
+	<tr>
+		<th colspan="3">
+			・이용 1일 전까지 결제금액에 대한 취소 수수료 없음<br>
+			・이용 당일은 취소/환불 불가<br>
+			・방문이 힘드신 경우&nbsp;타인을 배려하기 위해&nbsp;반드시 예약 취소 부탁드립니다.<br>
+		</th>
+	</tr>
+	</table>
 <!------------------버튼------------------>
-	<form  method="post" action="orderDelProc.jsp" onsubmit="return delCheck()">
+	<form  method="post" action="../order/orderDelProc.jsp" onsubmit="return delCheck()">
 		<input type="hidden" name="bbsno" value="<%=ordernum%>">
-		<input type="submit" value="예매취소">
+		<input type="submit" value="예매취소" >
 		<input type="button" value="예매목록" onclick="location.href='ticketList.jsp'">
 	</form>
 	

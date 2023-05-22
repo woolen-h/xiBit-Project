@@ -5,7 +5,7 @@ public class OrderDTO {
 	private String ordernum;
 	private int excode;
 	private int amount;
-	private int price;
+	private String price;
 	private String sdate;
 	
 	public OrderDTO() {}
@@ -50,11 +50,11 @@ public class OrderDTO {
 		this.amount = amount;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 

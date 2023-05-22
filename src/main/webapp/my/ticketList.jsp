@@ -27,47 +27,38 @@
 	<table class="info_tb">
 <!--------------------예매내역--------------------->
 		<tr>
-			<td><a href="#">관람예정</a></td>
-			<td><a href="#">취소/환불</a></td>
-			<td><a href="#">관람완료</a></td>
-			<td>
-				<select>
-					<option value="1">최근 예매순</option>
-					<option value="2">최근 전시순</option>
-				</select>
-			</td>		
+			<th>예매내역</th>	
 		</tr>
 		<tr>
-<%--
+			<th width="30%">포스터</th>
+			<th>전시명</th>
+			<th>관람장소</th>
+<%
 		ArrayList<OrderDTO> list=dao.list(s_mid);
-		int excode=dto.getExcode();
+		
 		if(list==null){
 			out.println("<td>예매하신 내역이 없습니다.</td>");
 		}else{
 			for(int i=0; i<list.size(); i++){
 				dto=list.get(i);
+				int excode=dto.getExcode();
 				dtoE=daoE.read(excode);	
---%>
-		<th width="30%">사진</th>
-		<td><%-- <img src="../storage/<%=dtoE.getFilename()%>"> --%></td>
-		</tr>
+%>
 		<tr>
-			<th>전시명</th>
-			<td><%-- <a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%> --%></a></td>
-		</tr>
-		<tr>
-			<th>관람장소</th>
-			<td><%-- <%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
+			<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+			<td><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></td>
+			<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
 				  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
 				  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
 			      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
-			      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%> --%></td>
+			      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
 		</tr>
-	</table>
-<%--
+	
+<%
 			}
 		}
---%>
+%>
+	</table>
 	</div>
 </div>
 </div>

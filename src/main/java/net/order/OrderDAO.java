@@ -26,7 +26,7 @@ public class OrderDAO {
 			con=dbopen.getConnection();
 			
 			sql=new StringBuilder();
-			sql.append(" SELECT excode ");
+			sql.append(" SELECT excode, ordernum, amount, price, sdate ");
 			sql.append(" FROM exh_order ");
 			sql.append(" WHERE mid=? ");
 			sql.append(" ORDER BY ordernum DESC ");
@@ -36,15 +36,19 @@ public class OrderDAO {
 			
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
-				list=new ArrayList<OrderDTO>();
+				list=new ArrayList<>();
 				do {
 					OrderDTO dto = new OrderDTO();
 					dto.setExcode(rs.getInt("excode"));
+					dto.setOrdernum(rs.getString("ordernum"));
+					dto.setAmount(rs.getInt("amount"));
+					dto.setPrice(rs.getString("price"));
+					dto.setSdate(rs.getString("sdate"));
 					list.add(dto);
 				}while(rs.next());
 			}
 		} catch (Exception e) {
-			System.out.println("결제내역조회 실패"+e);
+			System.out.println("예매내역조회 실패"+e);
 		} finally {
 			DBClose.close(con, pstmt, rs);
 		}
@@ -58,7 +62,7 @@ public class OrderDAO {
 			
 			sql=new StringBuilder();
 			sql.append(" INSERT INTO exh_order(mid, ordernum, excode, amount, price, sdate) ");
-	        sql.append(" VALUES (?,?,?,?,?) ");
+	        sql.append(" VALUES (?,?,?,?,?,?) ");
 	      
 	         
 	        pstmt=con.prepareStatement(sql.toString());
@@ -66,8 +70,8 @@ public class OrderDAO {
 	        pstmt.setString(2, dto.getOrdernum());
 	        pstmt.setInt(3, dto.getExcode());
 	        pstmt.setInt(4, dto.getAmount());
-	        pstmt.setInt(5, dto.getPrice());                                                                                                    
-	        pstmt.setString(5, dto.getSdate());                                                                                                    
+	        pstmt.setString(5, dto.getPrice());                                                                                                    
+	        pstmt.setString(6, dto.getSdate());                                                                                                    
 	         
 			cnt=pstmt.executeUpdate();
 			
@@ -100,7 +104,7 @@ public class OrderDAO {
 				dto.setOrdernum(rs.getString("ordernum"));
 				dto.setExcode(rs.getInt("excode"));
 				dto.setAmount(rs.getInt("amount"));
-				dto.setPrice(rs.getInt("price"));
+				dto.setPrice(rs.getString("price"));
 				dto.setSdate(rs.getString("sdate"));
 				
 			}//if end			
