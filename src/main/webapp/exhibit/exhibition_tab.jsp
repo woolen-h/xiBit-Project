@@ -3,6 +3,15 @@
 <%@ include file="../header.jsp"%>
 <div class="content">
 	<!-- 본문 시작 exhibition_tab.jsp -->
+	<%
+	if (s_mlevel.equals("A1")) {
+	%>
+	<div class="exh_write">
+		<input class="button" value="게시하기" onclick="location.href='exhibitForm.jsp'"> 
+	</div>
+	<%
+	}
+	%>
 	    <div class=content_120_3>
            <div class=ex_top_bar>
            	<select class="location_9_113">
@@ -54,9 +63,6 @@
 				} // if end
 				%>
 			</div>
-				<div class="exh_write">
-					<a href="exhibitForm.jsp">[게시하기]</a>
-				</div>
 		</div>
 	</div>
 	<!-- 본문 끝 -->

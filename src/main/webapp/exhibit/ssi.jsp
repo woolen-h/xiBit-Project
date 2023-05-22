@@ -16,7 +16,7 @@
 <%request.setCharacterEncoding("UTF-8");%>
 
 <%
-	//검색--------------------------------------------------------
+	//검색 (혹시몰라서 ~~)--------------------------------------------------------
 	String word = request.getParameter("word"); //검색어 가져오기
 	String col = request.getParameter("col"); //검색컬럼 가져오기
 	
