@@ -67,12 +67,12 @@ hr{
 	padding-right: 45px;
 	padding-bottom: 45px;
 }
-.nav a div {
+.nav_2 a div {
 	font-size: 12pt;
 	font-family: "rotunda-variable", sans-serif;
 	font-variation-settings: "wght" 300;
 }
-.nav div a {
+.nav_1 a div {
 	font-size: 28pt;
 	font-family: "rotunda-variable", sans-serif;
 	font-variation-settings: "wght" 900;
