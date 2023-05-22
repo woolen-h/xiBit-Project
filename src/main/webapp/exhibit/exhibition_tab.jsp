@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@ include file="ssi.jsp" %>
     <%@ include file="../header.jsp" %>
-    
         <div class="content">
         <!-- 본문 시작 exhibition_tab.jsp -->
 		    <div class=content_120_3>
@@ -27,7 +26,6 @@
             %>
             
             <div class=scroll_9_139>
-            <a href="exhibitForm.jsp">[게시하기]</a>
             <!-- 
               <div class=component_8_121_36>
                 <div class=component_1_121_35>
@@ -73,11 +71,11 @@
 				  <tr>
 
 					<td style="text-align: left">
-            			<%if(dto.getBcode().equals("Seo")){out.print("서울");}else
+            <%if(dto.getBcode().equals("Seo")){out.print("서울");}else
 					    if(dto.getBcode().equals("Gwa")){out.print("과천");}else
 					    if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
-				      	if(dto.getBcode().equals("Cheong")){out.print("청주");}else
-				      	if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%>
+				      if(dto.getBcode().equals("Cheong")){out.print("청주");}else
+				      if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%>
            </td>
 					<td style="text-align: left"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></td>
 					<td style="text-align: left"><%=dto.getExstart().substring(0, 11)%> ~ <%=dto.getExend().substring(0, 11)%></td>
@@ -87,6 +85,7 @@
             }
 %>
           		</table>   
+            		<div class="exh_write"><a href="exhibitForm.jsp">[게시하기]</a></div>
                 </div>
             </div>
           </div>
