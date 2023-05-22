@@ -125,10 +125,11 @@ public class OrderDAO {
 			
 			sql=new StringBuilder();
 			sql.append(" DELETE FROM exh_order ");
-			sql.append(" WHERE ordernum=? ");
+			sql.append(" WHERE ordernum=? AND mid=?");
 			
 			pstmt=con.prepareStatement(sql.toString());
 			pstmt.setString(1, dto.getOrdernum());
+			pstmt.setString(2, dto.getMid());
 			cnt=pstmt.executeUpdate();
 			
 		} catch (Exception e) {

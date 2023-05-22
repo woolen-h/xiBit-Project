@@ -23,7 +23,7 @@
 	<div class="info_tb_container">
 <!-- 예매상세 -->
 <%
-	String ordernum = request.getParameter("ordernum");
+	String ordernum = request.getParameter("ordernum").trim();
 	dto=dao.read(ordernum);
 	
 	if(dto==null){
@@ -119,7 +119,7 @@
 	</table>
 <!------------------버튼------------------>
 	<form  method="post" action="../order/orderDelProc.jsp" onsubmit="return delCheck()">
-		<input type="hidden" name="bbsno" value="<%=ordernum%>">
+		<input type="hidden" name="ordernum" value="<%=ordernum%>">
 		<input type="submit" value="예매취소" >
 		<input type="button" value="예매목록" onclick="location.href='ticketList.jsp'">
 	</form>
