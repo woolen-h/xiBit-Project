@@ -320,7 +320,7 @@ hr{
   justify-content: center;
   align-items: center;
 	background-color:rgba(255, 255, 255, 1);
-	width:84px;
+	width:120px;
 	height:25px;
 	position:fixed;
 	left:2em;
@@ -330,8 +330,6 @@ hr{
 	border-bottom-left-radius:36px;
 	border-bottom-right-radius:36px;
 	z-index: 100;
-}
-.location_9_113 { 
 	border:0.5px solid rgba(0, 0, 0, 1);
 }
 .___9_114 { 
@@ -378,7 +376,7 @@ hr{
 	justify-content: center;
 	align-items: center; 
 	background-color:rgba(255, 255, 255, 1);
-	width:70px;
+	width:120px;
 	height:25px;
 	position:fixed;
 	right:2em;
@@ -388,8 +386,6 @@ hr{
 	border-bottom-left-radius:36px;
 	border-bottom-right-radius:36px;
 	z-index: 100;
-}
-.newest_9_143 { 
 	border:0.5px solid rgba(0, 0, 0, 1);
 }
 .____9_144 { 

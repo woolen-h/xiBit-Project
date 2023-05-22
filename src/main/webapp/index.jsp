@@ -19,9 +19,9 @@
   </head>
   <body>
     <div class="landing_page_13_15">
-    	<div class="logo">
+    	<a href="index.jsp"><div class="logo">
     		<div  class="xibit_13_21">xiBit</div>
-    	</div>
+    	</div></a>
     	<hr>
     	<div class="nav">
 	    	<div class="nav_1">
