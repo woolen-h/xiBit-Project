@@ -42,8 +42,9 @@ body::-webkit-scrollbar-track {
 	color: rgba(0, 0, 0, 1);
   	width: 44px;
   	height: 24px;
-  	font-family: stinger-variable;
-  	font-weight: 800;
+  	font-family: "fit-extra-wide", sans-serif;
+	font-weight: 400;
+	font-style: normal;
   	text-align: center;
   	font-size: 60pt;
   	letter-spacing: 0;
@@ -67,17 +68,17 @@ hr{
 	padding-bottom: 45px;
 }
 .nav a div {
-	font-size: 16pt;
-  	font-family: stinger-variable;
-  	font-weight: 400;
+	font-size: 12pt;
+	font-family: "rotunda-variable", sans-serif;
+	font-variation-settings: "wght" 300;
 }
 .nav div a {
-	font-size: 16pt;
-  	font-family: stinger-variable;
-  	font-weight: 400;
+	font-size: 28pt;
+	font-family: "rotunda-variable", sans-serif;
+	font-variation-settings: "wght" 900;
 }
 .nav_1{
-	width: 800px;
+	width: 1200px;
 	height: 60px;
 	display: flex;
 	align-items: center;
