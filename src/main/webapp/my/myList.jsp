@@ -39,47 +39,45 @@
 			<td><%=dtoM.getTel() %></td><!-- 이메일 -->
 		</tr>
 	</table>
+<!--------------------예매내역--------------------->	
 	<table class="info_tb">
 		<tr>
-			<th>예매내역</th>
+			<th colspan="2">예매내역</th>
 			<td><button onclick="location.href='ticketList.jsp';">더보기+</button></td>
+		</tr>
+		<tr>
+			<th width="30%">포스터</th>
+			<th>전시명</th>
+			<th>관람장소</th>
 		</tr>
 		<tr>
 <%
 		ArrayList<OrderDTO> list=dao.list(s_mid);
-		int excode=dto.getExcode();
+		
 		if(list==null){
 			out.println("<td>예매하신 내역이 없습니다.</td>");
 		}else{
 			for(int i=0; i<list.size(); i++){
 				dto=list.get(i);
+				int excode=dto.getExcode();
 				dtoE=daoE.read(excode);	
 %>
 	
-		<th width="30%">사진</th>
 		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
-		</tr>
-		<tr>
-			<th>전시명</th>
-			<td><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></td>
-		</tr>
-		<tr>
-			<th>관람 예정일로부터 D-</th>
-		</tr>
-		<tr>
-			<th>관람장소</th>
-			<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
+		<td><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></td>
+		<td><%if(dtoE.getBcode().equals("Seo")){out.print("서울");}else
 				  if(dtoE.getBcode().equals("Gwa")){out.print("과천");}else
 				  if(dtoE.getBcode().equals("Deok")){out.print("덕수궁");}else
 			      if(dtoE.getBcode().equals("Cheong")){out.print("청주");}else
 			      if(dtoE.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
 		</tr>
-	</table>
+	
 
 <%
 			}
 		}
 %>
+	</table>
 <!------------------즐겨찾기-------------------->	
 	<table class="info_tb">
 		<tr>
@@ -94,11 +92,12 @@
 		<tr>
 			<td colspan="3">즐겨찾기 및 좋아요 내역이 없습니다.</td>
 		</tr>
-	</table>
-	</div>
+	
 <%
 	}
 %>
+	</table>
+	</div>
 </div>
 </div>
 <%@ include file="../footer.jsp" %>

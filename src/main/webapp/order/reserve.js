@@ -212,7 +212,7 @@ function selectDay(obj) {
 
         $('#check_in_day').html(getCheckIndateHtml());
 
-        lastCheckInDate();
+		document.getElementById("sdate").value=checkInDate;
     } else {
         // 체크인 날짜를 한번더 클릭했을때 아무 동작 하지 않기
         if (parseInt(checkInDate) === $(obj).data('day')) {
@@ -238,11 +238,10 @@ function selectDay(obj) {
                 checkOutDate = "";
 
                 $('#check_in_day').html(getCheckIndateHtml());
-                $('#check_out_day').html("");
 
-                lastCheckInDate();
-            
+            		document.getElementById("sdate").value=checkInDate;
         }
+        
     }
 }
 

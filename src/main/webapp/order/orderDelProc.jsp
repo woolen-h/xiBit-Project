@@ -5,7 +5,7 @@
 <%@ include file="../header.jsp" %>
 
 <%
-	String ordernum=request.getParameter("ordernum");
+	String ordernum=request.getParameter("ordernum").trim();
 	
 	dto.setOrdernum(ordernum);
 	
