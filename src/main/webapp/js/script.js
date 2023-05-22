@@ -17,9 +17,9 @@ const slideLength = document.querySelectorAll('.flexplz li').length;
 let currentSlide = 1;
 const IMAGE_WIDTH = 930;
 
-flexplz.addEventListener('wheel', click);
+flexplz.addEventListener('wheel', wheel);
 
-function click(e){
+function wheel(e){
 	console.log(e.target);
 	if (currentSlide >= slideLength) {
     currentSlide = 0;
