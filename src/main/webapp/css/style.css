@@ -42,7 +42,8 @@ body::-webkit-scrollbar-track {
 	color: rgba(0, 0, 0, 1);
   	width: 44px;
   	height: 24px;
-  	font-family: Inter;
+  	font-family: stinger-variable;
+  	font-weight: 800;
   	text-align: center;
   	font-size: 60pt;
   	letter-spacing: 0;
@@ -50,7 +51,7 @@ body::-webkit-scrollbar-track {
 hr{
 	position: relative;
 	top: 110px;
-	width: 95%;
+	width: 100%;
 }
 .nav {
 	width: 100%;
@@ -65,8 +66,18 @@ hr{
 	padding-right: 45px;
 	padding-bottom: 45px;
 }
+.nav a div {
+	font-size: 16pt;
+  	font-family: stinger-variable;
+  	font-weight: 400;
+}
+.nav div a {
+	font-size: 16pt;
+  	font-family: stinger-variable;
+  	font-weight: 400;
+}
 .nav_1{
-	width: 500px;
+	width: 800px;
 	height: 60px;
 	display: flex;
 	align-items: center;
@@ -74,8 +85,6 @@ hr{
 }
 .home_13_17 {
   color: rgba(0, 0, 0, 1);
-  width: 34px;
-  height: 15px;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -83,8 +92,6 @@ hr{
 }
 .exhibition_13_18 {
   color: rgba(0, 0, 0, 1);
-  width: 56px;
-  height: 15px;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -92,8 +99,6 @@ hr{
 }
 .info_13_19 {
   color: rgba(0, 0, 0, 1);
-  width: 43px;
-  height: 15px;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -101,8 +106,6 @@ hr{
 }
 .event_13_20 {
   color: rgba(0, 0, 0, 1);
-  width: 32px;
-  height: 15px;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -110,8 +113,6 @@ hr{
 }
   .booth_13_21{
   color: rgba(0, 0, 0, 1);
-  width: 32px;
-  height: 15px;
   font-family: Inter;
   text-align: center;
   font-size: 12px;
@@ -127,43 +128,39 @@ hr{
     201.8750050663948,
     201.8750050663948,
     1);
-  	width: 100px;
-  	height: 40px;
+  	width: 150px;
+  	height: 50px;
   	margin-right: 10px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .sign_up_13_24 {
   color: rgba(0, 0, 0, 1);
-  width: 41px;
-  height: 13px;
-  position: relative;
-  left: 30px;
-  top: 11px;
   font-family: Inter;
   text-align: center;
   font-size: 11px;
   letter-spacing: 0;
 }
 
-.sign_up_82_67 {
+.login {
   background-color: rgba(203.99998784065247, 255, 0, 1);
-  width: 100px;
-  height: 40px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  width: 150px;
+  height: 50px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .login_82_68 {
   color: rgba(0, 0, 0, 1);
-  width: 30px;
-  height: 13px;
-  position: relative;
-  left: 35px;
-  top: 13px;
   font-family: Inter;
   text-align: center;
   font-size: 11px;
@@ -612,14 +609,6 @@ th, td {
 	font-weight: bold;
 }
 /* 인포메이션 탭 */
-.in_content{
-  position: absolute;
-  top: 100px;
-  left: 2em;
-  width: calc(100% - 4em);
-  height: 83%;
-  overflow: hidden;
-}
 .fa_qna{
 	color: rgba(203.99998784065247, 255, 0, 1);
 	background-color: black;
