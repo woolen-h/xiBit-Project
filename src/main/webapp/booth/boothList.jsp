@@ -5,7 +5,6 @@
 <%@ include file="../header.jsp" %>
 
 <div class="content">
-
 	<h3>전시장 안내</h3>
 	<p><a href="boothForm.jsp">[글쓰기]</a></p>
 	<div>
