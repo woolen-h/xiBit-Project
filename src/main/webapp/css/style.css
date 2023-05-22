@@ -688,3 +688,37 @@ select option {
 	padding: 3px 0;
 }
 /* notice css end */
+
+/********************* 약관 동의 시작 *********************/
+
+.agreeCon {
+    margin-bottom: 30px;
+    
+    width: 100%;
+    border: 1px solid #000;
+    height: 240px;
+    padding: 20px;
+    overflow-y: scroll;
+    
+    box-sizing: border-box;
+    
+    background-color: #fff;
+    
+    border-radius: 3px;    
+    
+    word-spacing: -1px;
+    letter-spacing: 0px;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+.agreeCon h5, .agreeCon h6 {
+	padding-top: 20px;
+    font-size: 15px;
+}
+
+.agreeCon b, h1, h2, h3, h4, h5, h6, th {
+    font-weight: 600;
+}
+
+/********************* 약관 동의 끝 *********************/
