@@ -110,21 +110,21 @@ public class ExhibitDAO {
 			con = dbopen.getConnection();
 
 			StringBuilder sql = new StringBuilder();
-			sql.append(" INSERT INTO exh_info (excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ) ");
-			sql.append(" VALUES(exh_info_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+			sql.append(" INSERT INTO exh_info (bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename) ");
+			sql.append(" VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
 			pstmt = con.prepareStatement(sql.toString());
 
 			pstmt.setString(1, dto.getBcode());
-			pstmt.setString(2, dto.getExname());
-			pstmt.setString(3, dto.getAuthor());
-			pstmt.setString(4, dto.getExstart());
-			pstmt.setString(5, dto.getExend());
-			pstmt.setInt(6, dto.getExcnt());
-			pstmt.setInt(7, dto.getPrice());
-			pstmt.setString(8, dto.getTel());
-			pstmt.setString(9, dto.getContents());
-			pstmt.setString(10, dto.getFilename());
+      pstmt.setString(2, dto.getExname());
+      pstmt.setString(3, dto.getAuthor());
+      pstmt.setString(4, dto.getExstart());
+      pstmt.setString(5, dto.getExend());
+      pstmt.setInt(6, dto.getExcnt());
+      pstmt.setInt(7, dto.getPrice());
+      pstmt.setString(8, dto.getTel());
+      pstmt.setString(9, dto.getContents());
+      pstmt.setString(10, dto.getFilename());
 
 			cnt = pstmt.executeUpdate();
 
