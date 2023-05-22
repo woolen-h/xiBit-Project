@@ -5,19 +5,27 @@
         <div class="content">
         <!-- 본문 시작 exhibition_tab.jsp -->
 		    <div class=content_120_3>
-            <div class=location_9_113>
-              <button onclick="display_mn()" class="___9_114">위치</button>
-              <ul style="display: none;" id="drop_cont">
-                <li>서울</li>
-                <li>과천</li>
-                <li>덕수궁</li>
-                <li>청주</li>
-                <li>어린이미술관</li>
-              </ul>
+            <div>
+              <select class="location_9_113">
+	              <option class="___9_114">위치</option>
+	              <option class="___9_114">서울</option>
+	              <option class="___9_114">과천</option>
+	              <option class="___9_114">덕수궁</option>
+	              <option class="___9_114">청주</option>
+	              <option class="___9_114">어린이미술관</option>
+              </select>
             </div>
-            
-            <div class=continue_9_145><span  class="__________9_146">현재 진행중 전시</span></div>
-            <div class=newest_9_143><span  class="____9_144">최신순</span></div>
+            <div class="continue_9_145">
+	            <span  class="__________9_146">
+	            	현재 진행중 전시
+	            </span>
+            </div>
+            <div>
+	            <select class="newest_9_143">
+	            	<option class="____9_144">최신순</option>
+	            	<option class="____9_144">예매순</option>
+	            </select>
+            </div>
             <% 
             ArrayList<ExhibitDTO> list = dao.listNow(); 
             if(list==null){
