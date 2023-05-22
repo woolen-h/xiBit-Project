@@ -27,9 +27,24 @@ body::-webkit-scrollbar-track {
 .landing_page_13_15 {
 	display: flex;
 	flex-direction: column;
-	width: 100vw;
+	width: 100%;
+	height: 1000px;
 	position: fixed;
 }
+.landing_page_13_15::-webkit-scrollbar {
+    width: 10px;
+}
+.landing_page_13_15::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.landing_page_13_15::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 /* 로고 스타일링 및 위치 지정 시작 */
 .logo {
 	position: relative;
@@ -217,7 +232,6 @@ hr{
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
 .content-box {
 	width: 100%;
-	height: 2000px;
   	display: flex;
   	padding-top: 35px;
   	padding-left: 45px;
