@@ -52,7 +52,6 @@
   		</div><!-- nav end -->
   		<hr>
         <div class="content-box">
-	        <div class="window">
 		        <div class="carousel_box">
 		        	<ul class="flexplz">
 			        	<li>
@@ -69,12 +68,12 @@
 			        	</li>
 				    </ul>
 		        </div>
-	        </div>
+		        
 	        <div class="content-scr">
 	        전시가 있어용
 	        </div>
+	        </div>
         </div>
-      </div>
   </body>
   <script type="text/javascript" src="js/script.js"></script> 
 </html>
