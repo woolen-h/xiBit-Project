@@ -45,7 +45,7 @@
 					<img class="img" src="../storage/<%=dto.getFilename()%>">
 					
 					<div class=frame_8_i121_35_9_93>
-						<span class="______________________i121_35_9_100"><%=dto.getExname()%></span>
+						<span class="______________________i121_35_9_100"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></span>
 					</div>
 				</div>
 
