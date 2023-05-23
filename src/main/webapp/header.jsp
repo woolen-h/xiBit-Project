@@ -24,7 +24,6 @@
 	    	<div class="nav_1">
 				<a href="../index.jsp"><div class="home_13_17">Home</div></a>
 			    <a href="../exhibit/exhibition_tab.jsp"><div  class="exhibition_13_18">Exhibition</div></a> 
-			    <a href="../information/information_tab.jsp"><div  class="info_13_19">Information</div></a> 
 			    <a href="../notice/noticeList.jsp"><div  class="event_13_20">Notice</div></a>
 			    <a href="../booth/boothList.jsp"><div  class="booth_13_21">Booth</div></a>
 			</div>

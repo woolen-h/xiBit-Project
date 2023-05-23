@@ -231,7 +231,9 @@
 	</tr>
 	</table>
 	</div>
-	<input type="submit" value="결제하기">
+	<div class="ord_sub_flex">
+	<input type="submit" value="결제하기" class="ord_submit">
+	</div>
 	</form>
 	</div>
    	
