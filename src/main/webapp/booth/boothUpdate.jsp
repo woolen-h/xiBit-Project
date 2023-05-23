@@ -33,12 +33,6 @@
 					</td>
 				</tr>
 				<tr>
-					<th>전시장 지역</th>
-					<td>
-						<input type="text" name="baddr" id="baddr" value="<%=dto.getBaddr()%>" maxlength="50" required>
-					</td>
-				</tr>
-				<tr>
 					<th>운영요일</th>
 					<td>
 						<input type="text" name="bdays" id="bdays" value="<%=dto.getBdays()%>" maxlength="50" required>

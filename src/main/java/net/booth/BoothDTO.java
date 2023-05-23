@@ -13,6 +13,7 @@ public class BoothDTO {
 		private String bhour;		//운영 시간
 		private String boffday;		//휴관일
 		private String btel;		//전화번호
+		private String bimg;		//전시장 이미지
 		
 		
 		
@@ -58,14 +59,17 @@ public class BoothDTO {
 		public void setBtel(String btel) {
 			this.btel = btel;
 		}
-		
+		public String getBimg() {
+			return bimg;
+		}
+		public void setBimg(String bimg) {
+			this.bimg = bimg;
+		}
 		
 		@Override
 		public String toString() {
 			return "BoothDTO [bcode=" + bcode + ", bname=" + bname + ", baddr=" + baddr + ", bdays=" + bdays
-					+ ", bhour=" + bhour + ", boffday=" + boffday + ", btel=" + btel + "]";
-		}
-		
-	
-	
+					+ ", bhour=" + bhour + ", boffday=" + boffday + ", btel=" + btel + ", bimg=" + bimg + "]";
+		}		
+
 }//class end

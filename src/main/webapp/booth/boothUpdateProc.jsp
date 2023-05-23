@@ -11,7 +11,6 @@
 		
 	
 		String bname = request.getParameter("bname").trim();
-		String baddr = request.getParameter("baddr").trim();
 		String bdays = request.getParameter("bdays").trim();
 		String bhour = request.getParameter("bhour").trim();
 		String boffday = request.getParameter("boffday").trim();
@@ -20,7 +19,6 @@
 		
 		
 		dto.setBname(bname);
-		dto.setBaddr(baddr);
 		dto.setBdays(bdays);
 		dto.setBhour(bhour);
 		dto.setBoffday(boffday);
