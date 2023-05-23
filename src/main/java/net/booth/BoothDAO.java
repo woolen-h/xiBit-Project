@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import net.notice.NoticeDTO;
 import net.utility.DBClose;
 import net.utility.DBOpen;
 
@@ -29,16 +28,15 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				sql = new StringBuilder();
-				sql.append(" INSERT INTO exh_booth(bcode, bname, baddr, bdays, bhour, boffday, btel)");
-				sql.append(" VALUES(noticeno_seq.nextval, ?, ?, ?, ?, ?, ?)");
+				sql.append(" INSERT INTO exh_booth(bname, bdays, bhour, boffday, btel)");
+				sql.append(" VALUES(?, ?, ?, ?, ?)");
 
 				pstmt = con.prepareStatement(sql.toString());
 				pstmt.setString(1, dto.getBname());
-				pstmt.setString(2, dto.getBaddr());
-				pstmt.setString(3, dto.getBdays());
-				pstmt.setString(4, dto.getBhour());
-				pstmt.setString(5, dto.getBoffday());
-				pstmt.setString(6, dto.getBtel());
+				pstmt.setString(2, dto.getBdays());
+				pstmt.setString(3, dto.getBhour());
+				pstmt.setString(4, dto.getBoffday());
+				pstmt.setString(5, dto.getBtel());
 				
 				cnt = pstmt.executeUpdate();
 			} catch (Exception e) {
@@ -58,9 +56,8 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 				
 				StringBuilder sql = new StringBuilder();
-	            sql.append(" SELECT bcode, bname, baddr, bdays, bhour, boffday, btel ");
+	            sql.append(" SELECT bcode, bname, bdays, bhour, boffday, btel ");
 	            sql.append(" FROM exh_booth ");
-	            //sql.append(" ORDER BY noticeno DESC ");
 				
 				pstmt = con.prepareStatement(sql.toString());
 				rs = pstmt.executeQuery();
@@ -70,7 +67,6 @@ public class BoothDAO {
 						BoothDTO dto=new BoothDTO(); //한줄담기
 						dto.setBcode(rs.getString("bcode"));
 						dto.setBname(rs.getString("bname"));
-						dto.setBaddr(rs.getString("baddr"));
 						dto.setBdays(rs.getString("bdays"));
 						dto.setBhour(rs.getString("bhour"));
 						dto.setBoffday(rs.getString("boffday"));
@@ -95,9 +91,9 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				sql = new StringBuilder();
-				sql.append(" SELECT bname, baddr, bdays, bhour, boffday, btel");
-				sql.append(" FROM exh_booth");
-				sql.append(" WHERE bcode=?");
+				sql.append(" SELECT bname, bdays, bhour, boffday, btel ");
+				sql.append(" FROM exh_booth ");
+				sql.append(" WHERE bcode=? ");
 
 				pstmt = con.prepareStatement(sql.toString());
 				pstmt.setString(1, bcode);
@@ -108,7 +104,6 @@ public class BoothDAO {
 					dto = new BoothDTO();	//입력한 값 넣어주기
 					//dto.setBcode(rs.getString("bcode"));
 					dto.setBname(rs.getString("bname"));
-					dto.setBaddr(rs.getString("baddr"));
 					dto.setBdays(rs.getString("bdays"));
 					dto.setBhour(rs.getString("bhour"));
 					dto.setBoffday(rs.getString("boffday"));
@@ -132,18 +127,17 @@ public class BoothDAO {
 
 				StringBuilder sql = new StringBuilder();
 				sql.append(" UPDATE exh_booth");
-				sql.append(" SET bname=?, baddr=?, bdays=?, bhour=?, boffday=?, btel=?");
+				sql.append(" SET bname=?, bdays=?, bhour=?, boffday=?, btel=? ");
 				sql.append(" WHERE bcode=?");
 
 				pstmt = con.prepareStatement(sql.toString());
 
 				pstmt.setString(1, dto.getBname());
-				pstmt.setString(2, dto.getBaddr());
-				pstmt.setString(3, dto.getBdays());
-				pstmt.setString(4, dto.getBhour());
-				pstmt.setString(5, dto.getBoffday());
-				pstmt.setString(6, dto.getBtel());
-				pstmt.setString(7, dto.getBcode());
+				pstmt.setString(2, dto.getBdays());
+				pstmt.setString(3, dto.getBhour());
+				pstmt.setString(4, dto.getBoffday());
+				pstmt.setString(5, dto.getBtel());
+				pstmt.setString(6, dto.getBcode());
 				
 				cnt = pstmt.executeUpdate();
 			} catch (Exception e) {
