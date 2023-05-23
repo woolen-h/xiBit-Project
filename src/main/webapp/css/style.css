@@ -666,28 +666,6 @@ th, td {
 	border: solid 0.1rem #000000;
 	margin-bottom: 1rem;
 }
-/* notice css */
-select::-ms-expand { 
-	display: none;
-}
-
-.select {
-	-o-appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background: url('https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png') calc(100% - 5px) center no-repeat;
-	background-size: 20px;
-	padding: 5px 30px 5px 10px;
-	border-radius: 4px;
-	outline: 0 none;
-}
-select option {
-	color: white;
-	background: black;
-	padding: 3px 0;
-}
-/* notice css end */
 
 /********************* 약관 동의 시작 *********************/
 
@@ -722,3 +700,19 @@ select option {
 }
 
 /********************* 약관 동의 끝 *********************/
+
+/* notice */
+.search {
+	background-color: rgba(203.99998784065247, 255, 0, 1);
+  width: 80px;
+  height: 30px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+}
