@@ -72,7 +72,7 @@ public class ZzimDAO {
 		return cnt;
 	} // delete() end
 
-	public ArrayList<ZzimDTO> list(String mid, int excode) {
+	public ArrayList<ZzimDTO> list(String mid) {
 		ArrayList<ZzimDTO> list = null;
 
 		try {
@@ -81,11 +81,10 @@ public class ZzimDAO {
 			sql = new StringBuilder();
 			sql.append(" SELECT mid, excode");
 			sql.append(" FROM zzim");
-			sql.append(" WHERE mid=? AND excode=?");
+			sql.append(" WHERE mid=?");
 
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setString(1, mid);
-			pstmt.setInt(2, excode);
 
 			rs = pstmt.executeQuery();
 
