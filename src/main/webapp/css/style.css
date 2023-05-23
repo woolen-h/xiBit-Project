@@ -783,6 +783,10 @@ select option {
 	display: flex;
 	justify-content: flex-end;
 }
+.booth_read_btn_flex {
+	display: flex;
+	justify-content: center;
+}
 /* 마이페이지 css */
 .my_list {
 	width: 20%;
