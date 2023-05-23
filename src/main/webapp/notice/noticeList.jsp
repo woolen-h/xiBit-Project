@@ -101,7 +101,7 @@
 			if (s_mlevel.equals("A1")) {
 			%>
 			<p>
-				<button class="search" onclick="noticeForm.jsp" style="margin: auto; margin-top: 10px;">글쓰기</button>
+				<button class="search" onclick="location.href='noticeForm.jsp'" style="margin: auto; margin-top: 10px;">글쓰기</button>
 			</p>
 			<%
 			} // if end
