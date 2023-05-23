@@ -48,13 +48,8 @@
 			} else {
 				
 				for (int i = 0; i < list.size(); i++) {
-					dto = list.get(i);	
-				}//값자기 이걸 넣었더니 null에서 1로 값이 불러져왔어
-				
-				
-				
-				
-			%>			
+					dto = list.get(i);	%>
+						
 		<tr>
 			<td>
 			<a href="boothRead.jsp?bcode=<%=dto.getBcode()%>"><%=dto.getBname()%></a>			
@@ -80,6 +75,8 @@
 			
 				
 <%
+				}//값자기 이걸 넣었더니 null에서 1로 값이 불러져왔어
+				
 			}
 %>			
 		

@@ -783,3 +783,11 @@ select option {
 	display: flex;
 	justify-content: flex-end;
 }
+/* 마이페이지 css */
+.my_list {
+	width: 20%;
+	padding-right: 40px;
+}
+.my_container {
+	width: 80%;
+}
