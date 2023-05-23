@@ -101,7 +101,7 @@ body::-webkit-scrollbar-track {
 	font-variation-settings: "wght" 900;
 }
 .nav_1{
-	width: 1200px;
+	width: 800px;
 	height: 60px;
 	display: flex;
 	align-items: center;
@@ -193,7 +193,7 @@ body::-webkit-scrollbar-track {
 }
 .content {
   width: 100%;
-  height: 100%;
+  height: 700px;
   overflow: auto;
   padding-left: 45px;
   padding-right: 45px; 
@@ -688,3 +688,25 @@ select option {
 	padding: 3px 0;
 }
 /* notice css end */
+/* order form css */
+.ord_submit{
+	margin-top: 20px;
+	width: 120px;
+	height: 60px;
+	background-color: white;
+	border-radius: 30px;
+	border: 1px solid black;
+}
+.ord_submit:hover{
+	margin-top: 20px;
+	width: 120px;
+	height: 60px;
+	background-color: rgba(203.99998784065247, 255, 0, 1);
+	border-radius: 30px;
+	border: 1px solid black;
+}
+.ord_sub_flex{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
