@@ -789,9 +789,9 @@ select option {
 }
 /* 마이페이지 css */
 .my_list {
-	width: 300px;
-	padding-right: 45px;
+	width: 20%;
+	padding-right: 40px;
 }
 .my_container {
-	width: 100%;
+	width: 80%;
 }
