@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ include file="ssi.jsp" %>
-<%@ include file="../header.jsp" %>
+<%@page import="net.zzim.ZzimDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ include file="ssi.jsp"%>
+<%@ include file="../header.jsp"%>
 
 <div class="content">
 	<div class="info_content">
@@ -78,26 +78,44 @@
 			}
 	%>
 		</table>
-	<!------------------즐겨찾기-------------------->	
-		<table class="info_tb">
-			<tr>
-				<th colspan="2">즐겨찾기 전시</th>
-				<td><button>더보기+</button></td>
-			</tr>
-			<tr>
-				<th>구분</th>
-				<th>제목</th>
-				<th>등록날짜</th>
-			</tr>
-			<tr>
-				<td colspan="3">즐겨찾기 및 좋아요 내역이 없습니다.</td>
-			</tr>
-		
-	<%
-		}
-	%>
-		</table>
+	<!------------------즐겨찾기-------------------->
+			<table class="info_tb">
+				<tr>
+					<th colspan="2">즐겨찾기 전시</th>
+					<td><button onclick="location.href='myFavoriteList.jsp';">더보기+</button></td>
+				</tr>
+				<tr>
+					<th width="20%">포스터</th>
+					<th>제목</th>
+					<th width="50%">전시일정</th>
+				</tr>
+				<tr>
+
+					<%
+					ArrayList<ZzimDTO> listz = daoZ.list(s_mid);
+
+					if (listz == null) {
+						out.print("<tr>");
+						out.println("<td colspan='3'>즐겨찾기 및 좋아요 내역이 없습니다.</td>");
+						out.print("</tr>");
+					} else {
+						for (int i = 0; i < listz.size(); i++) {
+							dtoZ = listz.get(i);
+							int excode = dtoZ.getExcode();
+							dtoE = daoE.read(excode);
+					%>
+
+					<td><img width="10%" src="../storage/<%=dtoE.getFilename()%>"></td>
+					<td><%=dtoE.getExname()%></td>
+					<td><%=dtoE.getExstart().substring(0, 11)%> ~ <%=dtoE.getExend().substring(0, 11)%></td>
+				</tr>
+				<%
+						} // for end
+					} // if end
+				} // if end
+				%>
+			</table>
 		</div>
+	</div>
 </div>
-</div>
-<%@ include file="../footer.jsp" %>
+<%@ include file="../footer.jsp"%>

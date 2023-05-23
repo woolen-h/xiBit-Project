@@ -18,6 +18,9 @@
 <jsp:useBean id="daoM" class="net.member.MemberDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dtoM" class="net.member.MemberDTO" scope="page"></jsp:useBean>
 
+<jsp:useBean id="daoZ" class="net.zzim.ZzimDAO" scope="page"></jsp:useBean>
+<jsp:useBean id="dtoZ" class="net.zzim.ZzimDTO" scope="page"></jsp:useBean>
+
 
 <%request.setCharacterEncoding("UTF-8"); %>
 

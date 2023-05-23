@@ -63,12 +63,20 @@
 		</table>
 	</div> <!-- end -->
 	
+	<%
+		if (s_mlevel.equals("A1")) {
+	%>
+	
 	<div style="width: 100%; display: inline-block; margin-top: 10px;">
 		<form style="display: flex; float: right;" method="post" action="noticeDel.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>" onsubmit="return removeCheck()">
 			<button style="margin-right: 5px;" type="button" onClick="location.href='noticeUpdate.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'" class="search">수정</button>
 			<input type="submit" value="삭제" class="search">
 		</form>
 	</div>
+	
+	<%
+		}
+	%>
 	
 	<%
 	} // if end
