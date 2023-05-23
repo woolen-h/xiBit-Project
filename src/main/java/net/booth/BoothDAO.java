@@ -29,7 +29,7 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				sql = new StringBuilder();
-				sql.append(" INSERT INTO exh_booth(bcode, bname, baddr, bdays, bhour, boffday, btel)");
+				sql.append(" INSERT INTO ex_booth(bcode, bname, baddr, bdays, bhour, boffday, btel)");
 				sql.append(" VALUES(noticeno_seq.nextval, ?, ?, ?, ?, ?, ?)");
 
 				pstmt = con.prepareStatement(sql.toString());
@@ -59,7 +59,7 @@ public class BoothDAO {
 				
 				StringBuilder sql = new StringBuilder();
 	            sql.append(" SELECT bcode, bname, baddr, bdays, bhour, boffday, btel ");
-	            sql.append(" FROM exh_booth ");
+	            sql.append(" FROM ex_booth ");
 	            //sql.append(" ORDER BY noticeno DESC ");
 				
 				pstmt = con.prepareStatement(sql.toString());
@@ -96,7 +96,7 @@ public class BoothDAO {
 
 				sql = new StringBuilder();
 				sql.append(" SELECT bname, baddr, bdays, bhour, boffday, btel");
-				sql.append(" FROM exh_booth");
+				sql.append(" FROM ex_booth");
 				sql.append(" WHERE bcode=?");
 
 				pstmt = con.prepareStatement(sql.toString());
@@ -131,7 +131,7 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				StringBuilder sql = new StringBuilder();
-				sql.append(" UPDATE exh_booth");
+				sql.append(" UPDATE ex_booth");
 				sql.append(" SET bname=?, baddr=?, bdays=?, bhour=?, boffday=?, btel=?");
 				sql.append(" WHERE bcode=?");
 
@@ -161,7 +161,7 @@ public class BoothDAO {
 			try {
 				con = dbopen.getConnection();
 				StringBuilder sql = new StringBuilder();
-				sql.append(" DELETE FROM exh_booth");
+				sql.append(" DELETE FROM ex_booth");
 				sql.append(" WHERE bcode=?");
 
 				pstmt = con.prepareStatement(sql.toString());
