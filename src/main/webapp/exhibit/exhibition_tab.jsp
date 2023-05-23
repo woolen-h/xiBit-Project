@@ -40,11 +40,17 @@
 		%>
 
 		<div class=scroll_9_139>
-			<div class=component_8_121_36>
+			<div class="component_8_121_36">
 
 				<%
 				for (int i = 0; i < list.size(); i++) {
 					dto = list.get(i);
+					if(i % 5 == 0 && i != 0) {
+						%>
+						</div> <!-- component_8_121_36 end -->
+						<div class="component_8_121_36">
+						<%
+					}
 				%>
 				
 				<!-- 추가해야 할 설정: 한 줄에 몇 개씩 출력할 건지? -->
@@ -57,12 +63,11 @@
 						<span class="______________________i121_35_9_100"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></span>
 					</div>
 				</div>
-
 				<%
 				} // for end
 				} // if end
 				%>
-			</div>
+				</div>
 		</div>
 	</div>
 	<!-- 본문 끝 -->
