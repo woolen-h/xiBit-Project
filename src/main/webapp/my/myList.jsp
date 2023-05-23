@@ -92,7 +92,7 @@
 				%>
 			</table>
 			<!------------------즐겨찾기-------------------->
-			<h1>즐겨찾기 전시</h1>
+			<h1 class="zzim_exh_title">즐겨찾기 전시</h1>
 			<button onclick="location.href='myFavoriteList.jsp';">더보기+</button>
 
 			<%

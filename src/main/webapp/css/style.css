@@ -638,6 +638,7 @@ th, td {
 	font-weight: bold;
 	margin-top: 30px;
 	margin-bottom: 15px;
+	text-align: left;
 }
 .info_qna_d{
 	font-size: 9pt;
@@ -804,4 +805,8 @@ select option {
 }
 .my_container {
 	width: 80%;
+}
+.zzim_exh_title {
+	margin-top: 20px;
+	font-size: 16pt;
 }
