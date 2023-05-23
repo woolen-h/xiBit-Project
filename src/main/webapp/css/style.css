@@ -841,3 +841,30 @@ select option {
     margin-right: 50px;
     gap: 50px;
 }
+/* memberwithdraw css */
+.mem_wd_title {
+	font-size: 20pt;
+	text-align: center;
+	margin-top: 40px;
+}
+.mem_wd_id {
+	margin: 20px;
+	font-weight: bold;
+}
+.mem_wd_flex {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 150px;
+}
+.mem_wd_pass {
+	margin-top: 15px;
+	border-radius: 20px;
+	width: 200px;
+	height: 30px;
+	text-align: center;
+	font-size: 8pt;
+}
