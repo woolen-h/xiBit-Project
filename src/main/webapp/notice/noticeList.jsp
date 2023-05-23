@@ -4,6 +4,7 @@
 <%@ include file="../header.jsp"%>
 
 <div class="content">
+	<h3 class="booth_title">공지사항</h3>
 	<div class="info_content">
 	
 		<div class="info_tb_container">

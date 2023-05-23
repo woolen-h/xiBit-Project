@@ -593,7 +593,7 @@ body::-webkit-scrollbar-track {
 	width: 100%;
 }
 .info_tb_container{
-	width: 80%;
+	width: 100%;
 }
 /***************************** info style end *****************************/
 /***************************** table style *****************************/
@@ -754,4 +754,32 @@ select option {
 	align-items: center;
 	border: 0;
 	cursor: pointer;
+}
+/* booth style */
+.booth_title {
+	font-size: 20pt;
+	text-align: center;
+	margin-top: 40px;
+}
+.booth_write_btn {
+    box-sizing: border-box;
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+    width: 80px;
+    height: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+}
+.booth_btn_flex {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
