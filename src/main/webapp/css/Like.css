@@ -1,8 +1,14 @@
 @charset "UTF-8";
 
-a{
-  text-decoration:none; color:inherit; cursor: pointer; float: right;
-  
+a {
+  text-decoration:none; 
+  color:inherit; 
+  cursor: pointer;
+}
+.zzim_flex {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
  .right_area .icon{
     display: flex;
@@ -14,6 +20,11 @@ a{
     border-radius: 50%;
     border: solid 2px #eaeaea;
     background-color: #fff;
+}
+
+.right_area {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .icon.heart img{
