@@ -47,7 +47,7 @@
 			<table class="info_tb">
 				<tr>
 					<th colspan="2">예매내역</th>
-					<td><button onclick="location.href='ticketList.jsp';">더보기+</button></td>
+					<td class="my_order_more_btn"><button onclick="location.href='ticketList.jsp';" class="zzim_exh_more_btn">더보기+</button></td>
 				</tr>
 				<tr>
 					<th width="30%">포스터</th>
@@ -92,9 +92,10 @@
 				%>
 			</table>
 			<!------------------즐겨찾기-------------------->
+			<div class="zzim_flex">
 			<h1 class="zzim_exh_title">즐겨찾기 전시</h1>
-			<button onclick="location.href='myFavoriteList.jsp';">더보기+</button>
-
+			<button onclick="location.href='myFavoriteList.jsp';" class="zzim_exh_more_btn">더보기+</button>
+			</div>
 			<%
 			ArrayList<ZzimDTO> listz = daoZ.list(s_mid);
 
@@ -106,7 +107,7 @@
 			%>
 
 			<div class=scroll_9_139>
-				<div class="component_8_121_36">
+				<div class="my_component">
 
 					<%
 					for (int i = 0; i < listz.size(); i++) {
@@ -117,7 +118,7 @@
 					%>
 				</div>
 				<!-- component_8_121_36 end -->
-				<div class="component_8_121_36">
+				<div class="my_component">
 					<%
 					} // if end
 					%>
@@ -125,12 +126,13 @@
 						<img class="img" src="../storage/<%=dtoE.getFilename()%>">
 
 						<div class=frame_8_i121_35_9_93>
-							<span class="______________________i121_35_9_100"><a href="../exhibit/exhibitRead.jsp?excode=<%=dtoE.getExcode()%>"><%=dtoE.getExname()%></a></span>
+							<span class="zzim_title"><a href="../exhibit/exhibitRead.jsp?excode=<%=dtoE.getExcode()%>"><%=dtoE.getExname()%></a></span>
+							<div class="ex_durate">
+								<%=dtoE.getExstart().substring(0, 11)%>
+								~
+								<%=dtoE.getExend().substring(0, 11)%>
+							</div>
 						</div>
-
-						<%=dtoE.getExstart().substring(0, 11)%>
-						~
-						<%=dtoE.getExend().substring(0, 11)%>
 					</div>
 					<%
 							} // for end
