@@ -5,11 +5,16 @@
 
 <div class="content">
 
-	<h3>전시장 상세보기</h3>
-	<p>
-		<a href="boothForm.jsp">[글쓰기]</a>
-		<a href="boothList.jsp">[글목록]</a>
-	</p>
+	<h3 class="booth_title">전시장 상세보기</h3>
+	<div class="booth_btn_flex">
+		<div class="booth_write_btn">
+			<a href="boothForm.jsp">글쓰기</a>
+		</div>
+		&nbsp;&nbsp;
+		<div class="booth_write_btn">
+			<a href="boothList.jsp">글목록</a>
+		</div>
+	</div>
 	
 	<%
 		String bcode = request.getParameter("bcode");
@@ -57,8 +62,11 @@
 				</table>
 			</div>
 			<form method="post" action="boothDel.jsp?bcode=<%=bcode%>" onsubmit="return removeCheck()">
-				<button type="button" onClick="location.href='boothUpdate.jsp?bcode=<%=bcode%>'">수정</button>
-				<input type="submit" value="삭제">
+				<div class="booth_read_btn_flex">
+					<button type="button" onClick="location.href='boothUpdate.jsp?bcode=<%=bcode%>'" class="ord_submit">수정</button>
+					&nbsp;&nbsp;
+					<input type="submit" value="삭제" class="ord_submit">
+				</div>
 			</form>
 	<%
 		} // if end
