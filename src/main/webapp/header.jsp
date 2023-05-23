@@ -40,7 +40,7 @@
 			        
 			  	<%} else{ %>
 			        <a href="../my/myList.jsp"><div class="sign_up_13_23">
-			          <span  class="sign_up_13_24">MyPage</span>
+			          <div  class="sign_up_13_24">MyPage</div>
 			        </div></a>
 			        <a href="../member/logout.jsp"><div class="login">
 			          <div  class="login_82_68">Logout</div>
