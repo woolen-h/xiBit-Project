@@ -13,10 +13,13 @@
 <jsp:useBean id="dao" class="net.exhibit.ExhibitDAO" scope="page"></jsp:useBean>
 <jsp:useBean id="dto" class="net.exhibit.ExhibitDTO" scope="page"></jsp:useBean>
 
+<jsp:useBean id="daoz" class="net.zzim.ZzimDAO" scope="page"></jsp:useBean>
+<jsp:useBean id="dtoz" class="net.zzim.ZzimDTO" scope="page"></jsp:useBean>
+
 <%request.setCharacterEncoding("UTF-8");%>
 
 <%
-	//검색--------------------------------------------------------
+	//검색 (혹시몰라서 ~~)--------------------------------------------------------
 	String word = request.getParameter("word"); //검색어 가져오기
 	String col = request.getParameter("col"); //검색컬럼 가져오기
 	

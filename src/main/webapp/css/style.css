@@ -666,9 +666,37 @@ th, td {
 	border: solid 0.1rem #000000;
 	margin-bottom: 1rem;
 }
-/* notice css */
-select::-ms-expand { 
-	display: none;
+
+/********************* 약관 동의 시작 *********************/
+
+.agreeCon {
+    margin-bottom: 30px;
+    
+    width: 100%;
+    border: 1px solid #000;
+    height: 240px;
+    padding: 20px;
+    overflow-y: scroll;
+    
+    box-sizing: border-box;
+    
+    background-color: #fff;
+    
+    border-radius: 3px;    
+    
+    word-spacing: -1px;
+    letter-spacing: 0px;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+}
+
+.agreeCon h5, .agreeCon h6 {
+	padding-top: 20px;
+    font-size: 15px;
+}
+
+.agreeCon b, h1, h2, h3, h4, h5, h6, th {
+    font-weight: 600;
 }
 
 .select {
@@ -709,4 +737,21 @@ select option {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+/********************* 약관 동의 끝 *********************/
+
+/* notice */
+.search {
+	background-color: rgba(203.99998784065247, 255, 0, 1);
+  width: 80px;
+  height: 30px;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	cursor: pointer;
 }

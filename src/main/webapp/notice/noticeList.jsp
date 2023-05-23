@@ -6,38 +6,18 @@
 <div class="content">
 	<div class="info_content">
 	
-		<div class="info_tb_list">
-			<ul>
-				<li class="fa_qna"><a>공지사항</a></li>
-			</ul>
-			<!-- 이 부분 수정 어떻게 하면 좋을까 -->
-			<ul>
-				<li class="info_qna_h">전시 문의</li>
-				<li class="info_qna_d"><a href="#">전체</a></li>
-				<li class="info_qna_d"><a>전시 1</a></li>
-				<li class="info_qna_d"><a>전시 2</a></li>
-			</ul>
-			<ul>
-				<li class="info_qna_h">예약 문의</li>
-				<li class="info_qna_d"><a>전체</a></li>
-				<li class="info_qna_d"><a>전시 1</a></li>
-				<li class="info_qna_d"><a>전시 2</a></li>
-			</ul>
-		</div> <!-- info_tb_list end -->
-		
 		<div class="info_tb_container">
 		
 			<div class="info_tb_search">
-				<!-- info_tb_search -->
 				<form action="noticeList.jsp" onsubmit="return searchCheck()">
-					<div>
-						<select name="col" class="select">
+					<div style="display: flex;">
+						<select name="col" class="location_9_113" style="margin-right: 5px;">
 							<option value="subject_content">제목+내용</option>
 							<option value="subject">제목</option>
 							<option value="content">내용</option>
 						</select> 
-						<input type="text" name="word" id="word"> 
-						<input type="submit" value="검색">
+						<input type="text" name="word" id="word" style="margin-right: 5px;"> 
+						<input type="submit" value="검색" class="search">
 					</div>
 				</form>
 			</div> <!-- info_tb_search end -->
@@ -81,7 +61,7 @@
 						%>
 					</td>
 					<td style="text-align: left">
-						<a href="noticeRead.jsp?noticeno=<%=dto.getNoticeno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>"><%=dto.getSubject()%></a> 
+						<a href="noticeRead.jsp?noticeno=<%=dto.getNoticeno()%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>" style="color: inherit;"><%=dto.getSubject()%></a> 
 						<%
 							// 오늘 작성한 글 제목 뒤에 new이미지 출력
 							// 작성일(regdt)에서 "년월일" 자르기
@@ -116,19 +96,19 @@
 				} // if end
 				%>
 			</table>
+			
+			<%
+			if (s_mlevel.equals("A1")) {
+			%>
+			<p>
+				<button class="search" onclick="location.href='noticeForm.jsp'" style="margin: auto; margin-top: 10px;">글쓰기</button>
+			</p>
+			<%
+			} // if end
+			%>
+			
 		</div> <!-- info_tb_container end -->
 	</div> <!-- info_content end -->
-	
-	<%
-	if (s_mlevel.equals("A1")) {
-	%>
-	<p>
-		<a href="noticeForm.jsp">[글쓰기]</a>
-	</p>
-	<%
-	} // if end
-	%>
-	
 </div> <!-- in_content end -->
 
 <%@ include file="../footer.jsp"%>

@@ -15,6 +15,7 @@
 	    <link
 	      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
 	      rel="stylesheet"/>
+	    <link rel="stylesheet" href="https://use.typekit.net/usb8ffu.css">
 	    <link rel="stylesheet" href="../css/reset.css" />
 	    <link rel="stylesheet" href="../css/login_style.css" />
 	    <script type="text/javascript" src="../js/script.js"></script> 
@@ -23,12 +24,13 @@
 	  </head>
 	  
 	  <body>
-	    <div class=landing_page_13_15>
-	      <div class=login_box>
+	  <div class="content">
+	    <div class="landing_page_13_15">
+	      <div class="login_box">
 	
 	<!-- header 끝 -->
 	
-        <div class=content_login style="text-align: center">
+        <div class="content_login" style="text-align: center">
 		<!-- 본문 시작 loginForm.jsp-->
 		
 		
@@ -49,7 +51,7 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-			<h6 id="font" style="font-size:20px;">Login</h6>
+			<div id="font" style="font-size: 30px;"><h6>Login</h6></div>
 			<br><br><br>
 			
 			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
@@ -91,6 +93,6 @@
 		</form>
         <!-- 본문 끝 -->
         </div>
-
+		</div>
         
     <%@ include file="../footer.jsp" %>

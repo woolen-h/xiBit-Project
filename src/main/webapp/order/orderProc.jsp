@@ -7,17 +7,28 @@
 <div class="content">
 <!-- 본문 시작 주문서.jsp -->
 <% 
+   /* 아이디  */
    String mid    = request.getParameter("mid").trim();
+   /* 주문번호  */
    String ordernum    = request.getParameter("ordernum").trim();
+   /* 전시코드  */
    int excode = Integer.parseInt(request.getParameter("excode"));
-   int amount = Integer.parseInt(request.getParameter("amount").trim());
-   int price = Integer.parseInt(request.getParameter("price").trim());
+   /* 수량  */
+   int amount_A = Integer.parseInt(request.getParameter("amount1"));
+   int amount_C = Integer.parseInt(request.getParameter("amount2"));
+   int amount = amount_A+amount_C;
+   /* 금액  */
+   String price = request.getParameter("price");
+   /* 선택날짜  */
+   String sdate = request.getParameter("sdate").trim();
 
+   
    dto.setMid(mid);
    dto.setOrdernum(ordernum);
    dto.setExcode(excode);
    dto.setAmount(amount);
    dto.setPrice(price);
+   dto.setSdate(sdate);
    
    int cnt=dao.insert(dto);
    
@@ -25,10 +36,10 @@
       out.println("<p>예약에 실패했습니다</p>");
       out.println("<p><a href='javascript:history.back()'>[다시시도]</a></p>");
    }else{
-      out.println("<script>");
-      out.println("   alert('예약이 완료되었습니다.\n 예약내역은 마이페이지에서 확인하실 수 있습니다.');");
-      out.println("   location.href='../my/myList.jsp';");
-      out.println("</script>");
+	  out.println("<script>");
+	  out.println(" 	alert('예약이 완료되었습니다.');");
+	  out.println(" 	location.href='../my/myList.jsp';");
+	  out.println("</script>");
    }//if end
 
 

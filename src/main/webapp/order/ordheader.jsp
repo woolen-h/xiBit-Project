@@ -12,11 +12,8 @@
     />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="reserve.css">
-  	<script src="reserve.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./reserve.css">
+  	<script src="./reserve.js"></script>
   </head>
   <body>
     <div class="landing_page_13_15">

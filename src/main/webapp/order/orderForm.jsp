@@ -3,19 +3,18 @@
     
 <%@page import="java.util.Date" %>
 <%@page import="java.text.SimpleDateFormat" %>    
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  
 <%@ include file="ssi.jsp" %>    
 <%@ include file="ordheader.jsp" %>
 
+ 
+  
 <div class="content">
 <form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
-<input type="hidden" name="mid" id="mid" value="s_id">
-
-<!-- 주문서번호 생성 -->
-<!-- <input type="hidden" name="ordernum" id="ordernum" value=""> -->
-	
+<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
 <!-- 주문서 -->
-<!-- 왼쪽 -->
 <!-----------전시정보------------------------------------------------------------------>
 <%
 	dtoM=daoM.read(s_mid);
@@ -28,6 +27,35 @@
 %>
 	<div> <!-- 왼쪽 -->
 	<table>
+	<tr>
+		<th>주문서번호</th>
+		<td>
+		<input type="hidden" id="excode" name="excode" value="<%=excode %>">
+		<input type="hidden" id="ordernum" name="ordernum" value="">
+		<script>
+			getCurrentDate();
+			
+			function getCurrentDate()
+		    {
+				var excode=parseInt(document.getElementById("excode").value);
+				var date = new Date();
+		        var year = date.getFullYear().toString();
+
+		        var month = date.getMonth() + 1;
+		        month = month < 10 ? '0' + month.toString() : month.toString();
+
+		        var day = date.getDate();
+		        day = day < 10 ? '0' + day.toString() : day.toString();
+		        
+		        document.write(year+ month + day + String(excode).padStart(4, '0'));
+		        
+		        document.getElementById("ordernum").value=year+ month + day + String(excode).padStart(4, '0');
+		        
+		        
+		    }
+		</script>
+		</td>
+	</tr>
 	<tr>
 		<th width="30%">사진</th>
 		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
@@ -101,11 +129,11 @@
         </div>
         <!-- 현재 월 달력 -->
         <div class="dates start-calendar"></div>
+        <input type="hidden" id="sdate" name="sdate" value="">
       </div>
-    </div>
-
-
-    <div class="checkInOutInfo">
+      <br>
+      <br>
+      <div class="checkInOutInfo">
       <div>
         <p>
         <!-- 선택 날 표시 -->
@@ -113,14 +141,18 @@
         </p>
       </div>
     </div>
+    </div>
+
+
+    
 </div>
 
 <!-----------금액정보------------------------------------------------------------------>
 	<div>
 <%
-	int price=dtoE.getPrice();
-	double disprice=price*0.5;
-	int priceee=(int)disprice;
+	int priceA=dtoE.getPrice();
+	double priceC=priceA*0.5;
+	int disprice=(int)priceC;
 %>
 	<table>
 	<tr class="num">
@@ -132,21 +164,21 @@
 			<a href="#" class="minus">-</a>
 			<span id="result">0</span>
 			<!-- 성인 수량 -->
-			<input type="hidden" id="amount1" value="">
+			<input type="hidden" id="amount1" name="amount1" value="">
 			<a href="#" class="plus">+</a>
 		</td>
 		<td class="totalcost"></td>
 	</tr>
 	<tr class="num">
 	<th>어린이</th>
-		<td><%=priceee %>
-			<input type="hidden" id="cprice" value="<%=priceee %>">
+		<td><%=disprice %>
+			<input type="hidden" id="cprice" value="<%=disprice %>">
 		</td>
 		<td class="count">
 			<a href="#" class="minus2">-</a>
 			<span id="result2">0</span>
 			<!-- 어린이 수량 -->
-			<input type="hidden" id="amount2" value="">
+			<input type="hidden" id="amount2" name="amount2" value="">
 			<a href="#" class="plus2">+</a>
 		</td>
 		<td class="totalcost2"></td>
@@ -166,6 +198,7 @@
 	<tr>
 		<td>합계</td>
 		<td class="totalprice"></td>
+		<td><input type="hidden" id="price" name="price" value=""></td>
 		<td>원</td>
 	</tr>
 	<!-- 예매자정보 -->
@@ -215,6 +248,7 @@
 	let result=document.querySelector("#result");
 	let totalcost=document.querySelector(".totalcost");
 	let totalprice=document.querySelector(".totalprice");
+	let price=document.getElementById("price");
 	
 	let total=0;
 	let i=0;
@@ -229,6 +263,7 @@
 		
 		total+=aprice;
 		totalprice.textContent=total.toLocaleString();
+		price.value=total.toLocaleString();
 		
 		document.getElementById("amount1").value=i;
 	})
@@ -244,6 +279,7 @@
 			
 			total-=aprice;
 			totalprice.textContent=total.toLocaleString();
+			price.value=total.toLocaleString();
 			
 			document.getElementById("amount1").value=i;
 			
@@ -268,6 +304,7 @@
 		
 		total+=cprice;
 		totalprice.textContent=total.toLocaleString();
+		price.value=total.toLocaleString();
 		
 		document.getElementById("amount2").value=j;
 		
@@ -282,6 +319,7 @@
 			
 			total-=cprice;
 			totalprice.textContent=total.toLocaleString();
+			price.value=total.toLocaleString();
 			
 			document.getElementById("amount2").value=j;
 			

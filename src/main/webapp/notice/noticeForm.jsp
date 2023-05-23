@@ -4,9 +4,11 @@
 
 <div class="content">
 
-	<h3>공지사항</h3>
+	<div style="width: 100%; text-align: center;">
+		<span style="display: inline-block; margin-top: 30px; font-size: 25px;">공지사항</span>
+	</div>
 	<p>
-		<a href="noticeList.jsp">[목록]</a>
+		<button class="search" onClick="location.href='noticeList.jsp'" style="margin: auto; margin: 10px 0 10px 0; float: right;">글목록</button>
 	</p>
 
 	<div class="container">
@@ -33,8 +35,12 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="쓰기"> 
-						<input type="reset" value="취소">
+						<div style="width: 100%; display: inline-block;">
+							<div style="display: flex; justify-content: center;">
+								<input type="submit" value="쓰기" class="search" style="margin-right: 5px;"> 
+								<input type="reset" value="취소" class="search">
+							</div>
+						</div>
 					</td>
 				</tr>
 			</table>

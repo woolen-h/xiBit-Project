@@ -4,11 +4,11 @@
 <%@ include file="../header.jsp"%>
 
 <div class="content">
-
-	<h3>공지사항 상세보기</h3>
+	<div style="width: 100%; text-align: center;">
+		<span style="display: inline-block; margin-top: 30px; font-size: 25px;">공지사항 상세보기</span>
+	</div>
 	<p>
-		<a href="noticeForm.jsp">[글쓰기]</a> 
-		<a href="noticeList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>">[글목록]</a>
+		<button class="search" onClick="location.href='noticeList.jsp?col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'" style="margin: auto; margin: 10px 0 10px 0; float: right;">글목록</button>
 	</p>
 
 	<%
@@ -63,13 +63,17 @@
 		</table>
 	</div> <!-- end -->
 	
-	<form method="post" action="noticeDel.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>" onsubmit="return removeCheck()">
-		<button type="button" onClick="location.href='noticeUpdate.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'">수정</button>
-		<input type="submit" value="삭제">
-	</form>
+	<div style="width: 100%; display: inline-block; margin-top: 10px;">
+		<form style="display: flex; float: right;" method="post" action="noticeDel.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>" onsubmit="return removeCheck()">
+			<button style="margin-right: 5px;" type="button" onClick="location.href='noticeUpdate.jsp?noticeno=<%=noticeno%>&col=<%=col%>&word=<%=word%>&nowPage=<%=nowPage%>'" class="search">수정</button>
+			<input type="submit" value="삭제" class="search">
+		</form>
+	</div>
+	
 	<%
 	} // if end
 	%>
+	
 </div> <!-- content end -->
 
 <%@ include file="../footer.jsp"%>

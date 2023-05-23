@@ -5,7 +5,9 @@
 
 <div class="content">
 
-	<h3>공지사항 수정</h3>
+	<div style="width: 100%; text-align: center;">
+		<span style="display: inline-block; margin-top: 30px; font-size: 25px;">공지사항 수정</span>
+	</div>
 
 	<%
 	int noticeno = Integer.parseInt(request.getParameter("noticeno"));
@@ -17,8 +19,7 @@
 	%>
 	
 	<p>
-		<a href="noticeForm.jsp">[글쓰기]</a> 
-		<a href="noticeList.jsp">[글목록]</a>
+		<button class="search" onClick="location.href='noticeList.jsp'" style="margin: auto; margin: 10px 0 10px 0; float: right;">글목록</button>
 	</p>
 	
 	<form name="bbsfrm" id="bbsfrm" method="post" action="noticeUpdateProc.jsp" onsubmit="return noticeCheck()">
@@ -51,8 +52,12 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" value="수정"> 
-					<input type="reset" value="취소">
+					<div style="width: 100%; display: inline-block;">
+						<div style="display: flex; justify-content: center;">
+							<input type="submit" value="수정" class="search" style="margin-right: 5px;"> 
+							<input type="reset" value="취소" class="search">
+						</div>
+					</div>
 				</td>
 			</tr>
 		</table>
