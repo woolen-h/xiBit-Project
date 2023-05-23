@@ -451,7 +451,7 @@ body::-webkit-scrollbar-track {
 }
 .frame_8_i121_35_9_93 { 
 	width:200px;
-	height:35px;
+	margin-bottom: 20px;
 }
 .______________________i121_35_9_100 { 
 	color:rgba(0, 0, 0, 1);
@@ -805,8 +805,38 @@ select option {
 }
 .my_container {
 	width: 80%;
+	height: 850px;
 }
 .zzim_exh_title {
-	margin-top: 20px;
 	font-size: 16pt;
+}
+.zzim_exh_more_btn {
+	background-color: white;
+}
+.zzim_flex {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.zzim_title {
+	font-size: 12pt;
+}
+.frame_8_i121_35_9_93 {
+	margin-top: 10px;
+}
+.ex_durate {
+	margin-top: 10px;
+	font-size: 8pt;
+}
+.my_order_more_btn {
+	text-align: right;
+}
+.my_component {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    gap: 50px;
 }

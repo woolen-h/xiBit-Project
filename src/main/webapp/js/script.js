@@ -1,16 +1,4 @@
-/**
- * 
- */
-/*----------------------------- 드롭다운 메뉴 구현 -----------------------------------*/
- function display_mn(){
-	 let click = document.getElementById("drop_cont");
-	 if(click.style.display === "none"){
-		 click.style.display = "block";
-	 }else{
-		 click.style.display = "none";
-	 }
-}
- /*----------------------------- 드롭다운 메뉴 구현 끝 -----------------------------------*/
+
  /*----------------------------- 캐러셀 메뉴 구현 -----------------------------------*/
 const flexplz = document.querySelector(".flexplz");
 const slideLength = document.querySelectorAll('.flexplz li').length;
