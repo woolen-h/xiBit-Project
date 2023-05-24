@@ -29,7 +29,22 @@
 				<tr>
 					<th>전시장 이름</th>
 					<td>
-						 <input type="text" name="bname" id="bname" value="<%=dto.getBname()%>" maxlength="50" required>
+						 <input type="text" name="bname" id="bname"
+						 		value="<%
+											String bname = dto.getBname();
+											if (bname.equals("Seo")) {
+												out.print("[서울]국립현대미술관");
+											} else if (bname.equals("Gwa")) {
+												out.print("[과천]국립현대미술관");
+											} else if (bname.equals("Deok")) {
+												out.print("[덕수궁]국립현대미술관");
+											} else if (bname.equals("Cheong")) {
+												out.print("[청주]국립현대미술관");
+											} else if (bname.equals("Kid")) {
+												out.print("어린이미술관");
+											}// if end
+										%>"
+								maxlength="50" required>
 					</td>
 				</tr>
 				<tr>

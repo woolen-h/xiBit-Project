@@ -33,11 +33,22 @@
 				<table>
 					<tr>
 						<th>전시장 이름</th>
-						<td><%=dto.getBname()%></td>
-					</tr>
-					<tr>
-						<th>전시장 지역</th>
-						<td><%=dto.getBaddr()%></td>
+						<td>
+							<%
+							String bname = dto.getBname();
+							if (bname.equals("Seo")) {
+								out.print("[서울]국립현대미술관");
+							} else if (bname.equals("Gwa")) {
+								out.print("[과천]국립현대미술관");
+							} else if (bname.equals("Deok")) {
+								out.print("[덕수궁]국립현대미술관");
+							} else if (bname.equals("Cheong")) {
+								out.print("[청주]국립현대미술관");
+							} else if (bname.equals("Kid")) {
+								out.print("어린이미술관");
+							}// if end
+							%>
+						</td>
 					</tr>
 					<tr>
 						<th>운영 요일</th>

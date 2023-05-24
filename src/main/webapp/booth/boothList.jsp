@@ -25,7 +25,6 @@
 			</tr>
 
 			<%
-			//String bname = request.getParameter("bname");
 			String bdays = request.getParameter("bdays");
 			String bhour = request.getParameter("bhour");
 			String boffday = request.getParameter("boffday");
@@ -45,9 +44,6 @@
 					dto = list.get(i);
 			%>
 			<tr>
-				<td>
-					<a href="boothRead.jsp?bcode=<%=dto.getBcode()%>"><%=dto.getBname()%></a>
-				</td>
 				<td style="text-align: center;">
 					<a href="boothRead.jsp?bcode=<%=dto.getBcode()%>">
 						<%
