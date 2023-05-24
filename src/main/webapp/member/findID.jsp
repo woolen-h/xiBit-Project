@@ -32,7 +32,7 @@
 		<!-- 본문 시작 findID.jsp -->
 		
 		<form name="findID" id="findID" method="post" action="findIDProc.jsp" onsubmit="return findIDCheck()">
-			<h6 id="font" style="font-size:20px;">Find ID/Password</h6>
+			<h6 id="font" style="font-size:20px;" class="mem_login">Find ID/Password</h6>
 			<br><br><br>
 				<div class="form-field">
 					<input class="loginform" type="text" name="mname" id="mname" placeholder="Type your ID" maxlength="10" required>
