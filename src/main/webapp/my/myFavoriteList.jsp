@@ -44,7 +44,7 @@
 							dtoE = daoE.read(excode);
 					%>
 
-					<td><img width="10%" src="../storage/<%=dtoE.getFilename()%>"></td>
+					<td><img width="10%" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>"></td>
 					<td><%=dtoE.getExname()%></td>
 					<td><%=dtoE.getExstart().substring(0,11)%> ~ <%=dtoE.getExend().substring(0,11)%></td>
 				</tr>
