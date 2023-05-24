@@ -55,12 +55,23 @@
 				
 				<!-- 추가해야 할 설정: 한 줄에 몇 개씩 출력할 건지? -->
 
-				<div class="component_1_121_35">
+				<div class="component_1_121_35" onclick="location.href='exhibitRead.jsp?excode=<%=dto.getExcode()%>'">
 					
 					<img class="img" src="../storage/<%=dto.getFilename()%>">
 					
 					<div class=frame_8_i121_35_9_93>
-						<span class="______________________i121_35_9_100"><a href="exhibitRead.jsp?excode=<%=dto.getExcode()%>"><%=dto.getExname()%></a></span>
+						<span class="______________________i121_35_9_100">
+						
+						[<%if(dto.getBcode().equals("Seo")){out.print("서울");}else
+					       if(dto.getBcode().equals("Gwa")){out.print("과천");}else
+					       if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
+				           if(dto.getBcode().equals("Cheong")){out.print("청주");}else
+				           if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%>]
+						 <%=dto.getExname()%><br>
+						 <%=dto.getExstart().substring(2, 11)%> ~ 
+						 <%=dto.getExend().substring(2, 11)%>
+						
+						</span>
 					</div>
 				</div>
 				<%
