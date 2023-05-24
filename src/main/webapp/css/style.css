@@ -469,11 +469,10 @@ body::-webkit-scrollbar-track {
     cursor: pointer;
 }
 .component_8_121_36 {
-    width: 1800px;
+    width: 1700px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-right: 50px;
     gap: 50px;
 }
 .component_1_121_35 { 
@@ -849,7 +848,7 @@ select option {
 }
 .my_container {
 	width: 80%;
-	height: 850px;
+	height: auto;
 }
 .zzim_exh_title {
 	font-size: 16pt;
