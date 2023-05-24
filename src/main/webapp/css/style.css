@@ -848,7 +848,7 @@ select option {
 }
 .my_container {
 	width: 80%;
-	height: 850px;
+	height: auto;
 }
 .zzim_exh_title {
 	font-size: 16pt;
