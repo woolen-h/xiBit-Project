@@ -217,7 +217,7 @@ public class MemberDAO {
 					Message msg = new MimeMessage(sess);						//메일 관련 정보 작성
 					msg.setRecipients(Message.RecipientType.TO, address);		//받는 사람
 					msg.setFrom(new InternetAddress("aurorannn@gmail.com"));	//보내는 사람
-					msg.setSubject("Myweb 임시비밀번호 발급");						//메일 제목
+					msg.setSubject("xiBit 임시비밀번호 발급");						//메일 제목
 					msg.setContent(content, "text/html; charset=UTF-8");		//메일 내용
 					msg.setSentDate(new Date());								//메일 보낸 날짜
 					Transport.send(msg);										//메일 전송
