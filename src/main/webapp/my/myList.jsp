@@ -12,7 +12,7 @@
 			</ul>
 			<ul>
 				<li class="info_qna_h"><a href="myList.jsp">홈</a></li>
-				<li class="info_qna_h"><a href="ticketList.jsp">예약내역</a></li>
+				<li class="info_qna_h"><a href="ticketList.jsp">예매내역</a></li>
 				<li class="info_qna_h">개인정보</li>
 				<li class="info_qna_d"><a href="pwCheck.jsp">개인정보수정</a></li>
 				<li class="info_qna_d"><a href="../member/memberWithdraw.jsp">회원탈퇴</a></li>
@@ -31,24 +31,24 @@
 			dtoM = daoM.read(s_mid);
 			%>
 			<table class="info_tb">
-				<!--------------------개인정보--------------------->
-				<tr>
-					<th style="font-size: 30px;" colspan="2"><%=dtoM.getMname()%></th>
-					<!-- 이름 -->
-				</tr>
-				<tr>
-					<td><%=dtoM.getEmail()%></td>
-					<!-- 이메일 -->
-					<td><%=dtoM.getTel()%></td>
-					<!-- 이메일 -->
-				</tr>
+			<!--------------------개인정보--------------------->
+			<tr>
+				<th style="font-size: 30px;" colspan="2"><%=dtoM.getMname()%></th>
+				<!-- 이름 -->
+			</tr>
+			<tr>
+				<td><%=dtoM.getEmail()%></td>
+				<!-- 이메일 -->
+				<td><%=dtoM.getTel()%></td>
+				<!-- 이메일 -->
+			</tr>
 			</table>
 			<!--------------------예매내역--------------------->
 			<div class="my_flex">
 			<h1 class="my_exh_title">예매내역</h1>
-			<button onclick="location.href='myFavoriteList.jsp';" class="my_exh_more_btn">더보기+</button>
+			<button onclick="location.href='ticketList.jsp';" class="my_exh_more_btn">더보기+</button>
 			</div>
-			<div class=scroll_9_139>
+			<div class="scroll_9_139">
 				<div class="my_component">
 					<%
 					ArrayList<OrderDTO> list = dao.list(s_mid);
@@ -64,20 +64,21 @@
 					<div class="component_1_121_35">
 						<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
 						<div class=frame_8_i121_35_9_93>
-							<span class="my_title"><a href="../exhibit/exhibitRead.jsp?excode=<%=dtoE.getExcode()%>"><%=dtoE.getExname()%></a></span>
+							<span class="my_title"><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></span>
 							<div class="ex_durate">
 								<%=dtoE.getExstart().substring(0, 11)%>
 								~
 								<%=dtoE.getExend().substring(0, 11)%>
 							</div>
 						</div>
-						</div>
+					</div>
 				<%
 					}
 				}
 				%>
 				</div>
 				</div>
+				<hr>
 			<!------------------즐겨찾기-------------------->
 			<div class="my_flex">
 			<h1 class="my_exh_title">즐겨찾기 전시</h1>
