@@ -859,19 +859,19 @@ select option {
 	width: 80%;
 	height: auto;
 }
-.zzim_exh_title {
+.my_exh_title {
 	font-size: 16pt;
 }
-.zzim_exh_more_btn {
+.my_exh_more_btn {
 	background-color: white;
 }
-.zzim_flex {
+.my_flex {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	display: flex;
 	justify-content: space-between;
 }
-.zzim_title {
+.my_title {
 	font-size: 12pt;
 	font-weight: bold;
 }
