@@ -91,11 +91,57 @@
 				}
 				%>
 			</table>
-			
+			<!------------------즐겨찾기-------------------->
+			<div class="zzim_flex">
+			<h1 class="zzim_exh_title">즐겨찾기 전시</h1>
+			<button onclick="location.href='myFavoriteList.jsp';" class="zzim_exh_more_btn">더보기+</button>
+			</div>
+			<%
+			ArrayList<ZzimDTO> listz = daoZ.list(s_mid);
+
+			if (listz == null) {
+				out.print("<tr>");
+				out.println("<td colspan='3'>즐겨찾기 및 좋아요 내역이 없습니다.</td>");
+				out.print("</tr>");
+			} else {
+			%>
+
+			<div class=scroll_9_139>
+				<div class="my_component">
+
+					<%
+					for (int i = 0; i < listz.size(); i++) {
+						dtoZ = listz.get(i);
+						int excode = dtoZ.getExcode();
+						dtoE = daoE.read(excode);
+						if (i % 5 == 0 && i != 0) {
+					%>
+				</div>
+				<!-- component_8_121_36 end -->
+				<div class="my_component">
+					<%
+					} // if end
+					%>
+					<div class="component_1_121_35">
+						<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
+
+						<div class=frame_8_i121_35_9_93>
+							<span class="zzim_title"><a href="../exhibit/exhibitRead.jsp?excode=<%=dtoE.getExcode()%>"><%=dtoE.getExname()%></a></span>
+							<div class="ex_durate">
+								<%=dtoE.getExstart().substring(0, 11)%>
+								~
+								<%=dtoE.getExend().substring(0, 11)%>
+							</div>
+						</div>
+					</div>
 					<%
 							} // for end
+						} // if end
+					} // if end
 					%>
 				</div>
 			</div>
 		</div>
+</div>
+</div>
 <%@ include file="../footer.jsp"%>
