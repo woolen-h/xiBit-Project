@@ -328,7 +328,7 @@ body::-webkit-scrollbar-track {
 }
 /******************** 반응형 웹 구현 끝 *************************************************/
 
-/*********************************** EXHIBITION TAB STYLE *************************************************/
+/********************* 전시 탭 스타일 ********************************************/
 .content_120_3 {
     width: 100%;
     display: flex;
@@ -427,6 +427,9 @@ body::-webkit-scrollbar-track {
 	padding-top: 20px;
 	position: relative;
 	left: 50%;
+}
+.exh_read_content {
+	line-height: 175%;
 }
 .component_8_121_36 {
     width: 1800px;

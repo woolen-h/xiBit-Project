@@ -4,7 +4,7 @@
     <%@ include file="../header.jsp" %>
         <div class="content">
         <!-- 본문 시작 exhibitRead.jsp -->
-		<h3> * 전시 상세보기 * </h3>
+		<h3 class="booth_title"> 전시 상세보기 </h3>
 		<a href="exhibition_tab.jsp">[목록으로]</a>
 		
 <%
@@ -40,7 +40,7 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td>
+				<td class="exh_read_content">
 <%
 				//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
 				String content = Utility.convertChar(dto.getContents());
