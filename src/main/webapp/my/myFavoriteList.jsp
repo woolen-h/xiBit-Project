@@ -13,7 +13,7 @@
 			</ul>
 			<ul>
 				<li class="info_qna_h"><a href="myList.jsp">홈</a></li>
-				<li class="info_qna_h"><a href="ticketList.jsp">예약내역</a></li>
+				<li class="info_qna_h"><a href="ticketList.jsp">예매내역</a></li>
 				<li class="info_qna_h">개인정보</li>
 				<li class="info_qna_d"><a href="pwCheck.jsp">개인정보수정</a></li>
 				<li class="info_qna_d"><a href="../member/memberWithdraw.jsp">회원탈퇴</a></li>
