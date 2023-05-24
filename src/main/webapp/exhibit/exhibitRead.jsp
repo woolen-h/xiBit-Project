@@ -19,7 +19,7 @@
 			<table>
 			<tr>
 				<th width="30%">사진</th>
-				<td><img src="../storage/<%=dto.getFilename()%>"></td>
+				<td><img src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getFilename()%>"></td>
 			</tr>
 			<tr>
 				<th>전시코드</th>
