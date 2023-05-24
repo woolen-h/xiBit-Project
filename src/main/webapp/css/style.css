@@ -733,13 +733,14 @@ th, td {
 /********************* 약관 동의 시작 *********************/
 
 .agreeCon {
-    margin-bottom: 30px;
     
-    width: 100%;
+    width: 80%;
     border: 1px solid #000;
-    height: 240px;
+    height: 350px;
     padding: 20px;
     overflow-y: scroll;
+    margin: auto;
+    margin-bottom: 30px;
     
     box-sizing: border-box;
     

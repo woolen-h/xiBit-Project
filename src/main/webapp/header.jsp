@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/Like.css" />
     <script type="text/javascript" src="../js/script.js"></script> 
-    <script type="text/javascript" src="../js/Like.js"></script> 
+    <script type="text/javascript" src="../js/Like.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script>
     <title>Document</title>
   </head>
   <body>
