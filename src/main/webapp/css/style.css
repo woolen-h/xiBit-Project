@@ -434,6 +434,15 @@ body::-webkit-scrollbar-track {
 .exh_cont {
 	margin-top: 40px;
 }
+.exh_read_flex{
+	display: flex;
+}
+.exh_poster{
+	margin-right: 25px;
+}
+.exh_read_tb{
+	width: 100%;
+}
 .exh_list_btn1{
     box-sizing: border-box;
     background-color: rgba(
