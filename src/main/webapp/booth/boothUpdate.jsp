@@ -23,7 +23,7 @@
 	</p>
 	
 	<div class="container">
-		<form name="boothfrm" id="boothfrm" method="post" action="boothUpdateProc.jsp" onsubmit="return boothCheck()">
+		<form name="boothfrm" id="boothfrm" method="post" enctype="multipart/form-data" action="boothUpdateProc.jsp" onsubmit="return boothCheck()">
 			<input type="hidden" name="bcode" value="<%=bcode%>">
 			<table>
 				<tr>
@@ -94,6 +94,12 @@
 						<input type="text" name="btel3" id="tel3" size="4" value="<%=dto.getBtel().substring(8, 12) %>" maxlength="4">
 					</td>
 				</tr>
+				<tr>
+				    <th>첨부파일</th>
+				    <td style="text-align: left">
+				    	<input type="file" name="bimg" id="bimg">
+				    </td>
+				</tr>				
 				<tr>
 					<td colspan="2" align="center">
 						<input type="submit" value="수정"> 

@@ -1,10 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
-<%@page import="java.util.Enumeration"%>
-<%@page import="java.io.File"%>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
 <%@ include file="ssi.jsp"%>
 <%@ include file="../header.jsp"%>
@@ -39,18 +36,13 @@
 			} //if end
 		} //while end
 		
+		
 		//bname, bdays, bhour, boffday, btel
 		//enctype="multipart/form-data"로 전송 시 request.getParameter가 아닌 multi.getParameter로 값 받아야 함
 		String bname = mr.getParameter("bname").trim();
 
 		String[] bdaysarr = mr.getParameterValues("bdays");
-		
 		String bdays = "";
-		/*
-		if(null == bdaysarr) { //null 체크
-			bdaysarr = new String[0];
-		}//if end
-		*/
 		for (int i = 0; i < bdaysarr.length; i++) {
 			bdays += bdaysarr[i];
 			if (i < bdaysarr.length - 1) {
@@ -62,11 +54,6 @@
 
 		String[] boffarr = mr.getParameterValues("boffday");
 		String boffday = "";
-		/*
-		if(null == boffarr) { //null 체크
-			boffarr = new String[0];
-		}//if end
-		*/
 		for (int i = 0; i < boffarr.length; i++) {
 			boffday += boffarr[i];
 			if (i < boffarr.length - 1) {
