@@ -57,7 +57,7 @@
 
 				<div class="component_1_121_35" onclick="location.href='exhibitRead.jsp?excode=<%=dto.getExcode()%>'">
 					
-					<img class="img" src="../storage/<%=dto.getFilename()%>">
+					<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getFilename()%>">
 					
 					<div class=frame_8_i121_35_9_93>
 						<span class="______________________i121_35_9_100">
