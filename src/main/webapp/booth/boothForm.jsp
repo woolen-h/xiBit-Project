@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="../header.jsp" %>
+<script src="../js/jquery-3.6.4.min.js"></script>
 
 <div class="content">
 
@@ -72,11 +73,7 @@
 				<tr>
 					<th>전화번호</th>
 					<td style="text-align: left">
-						<input type="text" name="btel1" id="tel1" size="3" maxlength="3" required>
-						-
-						<input type="text" name="btel2" id="tel2" size="4" maxlength="4" required>
-						-
-						<input type="text" name="btel3" id="tel3" size="4" maxlength="4" required>
+						<input type="text" name="btel" id="btel" size="11" maxlength="11" required>
 					</td>
 				</tr>
 				<!-- 
@@ -97,5 +94,24 @@
 		</form>
 	</div>
 </div>
+
+<script>
+
+	function chageExcode() {
+		let bname = $("#bname").val();
+		
+		if(bname == "Seo" || bname == "Kid") {
+			$("#btel").val("02-3701-9500");
+		} else if(bname == "Gwa") {
+			$("#btel").val("02-2188-6000");
+		} else if(bname == "Deok") {
+			$("#btel").val("02-2022-0600");
+		} else if(bname == "Cheong") {
+			$("#btel").val("043-261-1400");
+		} // if end
+	} // chageExcode() end
+	
+</script>
+
 
 <%@ include file="../footer.jsp" %>
