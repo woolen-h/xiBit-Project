@@ -20,7 +20,7 @@
 							<option value="Gwa">과천</option>
 							<option value="Deok">덕수궁</option>
 							<option value="Cheong">청주</option>
-							<option value="Kid">어린이박물관</option>
+							<option value="Kid">어린이미술관</option>
 						</select>
 					</td>
 				</tr>
@@ -87,7 +87,7 @@
 				<tr>
 					<td colspan="2" align="center">
 						<input type="submit" value="쓰기"> 
-						<input type="reset" value="취소">
+						<input type="reset" value="취소" onclick="javascript:history.back()">
 					</td>
 				</tr>
 			</table>
