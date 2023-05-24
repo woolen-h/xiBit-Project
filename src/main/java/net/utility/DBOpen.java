@@ -16,8 +16,8 @@ public class DBOpen {
 			String driver = "com.mysql.jdbc.Driver";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
-			System.out.println("database Connection Success");
-			
+			// System.out.println("database Connection Success");
+
 		} catch (Exception e) {
 			System.out.println("DB 연결 실패: " + e);
 		} // end
