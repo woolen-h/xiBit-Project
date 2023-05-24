@@ -321,6 +321,16 @@ public class MemberDAO {
 			
 			cnt=pstmt.executeUpdate();
 			
+			
+			sql=new StringBuilder();
+			sql.append(" DELETE FROM zzim ");
+			sql.append(" WHERE mid=? ");
+			
+			pstmt=con.prepareStatement(sql.toString());
+			pstmt.setString(1, dto.getMid());	
+			
+			cnt=pstmt.executeUpdate();
+			
 		} catch (Exception e) {
 			System.out.println("회원탈퇴 실패 : "+e);
 		}finally {

@@ -71,6 +71,31 @@ public class ZzimDAO {
 		
 		return cnt;
 	} // delete() end
+	
+	public int delete2(int excode) { // 작품 삭제됐을 때
+		int cnt = 0;
+
+		try {
+			con = dbopen.getConnection();
+
+			sql = new StringBuilder();
+			sql.append(" DELETE FROM zzim");
+			sql.append(" WHERE excode=?");
+
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, excode);
+
+			cnt = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("작품+찜 삭제 실패: " + e);
+			
+		} finally {
+			DBClose.close(con, pstmt);
+		} // try end
+		
+		return cnt;
+	} // delete() end
 
 	public ArrayList<ZzimDTO> list(String mid) {
 		ArrayList<ZzimDTO> list = null;

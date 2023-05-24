@@ -9,6 +9,8 @@
 		String saveDir = application.getRealPath("/storage");
 		
 		int cnt = dao.delete(excode,saveDir);
+		daoz.delete2(excode);
+		
 		if(cnt==0){
 			out.println("<p>삭제 실패했습니다.</p>");
 			out.println("<p><a href='javascript:history.back()'>[다시시도]</a></p>");
