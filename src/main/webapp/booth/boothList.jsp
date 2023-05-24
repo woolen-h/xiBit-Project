@@ -5,8 +5,8 @@
 <%@ include file="../header.jsp"%>
 
 <div class="content">
-	<h3>전시장 안내</h3>
-
+	<h3 class="booth_title">전시장 안내</h3>
+	<br>
 	<%
 	if (s_mlevel.equals("A1")) {
 	%>
