@@ -13,9 +13,9 @@
 	String[] bdaysarr = request.getParameterValues("bdays");
 	String bdays = "";
 	for (int i = 0; i < bdaysarr.length; i++) {
-		bdays += bdaysarr[i] + " ";
+		bdays += bdaysarr[i];
 		if (i < bdaysarr.length - 1) {
-			bdays += ",";
+			bdays += ", ";
 		} //if end
 	} //for end
 
@@ -24,9 +24,9 @@
 	String[] boffarr = request.getParameterValues("boffday");
 	String boffday = "";
 	for (int i = 0; i < boffarr.length; i++) {
-		boffday += boffarr[i] + " ";
+		boffday += boffarr[i];
 		if (i < boffarr.length - 1) {
-			boffday += ",";
+			boffday += ", ";
 		} //if end
 	} //for end
 

@@ -28,7 +28,7 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				sql = new StringBuilder();
-				sql.append(" INSERT INTO exh_booth(bname, bhour, boffday, btel)");
+				sql.append(" INSERT INTO exh_booth(bname, bdays, bhour, boffday, btel)");
 				sql.append(" VALUES(?, ?, ?, ?, ?)");
 
 				pstmt = con.prepareStatement(sql.toString());
