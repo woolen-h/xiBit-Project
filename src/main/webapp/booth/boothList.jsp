@@ -12,6 +12,8 @@
 	<div>
 		<table>
 			<tr>
+				<th>전시장 이미지</th>
+				
 				<th>전시장 이름</th>
 
 				<th>운영 요일</th>
@@ -44,6 +46,9 @@
 					dto = list.get(i);
 			%>
 			<tr>
+				<td>
+					<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getBimg()%>">
+				</td>
 				<td style="text-align: center;">
 					<a href="boothRead.jsp?bcode=<%=dto.getBcode()%>">
 						<%
