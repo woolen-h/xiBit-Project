@@ -12,7 +12,7 @@
 	
 		String bname = request.getParameter("bname").trim();
 		String bdays = request.getParameter("bdays").trim();
-		String bhour = request.getParameter("bhour").trim();
+		String bhour = request.getParameter("bhour1").trim() + "-" + request.getParameter("bhour2").trim();
 		String boffday = request.getParameter("boffday").trim();
 		String btel = request.getParameter("btel1").trim()+"-"+request.getParameter("btel2").trim()+"-"+request.getParameter("btel3").trim();
 		String bcode = request.getParameter("bcode");
