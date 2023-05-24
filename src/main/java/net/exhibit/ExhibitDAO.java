@@ -128,7 +128,7 @@ public class ExhibitDAO {
 
 			cnt = pstmt.executeUpdate();
 
-			System.out.println(dto.toString());
+			//System.out.println(dto.toString());
 		} catch (Exception e) {
 			System.out.println("게시 실패 : " + e);
 		} finally {
@@ -205,7 +205,7 @@ public class ExhibitDAO {
 			
 			cnt = pstmt.executeUpdate();
 			
-			System.out.println(dto);
+			//System.out.println(dto);
 		}catch(Exception e) {
 
 			System.out.println("수정 실패 : " + e);
