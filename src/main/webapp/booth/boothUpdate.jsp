@@ -51,7 +51,7 @@
 					<th>운영시간</th>
 					<td>
 					<%
-					String bhour1 = dto.getBhour().substring(0, 7);
+					String bhour1 = dto.getBhour().substring(0, 5);
 					%>
 						<!-- <input type="text" name="bhour" id="bhour" maxlength="50" value="<%=dto.getBhour()%>" required> -->
 						<select name="bhour1" id="bhour1">
@@ -64,7 +64,7 @@
 						</select>
 						-
 					<%
-					String bhour2 = dto.getBhour().substring(7);
+					String bhour2 = dto.getBhour().substring(6);
 					%>
 						<select name="bhour2" id="bhour2">
 							<option value="15:00" <%if (bhour2.equals("15:00")) { out.print("selected"); }%>>15:00</option>
