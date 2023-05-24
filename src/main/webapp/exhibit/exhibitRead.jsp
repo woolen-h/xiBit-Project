@@ -74,10 +74,16 @@
 			<!-- 버튼 -->
 			<br>
 			<div class="zzim_flex">
+<%
+			if (s_mlevel.equals("A1")) {
+%>
 			<div class="exh_edit_btn">
 			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
 			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
 			</div>
+<%
+			}
+%>
 <%			
 			if(!s_mid.equals("guest")) {%><!-- 로그인했을때만 노출 -->	
 				<!-- 예매버튼 -->
