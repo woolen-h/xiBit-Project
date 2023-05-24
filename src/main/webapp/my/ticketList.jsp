@@ -5,7 +5,7 @@
 <%@ include file="../header.jsp" %>
 
 <!-- 예약내역 -->
-<div class="in_content">
+<div class="content">
 	<div class="info_content">
 		<div class="info_tb_list">
 		<ul>
