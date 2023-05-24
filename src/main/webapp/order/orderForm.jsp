@@ -58,7 +58,7 @@
 	</tr>
 	<tr>
 		<th width="30%">사진</th>
-		<td><img src="../storage/<%=dtoE.getFilename()%>"></td>
+		<td><img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>"></td>
 	</tr>
 	<tr>
 		<th>전시명</th>
