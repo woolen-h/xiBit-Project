@@ -20,6 +20,9 @@ body {
 	background-position: center center;
 }
 /********************* 로그인 박스 설정 끝 *********************/
+.mem_login {
+	font-weight: bold;
+}
 .landing_page_13_15 {
 	display: flex;
 	justify-content: center;

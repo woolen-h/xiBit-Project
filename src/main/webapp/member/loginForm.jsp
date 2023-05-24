@@ -51,7 +51,7 @@
 			//ID저장 쿠키 확인 끝/////////////////////////////////////////////////////
 		%>
 		<form name="loginfrm" id="loginfrm" method="post" action="loginProc.jsp" onsubmit="return loginCheck()"><!-- myscript.js -->
-			<div id="font" style="font-size: 30px;"><h6>Login</h6></div>
+			<div id="font" style="font-size: 30px;"><h6 class="mem_login">Login</h6></div>
 			<br><br><br>
 			
 			<input class="button" type="button" value="sign up" onclick="location.href='agreement.jsp'">
