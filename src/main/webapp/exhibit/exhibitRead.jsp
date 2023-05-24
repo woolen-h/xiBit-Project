@@ -13,63 +13,56 @@
 			out.print("글 없음");
 		}else{
 %>
-		<!-- 일단 게시판 형식으로 출력 -->
-			<div class="exh_cont">
+		<div class="exh_cont">
 			<table>
-			<tr>
-				<th width="30%">사진</th>
-				<td><img src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getFilename()%>"></td>
-			</tr>
-			<tr>
-				<th>전시코드</th>
-				<td><%=dto.getExcode()%></td>
-			</tr>
-			<tr>
-				<th>전시명</th>
-				<td><%=dto.getExname()%></td>
-			</tr>
-			<tr>
-				<th>전시장소</th>
-				<td><%if(dto.getBcode().equals("Seo")){out.print("서울");}else
-					  if(dto.getBcode().equals("Gwa")){out.print("과천");}else
-					  if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
-				      if(dto.getBcode().equals("Cheong")){out.print("청주");}else
-				      if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%></td>
-				
-			</tr>
-			<tr>
-				<th>내용</th>
-				<td class="exh_read_content">
-<%
-				//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
-				String content = Utility.convertChar(dto.getContents());
-				out.print(content);
-%>
+				<tr>
+				<td width="30%" height="30%"><img src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getFilename()%>"></td>
+				<td align="center" valign="top">
+					<table>
+						<tr>
+							<th>전시명</th>
+							<td><%=dto.getExname()%></td>
+						</tr>
+						<tr>
+							<th>전시장소</th>
+							<td>
+							<%if(dto.getBcode().equals("Seo")){out.print("서울");}else
+					       	  if(dto.getBcode().equals("Gwa")){out.print("과천");}else
+					       	  if(dto.getBcode().equals("Deok")){out.print("덕수궁");}else
+				           	  if(dto.getBcode().equals("Cheong")){out.print("청주");}else
+				           	  if(dto.getBcode().equals("Kid")){out.print("어린이박물관");}%>
+				           	</td>
+						</tr>
+						<tr>
+							<th>문의번호</th>
+							<td><%=dto.getTel()%></td>
+						</tr>
+						<tr>
+							<th>작가</th>
+							<td><%=dto.getAuthor()%></td>
+						</tr>
+						<tr>
+							<th>작품수</th>
+							<td><%=dto.getExcnt()%></td>
+						</tr>
+						<tr>
+							<th>예매가</th>
+							<td><%=dto.getPrice()%></td>
+						</tr>
+					</table>
 				</td>
-			</tr>
-			<tr>
-				<th>작가</th>
-				<td><%=dto.getAuthor()%></td>
-			</tr>
-			<tr>
-				<th>전시기간</th>
-				<td><%=dto.getExstart().substring(0,11)%> ~ <%=dto.getExend().substring(0,11)%></td>
-			</tr>
-			<tr>
-				<th>작품수</th>
-				<td><%=dto.getExcnt()%></td>
-			</tr>
-			<tr>
-				<th>가격</th>
-				<td><%=dto.getPrice()%></td>
-			</tr>
-			<tr>
-				<th>문의번호</th>
-				<td><%=dto.getTel()%></td>
-			</tr>
+				</tr>
+				<tr>
+					<td class="exh_read_content">
+<%
+					//특수문자 및 엔터 그대로 받을수 있게 문자 치환하기
+					String content = Utility.convertChar(dto.getContents());
+					out.print(content);
+%>
+					</td>
+				</tr>
 			</table>
-			</div>
-			
+		</div>
 			<!-- 버튼 -->
 			<br>
 			<div class="zzim_flex">
