@@ -431,6 +431,43 @@ body::-webkit-scrollbar-track {
 .exh_read_content {
 	line-height: 175%;
 }
+.exh_cont {
+	margin-top: 40px;
+}
+.exh_list_btn1{
+    box-sizing: border-box;
+    background-color: rgba(
+    201.8750050663948,
+    201.8750050663948,
+    201.8750050663948,
+    1);
+    width: 80px;
+    height: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+}
+.exh_list_btn2{
+    box-sizing: border-box;
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+    width: 80px;
+    height: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+}
 .component_8_121_36 {
     width: 1800px;
     display: flex;

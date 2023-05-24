@@ -5,7 +5,6 @@
         <div class="content">
         <!-- 본문 시작 exhibitRead.jsp -->
 		<h3 class="booth_title"> 전시 상세보기 </h3>
-		<a href="exhibition_tab.jsp">[목록으로]</a>
 		
 <%
 		int excode = Integer.parseInt(request.getParameter("excode"));		
@@ -15,7 +14,7 @@
 		}else{
 %>
 		<!-- 일단 게시판 형식으로 출력 -->
-			<div>
+			<div class="exh_cont">
 			<table>
 			<tr>
 				<th width="30%">사진</th>
@@ -87,7 +86,8 @@
 <%			
 			if(!s_mid.equals("guest")) {%><!-- 로그인했을때만 노출 -->	
 				<!-- 예매버튼 -->
-				<input type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
+				<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록으로</a></div>
+				<input class="exh_list_btn2" type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
 				<div class="right_area">
 				  <a href="javascript:;" class="icon heart">
 				     <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
@@ -97,6 +97,7 @@
 <%			}		
 		}
 %>
+		
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>
