@@ -30,8 +30,7 @@
 		} //if end
 	} //for end
 
-	String btel = request.getParameter("btel1").trim() + "-" + request.getParameter("btel2").trim() + "-"
-			+ request.getParameter("btel3").trim();
+	String btel = request.getParameter("btel").trim();;
 
 	dto.setBname(bname);
 	dto.setBdays(bdays);

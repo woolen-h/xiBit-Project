@@ -14,7 +14,7 @@
 				<tr>
 					<th>전시장 이름</th>
 					<td>
-						<select name="bname" id="bname">
+						<select name="bname" id="bname" onchange="chageExcode(this.value);">
 							<option>-- 전시장 --</option>
 							<option value="Seo">서울</option>
 							<option value="Gwa">과천</option>
