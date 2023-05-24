@@ -9,12 +9,13 @@
 	<p><a href="boothList.jsp">[목록]</a></p>
 	
 	<div class="container">
-		<form name="boothfrm" id="boothfrm" method="post" action="boothIns.jsp" onsubmit="return boothCheck()">
+		<!-- <form name="boothfrm" id="boothfrm" action="boothIns.jsp" method="post" enctype="multipart/form-data" onsubmit="return boothCheck()"> -->
+		<form name="boothfrm" action="boothIns.jsp" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<th>전시장 이름</th>
 					<td>
-						<select name="bname" id="bname" onchange="chageExcode(this.value);">
+						<select name="bname" id="bname" onchange="chageExcode(this.value);" required>
 							<option>-- 전시장 --</option>
 							<option value="Seo">서울</option>
 							<option value="Gwa">과천</option>
@@ -76,14 +77,12 @@
 						<input type="text" name="btel" id="btel" size="11" maxlength="11" required>
 					</td>
 				</tr>
-				<!-- 
 				<tr>
 				    <th>첨부파일</th>
 				    <td style="text-align: left">
-				    	<input type="file" name="bimg" id="bimg" required>
+				    	<input type="file" name="bimg" id="bimg">
 				    </td>
 				</tr>
-				 --> 
 				<tr>
 					<td colspan="2" align="center">
 						<input type="submit" value="쓰기"> 

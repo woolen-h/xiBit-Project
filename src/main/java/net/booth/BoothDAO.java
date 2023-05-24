@@ -28,8 +28,8 @@ public class BoothDAO {
 				con = dbopen.getConnection();
 
 				sql = new StringBuilder();
-				sql.append(" INSERT INTO exh_booth(bname, bdays, bhour, boffday, btel)");
-				sql.append(" VALUES(?, ?, ?, ?, ?)");
+				sql.append(" INSERT INTO exh_booth(bname, bdays, bhour, boffday, btel, bimg)");
+				sql.append(" VALUES(?, ?, ?, ?, ?, ?)");
 
 				pstmt = con.prepareStatement(sql.toString());
 				pstmt.setString(1, dto.getBname());
@@ -37,6 +37,7 @@ public class BoothDAO {
 				pstmt.setString(3, dto.getBhour());
 				pstmt.setString(4, dto.getBoffday());
 				pstmt.setString(5, dto.getBtel());
+				pstmt.setString(6, dto.getBimg());
 				
 				cnt = pstmt.executeUpdate();
 			} catch (Exception e) {
