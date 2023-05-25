@@ -1,6 +1,6 @@
 
  /*----------------------------- 캐러셀 메뉴 구현 -----------------------------------*/
-const flexplz = document.querySelector(".flexplz");
+/*const flexplz = document.querySelector(".flexplz");
 const slideLength = document.querySelectorAll('.flexplz li').length;
 let currentSlide = 1;
 const IMAGE_WIDTH = 930;
@@ -14,7 +14,7 @@ function wheel(e){
   }
   flexplz.style.transform = `translateX(-${IMAGE_WIDTH * currentSlide}px)`;
   currentSlide++;
-}
+}*/
  /*----------------------------- 캐러셀 메뉴 구현 끝 -----------------------------------*/
 
 function pwCheck(){	

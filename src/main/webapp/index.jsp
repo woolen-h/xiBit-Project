@@ -49,25 +49,32 @@
 			</div>
   		</div><!-- nav end -->
         <div class="content-box">
-		        <div class="carousel_box">
-		        	<ul class="flexplz">
-			        	<li>
+		        <div class="slide">
+		        	<ul class="slide__list">
+			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="c_img1" alt="artwork" src="https://mdl.artvee.com/sftb/202837fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/202837fg.jpg"/>
 			        	</li>
-			        	<li>
+			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="c_img2" alt="artwork" src="https://mdl.artvee.com/sftb/223059fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/223059fg.jpg"/>
 			        	</li>
-			        	<li>
+			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="c_img3" alt="artwork" src="https://mdl.artvee.com/sftb/601146sl.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/601146sl.jpg"/>
+			        	</li>
+			        	<li class="slide__item">
+			        	<!-- 각 전시의 포스터 이미지 -->
+			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/226944fg.jpg"/>
+			        	</li>
+			        	<li class="slide__item">
+			        	<!-- 각 전시의 포스터 이미지 -->
+			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/205393fg.jpg"/>
 			        	</li>
 				    </ul>
+					<div class="paginations"></div>
 		        </div>
-		        <div class="content-scr">
-		        전시가 있어용
-		        </div>
+		        <script src="js/app.js"></script>
 	        </div>
         </div>
   </body>
