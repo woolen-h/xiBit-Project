@@ -36,14 +36,6 @@
 				<%
 				for (int i = 0; i < list.size(); i++) {
 					dto = list.get(i);
-					if (i % 5 == 0 && i != 0) {
-				%>
-			</div>
-			<!-- component_8_121_36 end -->
-			
-			<div class="component_8_121_36">
-				<%
-				}//if end
 				%>
 
 				<div class="component_1_121_35"
