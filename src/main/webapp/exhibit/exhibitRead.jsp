@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -50,11 +51,16 @@
 							</tr>
 							<tr>
 								<th>작품수</th>
-								<td><%=dto.getExcnt()%></td>
+								<td><%=dto.getExcnt()%> 점</td>
 							</tr>
 							<tr>
 								<th>예매가</th>
-								<td><%=dto.getPrice()%></td>
+								<td>
+<%
+								DecimalFormat df = new DecimalFormat("#,###");
+								String price = df.format(dto.getPrice());
+%>
+								<%=price%> 원</td>
 							</tr>
 						</table>
 					</div>
