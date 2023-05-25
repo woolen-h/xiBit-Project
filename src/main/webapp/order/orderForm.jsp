@@ -26,6 +26,7 @@
 		out.print("글 없음");
 	}else{
 %>
+	<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
 	<div style="padding-bottom:30px; border-bottom: solid 1px black;">
 		<h1 class="order_title" style="font-size:32px;"><%=dtoE.getExname()%></h1>
 	</div>
@@ -54,6 +55,7 @@
 			        
 			    }
 			</script>
+			<!-- 달력 -->
 			<div class="calendar-wrap">
 		    <div class="calendar-middle-wrap">
 		      <!-- 상단 -->
@@ -93,10 +95,11 @@
 		    </div>
 			</div>
 		</div>
+		<!-- 달력끝 -->
 	</div> <!-- class : calender_full -->
 	</div> <!-- class : my_order_flex -->
 <!-----------금액정보------------------------------------------------------------------>
-	<div class="my_order_content">
+	<div>
 <%
 	int priceA=dtoE.getPrice();
 	double priceC=priceA*0.5;
@@ -131,11 +134,16 @@
 		</td>
 		<td class="totalcost2"></td>
 	</tr>
+	<tr>
+		<td>합계</td>
+		<td class="totalprice"></td>
+		<td>원</td>
+		<td><input type="hidden" id="price" name="price" value=""></td>
+	</tr>
 	</table>
 	</div>
 	<hr>
-	</form>
-	</div> <!-- class : content -->
+<!-----------주문정보------------------------------------------------------------------>
 	<!-- 주문 정보 -->
 	<!-- class : order_check_content -->
 	<div class="order_check_content">
@@ -166,7 +174,10 @@
 		<div class="ord_sub_flex">
 			<input type="submit" value="결제하기" class="ord_submit">
 		</div>
+	</div>
+	</form>
 	</div> <!-- class : order_cancel -->
+	</div>
 <!----------------------------------------------------------------------------->  
 	
 <script>
