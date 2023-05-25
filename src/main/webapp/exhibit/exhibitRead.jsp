@@ -5,7 +5,7 @@
         <div class="content">
         <!-- 본문 시작 exhibitRead.jsp -->
 		<h3 class="booth_title"> 전시 상세보기 </h3>
-		
+		<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록</a></div>
 <%
 		int excode = Integer.parseInt(request.getParameter("excode"));		
 		dto = dao.read(excode);
@@ -74,8 +74,9 @@
 			if (s_mlevel.equals("A1")) {
 %>
 			<div class="exh_edit_btn">
-			<input type="button" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
-			<input type="button" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
+			<input type="button" class="exh_list_btn4" value="수정" onclick="location.href='exhibitUpdate.jsp?excode=<%=excode%>'">
+			<!-- <input type="button" class="button" value="삭제" onclick="return deleteCheck()">  -->
+			<input type="button" class="exh_list_btn3" value="삭제" onclick="location.href='exhibitDel.jsp?excode=<%=excode%>'"> 
 			</div>
 <%
 			}
@@ -83,7 +84,6 @@
 <%			
 			if(!s_mid.equals("guest")) {%><!-- 로그인했을때만 노출 -->	
 				<!-- 예매버튼 -->
-				<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록으로</a></div>
 				<input class="exh_list_btn2" type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
 				<div class="right_area">
 				  <a href="javascript:;" class="icon heart">
@@ -94,7 +94,6 @@
 <%			}		
 		}
 %>
-		
         <!-- 본문 끝 -->
         </div>
     <%@ include file="../footer.jsp" %>
