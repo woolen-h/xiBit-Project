@@ -14,19 +14,23 @@
 	%>
 	    <div class=content_120_3>
            <div class=ex_top_bar>
-           	<div>
-           		<input class="button" value="과거 전시" onclick="location.href='exhibitPast.jsp'">
-            </div>
+           	<select class="location_9_113" name="direction" id="direction">
+              <option class="___9_114" selected>위치</option>
+              <option class="___9_114">서울</option>
+              <option class="___9_114">과천</option>
+              <option class="___9_114">덕수궁</option>
+              <option class="___9_114">청주</option>
+              <option class="___9_114">어린이미술관</option>
+           	</select>
             <div class="continue_9_145">
 	            <span  class="__________9_146">
 	            	현재 진행중 전시
 	            </span>
             </div>
-            
-	        <div>
-           		<input class="button" value="예정 전시" onclick="location.href='exhibitFuture.jsp'">
-            </div>
-	        
+	        <select class="newest_9_143">
+            	<option class="____9_144">최신순</option>
+            	<option class="____9_144">예매순</option>
+	        </select>
            </div>
 		<%
 		ArrayList<ExhibitDTO> list = dao.listNow();
