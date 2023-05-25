@@ -255,6 +255,8 @@ body::-webkit-scrollbar-track {
 .slide {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 650px;
 }
 
 .slide__list {
@@ -265,31 +267,16 @@ body::-webkit-scrollbar-track {
 .slide__item {
   flex: 0 0 100%;
   list-style: none;
+  width: 100%;
+  height: 650px;
 }
 
 .slide__image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-.paginations {
-  padding-top: 1rem;
-  text-align: center;
-}
-.pagination {
-  width: 12px;
-  height: 12px;
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-}
-.pagination:not(:last-child) {
-  margin-right: 0.3rem;
-}
-
-.pagination.on {
-  background: #333;
+  object-fit: contain;
+  background-color: white;
 }
 /*********************************** 캐러셀 박스 구현 끝 ***********************************/
 

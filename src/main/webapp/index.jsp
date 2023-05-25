@@ -53,23 +53,23 @@
 		        	<ul class="slide__list">
 			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/202837fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/400108mtsdl.jpg"/>
 			        	</li>
 			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/223059fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/404795mtsdl.jpg"/>
 			        	</li>
 			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/601146sl.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/507151ldsdl.jpg"/>
 			        	</li>
 			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/226944fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/509626ldsdl.jpg"/>
 			        	</li>
 			        	<li class="slide__item">
 			        	<!-- 각 전시의 포스터 이미지 -->
-			        	<img class="slide__image" alt="artwork" src="https://mdl.artvee.com/sftb/205393fg.jpg"/>
+			        	<img class="slide__image" alt="artwork" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/602662slsdl.jpg"/>
 			        	</li>
 				    </ul>
 					<div class="paginations"></div>
