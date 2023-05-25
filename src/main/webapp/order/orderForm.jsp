@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
     
 <%@page import="java.util.Date" %>
 <%@page import="java.text.SimpleDateFormat" %>    
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+ 
   
 <%@ include file="ssi.jsp" %>    
-<%@ include file="ordheader.jsp" %>
 
  
   
