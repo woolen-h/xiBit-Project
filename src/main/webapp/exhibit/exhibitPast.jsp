@@ -18,7 +18,7 @@
            		<input class="button" value="현재 전시" onclick="location.href='exhibition_tab.jsp'">
             </div>
             <div class="continue_9_145">
-	            <span  class="__________9_146">
+	            <span  class="__________9_146" style="font-weight:bold; font-size:20pt">
 	            	과거 전시
 	            </span>
             </div>
