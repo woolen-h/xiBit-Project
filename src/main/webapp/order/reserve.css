@@ -37,24 +37,14 @@ ul {
 
 /* Calendar ---------------------------------------------------- */
 .calendar-wrap {
-    max-width: 1175px;
-    padding-top: 50px;
+    width: 100%;
     margin: 0 auto;
     font-family: "NanumSquareR";
     display: flex;
-    gap: 2%;
-    margin-bottom: 20px;
 }
-
-.calendar-wrap>div {}
-
-.calendar-middle-wrap {
-    background: #fafbfa;
-    width: 34%;
-    padding: 40px 32px;
-    padding-bottom: 100px;
+.calendar-middle-wrap{
+    width: 100%;
 }
-
 .checkInOutInfo {
     width: 100%;
     justify-content: center;
@@ -62,7 +52,6 @@ ul {
     background: #fafbfa;
     position: relative;
 }
-
 .calendar-wrap .cal_nav {
     display: flex;
     justify-content: center;
@@ -71,20 +60,17 @@ ul {
     font-size: 48px;
     line-height: 78px;
 }
-
 .calendar-wrap .cal_nav .year-month {
     width: 300px;
     text-align: center;
     line-height: 1;
     font-size: 20px;
 }
-
 .calendar-wrap .cal_nav .nav {
     display: flex;
     border: 1px solid #333333;
     border-radius: 5px;
 }
-
 .calendar-wrap .cal_nav .go-prev,
 .calendar-wrap .cal_nav .go-next {
     display: block;
@@ -94,7 +80,6 @@ ul {
     justify-content: center;
     align-items: center;
 }
-
 .calendar-wrap .cal_nav .go-prev::before,
 .calendar-wrap .cal_nav .go-next::before {
     content: "";

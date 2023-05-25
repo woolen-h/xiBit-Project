@@ -12,10 +12,9 @@
  
   
 <div class="content">
-	<div class="info_content">
-	<div class="my_container">
-<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
-<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
+	<div class="my_order_container">
+		<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
+		<input type="hidden" name="mid" id="mid" value="<%=s_mid %>"
 <!-- 주문서 -->
 <!-----------전시정보------------------------------------------------------------------>
 <%
@@ -27,80 +26,77 @@
 		out.print("글 없음");
 	}else{
 %>
-	
 	<div style="padding-bottom:30px; border-bottom: solid 1px black;">
-		<h1 style="font-size:32px;"><%=dtoE.getExname()%></h1>
+		<h1 class="order_title" style="font-size:32px;"><%=dtoE.getExname()%></h1>
 	</div>
-	<div style="width:30%; margin:30px; padding-left:3%; float:left;">
-			<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
+	<div class="my_order_flex" >
+		<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
+		<div class="calender_full">
+			<input type="hidden" id="excode" name="excode" value="<%=excode %>">
+			<input type="hidden" id="ordernum" name="ordernum" value="">
+			<script>
+				getCurrentDate();
+				
+				function getCurrentDate()
+			    {
+					var excode=parseInt(document.getElementById("excode").value);
+					var date = new Date();
+			        var year = date.getFullYear().toString();
+	
+			        var month = date.getMonth() + 1;
+			        month = month < 10 ? '0' + month.toString() : month.toString();
+	
+			        var day = date.getDate();
+			        day = day < 10 ? '0' + day.toString() : day.toString();
+			        
+			        document.getElementById("ordernum").value=year+ month + day + String(excode).padStart(4, '0');
+			        
+			        
+			    }
+			</script>
+			<div class="calendar-wrap">
+		    <div class="calendar-middle-wrap">
+		      <!-- 상단 -->
+		      <div class="cal_nav">
+		      	<!-- 이전 달 -->
+		        <a href="javascript:;" class="nav-btn go-prev"></a>
+		        <!-- 달력 월 표시 -->
+		        <span class="year-month start-year-month"></span>
+		        <!-- 다음 달 -->
+		        <a href="javascript:;" class="nav-btn go-next"></a>
+		      </div>
+		      <!-- 달력시작 -->
+		      <div class="cal_wrap">
+		      	<!-- 요일 -->
+		        <div class="days">
+		          <div class="day">일</div>
+		          <div class="day">월</div>
+		          <div class="day">화</div>
+		          <div class="day">수</div>
+		          <div class="day">목</div>
+		          <div class="day">금</div>
+		          <div class="day">토</div>
+		        </div>
+		        <!-- 현재 월 달력 -->
+		        <div class="dates start-calendar"></div>
+		        <input type="hidden" id="sdate" name="sdate" value="">
+		      </div>
+		      <br>
+		      <br>
+		      <div class="checkInOutInfo">
+		      <div>
+		        <p>
+		        <!-- 선택 날 표시 -->
+		          <label id="check_in_day"></label>
+		        </p>
+		      </div>
+		    </div>
+			</div>
 		</div>
-	<div style="width:60%; float:right; margin-top:30px;">
-		<input type="hidden" id="excode" name="excode" value="<%=excode %>">
-		<input type="hidden" id="ordernum" name="ordernum" value="">
-		<script>
-			getCurrentDate();
-			
-			function getCurrentDate()
-		    {
-				var excode=parseInt(document.getElementById("excode").value);
-				var date = new Date();
-		        var year = date.getFullYear().toString();
-
-		        var month = date.getMonth() + 1;
-		        month = month < 10 ? '0' + month.toString() : month.toString();
-
-		        var day = date.getDate();
-		        day = day < 10 ? '0' + day.toString() : day.toString();
-		        
-		        document.write(year+ month + day + String(excode).padStart(4, '0'));
-		        
-		        document.getElementById("ordernum").value=year+ month + day + String(excode).padStart(4, '0');
-		        
-		        
-		    }
-		</script>
-		<div class="calendar-wrap">
-	    <div class="calendar-middle-wrap">
-	      <!-- 상단 -->
-	      <div class="cal_nav">
-	      	<!-- 이전 달 -->
-	        <a href="javascript:;" class="nav-btn go-prev"></a>
-	        <!-- 달력 월 표시 -->
-	        <span class="year-month start-year-month"></span>
-	        <!-- 다음 달 -->
-	        <a href="javascript:;" class="nav-btn go-next"></a>
-	      </div>
-	      <!-- 달력시작 -->
-	      <div class="cal_wrap">
-	      	<!-- 요일 -->
-	        <div class="days">
-	          <div class="day">일</div>
-	          <div class="day">월</div>
-	          <div class="day">화</div>
-	          <div class="day">수</div>
-	          <div class="day">목</div>
-	          <div class="day">금</div>
-	          <div class="day">토</div>
-	        </div>
-	        <!-- 현재 월 달력 -->
-	        <div class="dates start-calendar"></div>
-	        <input type="hidden" id="sdate" name="sdate" value="">
-	      </div>
-	      <br>
-	      <br>
-	      <div class="checkInOutInfo">
-	      <div>
-	        <p>
-	        <!-- 선택 날 표시 -->
-	          <label id="check_in_day"></label>
-	        </p>
-	      </div>
-	    </div>
-	    </div>
-		</div>
-	</div>
+	</div> <!-- class : calender_full -->
+	</div> <!-- class : my_order_flex -->
 <!-----------금액정보------------------------------------------------------------------>
-	<div class="content">
+	<div class="my_order_content">
 <%
 	int priceA=dtoE.getPrice();
 	double priceC=priceA*0.5;
@@ -138,42 +134,39 @@
 	</table>
 	</div>
 	<hr>
-	
-<!-----------주문정보------------------------------------------------------------------>
-	
-	<div class="content">
+	</form>
+	</div> <!-- class : content -->
+	<!-- 주문 정보 -->
+	<!-- class : order_check_content -->
+	<div class="order_check_content">
 		<div style="padding-bottom:35px; margin-top:10px;">
-		<h1 style="font-size:23px;">예약자 확인</h1></div>
+		<h1 class="order_title" style="font-size:23px;">예약자 확인</h1></div>
 	
-		<div style="background-color:LightGrey; width:70%; heigth:100px;">
+		<div class="order_check_user">
 			<p><%=dtoM.getMname()%> / <%=dtoM.getTel()%> / <%=dtoM.getEmail()%></p>
 		</div>
 	
-	</div>
-	
-	
-	
-	<!-- 취소/환불 규정 -->
-	<tr>
-		<th colspan="2" style="text-align:left">취소/환불 규정</th>
-	</tr>
-	<tr>
-		<td>이용 1일 전까지</td>
-		<td>결제금액에 대한 취소 수수료 없음</td>
-	</tr>
-	<tr>
-		<td>이용 당일</td>
-		<td>취소 불가</td>
-	</tr>
-	</table>
-	</div>
-	<div class="ord_sub_flex">
-	<input type="submit" value="결제하기" class="ord_submit">
-	</div>
-	</form>
-	</div>
-	</div>
-	</div>
+	</div> <!-- class : order_check_content --> <!-- 주문 정보 -->
+	<!-- class : order_cancel -->
+	<div class="order_cancel">
+		<table>
+			<!-- 취소/환불 규정 -->
+			<tr>
+				<th colspan="2" style="text-align:left">취소/환불 규정</th>
+			</tr>
+			<tr>
+				<td>이용 1일 전까지</td>
+				<td>결제금액에 대한 취소 수수료 없음</td>
+			</tr>
+			<tr>
+				<td>이용 당일</td>
+				<td>취소 불가</td>
+			</tr>
+		</table>
+		<div class="ord_sub_flex">
+			<input type="submit" value="결제하기" class="ord_submit">
+		</div>
+	</div> <!-- class : order_cancel -->
 <!----------------------------------------------------------------------------->  
 	
 <script>
