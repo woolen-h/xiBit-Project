@@ -30,7 +30,7 @@
 		}else{
 			out.println("<script>");
 			out.println("	alert('회원가입되었습니다');");
-			out.println("	location.href='loginForm.jsp';");//목록페이지 이동
+			out.println("	location.href='../index.jsp';");//목록페이지 이동
 			out.println("</script>");
 		}//if end
 	%>

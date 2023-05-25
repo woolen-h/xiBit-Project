@@ -72,12 +72,13 @@
 		<%
 		}else{
 			//로그인 성공했다면	
-			out.println("<strong>"+ s_mid + "</strong>님");
+			out.println("<strong>ID "+ s_mid + "</strong>");
 			out.println("<br>");
-			out.println("좋은하루 보내세용");
-			out.println("<br><br>");
+			out.println("<br>");
 		%>
-			<input type='button' value='logout' class='btn btn-warning' onclick="location.href='logout.jsp'">
+		<input type='button' value='HOME' class='btn' onclick="location.href='../index.jsp'">
+		
+<%-- 			<input type='button' value='logout' class='btn btn-warning' onclick="location.href='logout.jsp'">
 		
 			<br><br>
 			<a href='../my/myList.jsp?mid=<%=s_mid%>'>[마이페이지]</a>
@@ -86,7 +87,7 @@
 			<a href='memberModify.jsp?mid=<%=s_mid%>'>[회원정보수정]</a>
 			<br>
 			&nbsp;&nbsp;
-			<a href='memberWithdraw.jsp?mid=<%=s_mid%>'>[회원탈퇴]</a>
+			<a href='memberWithdraw.jsp?mid=<%=s_mid%>'>[회원탈퇴]</a> --%>
 		<%
 		}//if end
 		%>

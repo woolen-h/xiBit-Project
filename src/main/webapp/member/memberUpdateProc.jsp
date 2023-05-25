@@ -13,7 +13,7 @@
 	String mname = request.getParameter("mname").trim();
 	String jomin1 = request.getParameter("jomin1").trim();
 	String jomin2 = request.getParameter("jomin2").trim();
-	String tel = request.getParameter("tel").trim();
+	String tel = request.getParameter("tel1").trim()+"-"+request.getParameter("tel2").trim()+"-"+request.getParameter("tel3").trim();
 	String email = request.getParameter("email").trim();
 
 	
@@ -31,7 +31,7 @@
 	}else{
 		out.println("<script>");
 		out.println("	alert('회원정보가 수정되었습니다');");
-		out.println("	location.href='loginForm.jsp';");//목록페이지 이동
+		out.println("	location.href='../index.jsp';");//목록페이지 이동
 		out.println("</script>");
 	}//if end
 %>
