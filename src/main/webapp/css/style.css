@@ -239,7 +239,7 @@ body::-webkit-scrollbar-track {
 	font-family: Inter;	
 }
   /*********************************** 캐러셀 박스 구현 시작 ***********************************/
-.carousel_box {
+/* .carousel_box {
 	width: 930px;
 	height: 930px;
 	overflow: hidden;
@@ -251,6 +251,32 @@ body::-webkit-scrollbar-track {
 .flexplz img {
 	width: 930px;
 	object-fit: cover;
+} */
+.slide {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 650px;
+}
+
+.slide__list {
+  display: flex;
+  transform: translate(0, 0);
+}
+
+.slide__item {
+  flex: 0 0 100%;
+  list-style: none;
+  width: 100%;
+  height: 650px;
+}
+
+.slide__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: white;
 }
 /*********************************** 캐러셀 박스 구현 끝 ***********************************/
 
