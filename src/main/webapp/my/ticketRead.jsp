@@ -40,7 +40,7 @@
 			
 		
 		<div style="width:30%; margin:30px; padding-left:3%; float:left;">
-			<img class="img" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
+			<img class="myimg" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
 		</div>
 		<div style="width:60%; float:right; margin-top:30px;">
 		<div style="margin-top:40px;">
@@ -61,7 +61,7 @@
 		</div>
 		</div>
 <!------------------예매정보------------------>
-		<div class="content">
+		<div>
 		<div style="padding-bottom:25px; border-bottom: solid 2px black; margin-top:10px;">
 		<h1 style="font-size:26px;">예매정보</h1></div>
 		<table class="info_tb">

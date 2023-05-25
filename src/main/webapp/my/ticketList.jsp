@@ -45,11 +45,11 @@
 							int excode = dto.getExcode();
 							dtoE = daoE.read(excode);
 					%>
-					<li style="display:flex; margin-left:50px;padding:50px; border-bottom:1px solid grey;">
+					<li style="display:flex; margin-left:50px; padding:20px; border-bottom:1px solid grey;">
 					<div style="width:28%; margin:15px;">
 						<img class="myimg" src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dtoE.getFilename()%>">
 					</div>
-					<div style="width:60%;  margin-top:20px; margin-left:60px;">
+					<div style="width:100%;  margin-top:20px; margin-left:70px;">
 					<div style="margin-top:20px;">
 						<p style="font-weight:bold; font-size:13px; margin:30px;">관람예정일로부터 일 <br><br>남았습니다.</p>
 						<p style="font-weight:bold; font-size:20px; margin:30px;"><a href="ticketRead.jsp?ordernum=<%=dto.getOrdernum()%>"><%=dtoE.getExname()%></a></p>
