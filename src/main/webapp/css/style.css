@@ -107,41 +107,6 @@ body::-webkit-scrollbar-track {
 	align-items: center;
 	justify-content: space-between;
 }
-.home_13_17 {
-  color: rgba(0, 0, 0, 1);
-  font-family: Inter;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0;
-}
-.exhibition_13_18 {
-  color: rgba(0, 0, 0, 1);
-  font-family: Inter;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0;
-}
-.info_13_19 {
-  color: rgba(0, 0, 0, 1);
-  font-family: Inter;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0;
-}
-.event_13_20 {
-  color: rgba(0, 0, 0, 1);
-  font-family: Inter;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0;
-}
-  .booth_13_21{
-  color: rgba(0, 0, 0, 1);
-  font-family: Inter;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 0;
-  }
 .nav_2{
 	display: flex;
 	align-items: center;
@@ -1025,4 +990,285 @@ select option {
 	height: 30px;
 	text-align: center;
 	font-size: 8pt;
+}
+
+
+
+/* Calendar ---------------------------------------------------- */
+.calendar-wrap {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "NanumSquareR";
+    display: flex;
+}
+.calendar-middle-wrap{
+    width: 100%;
+}
+.checkInOutInfo {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #fafbfa;
+    position: relative;
+}
+.calendar-wrap .cal_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 78px;
+}
+.calendar-wrap .cal_nav .year-month {
+    width: 300px;
+    text-align: center;
+    line-height: 1;
+    font-size: 20px;
+}
+.calendar-wrap .cal_nav .nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+.calendar-wrap .cal_nav .go-prev,
+.calendar-wrap .cal_nav .go-next {
+    display: block;
+    width: 50px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar-wrap .cal_nav .go-prev::before,
+.calendar-wrap .cal_nav .go-next::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-width: 3px 3px 0 0;
+    transition: border 0.1s;
+}
+
+.calendar-wrap .cal_nav .go-prev::before {
+    transform: rotate(-135deg);
+}
+
+.calendar-wrap .cal_nav .go-next::before {
+    transform: rotate(45deg);
+}
+
+.calendar-wrap .cal_wrap {
+    padding-top: 40px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.calendar-wrap .cal_wrap::after {
+    top: 368px;
+}
+
+.calendar-wrap .cal_wrap .dates {
+    display: flex;
+    flex-flow: wrap;
+    height: 290px;
+}
+
+.calendar-wrap .cal_wrap .days {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.calendar-wrap .cal_wrap .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    text-align: left;
+    color: #2d1d0b;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar-wrap .cal_wrap .day span {
+    z-index: 5;
+}
+
+.calendar-wrap .cal_wrap .day .check_in_out_p {
+    position: absolute;
+    left: 50%;
+    top: 47px;
+    transform: translateX(-50%);
+    font-size: 12px;
+    width: 100%;
+    color: var(--blue);
+}
+
+.calendar-wrap .cal_wrap .checkIn span {
+    color: #fff;
+}
+
+.calendar-wrap .cal_wrap .checkOut span {
+    color: #fff;
+}
+
+.calendar-wrap .cal_wrap .selectDay {
+    position: relative;
+}
+
+
+
+.calendar-wrap .cal_wrap .checkIn.selectDay::before {
+    left: 50%;
+    width: 50%;
+}
+
+.calendar-wrap .cal_wrap .checkOut.selectDay::before {
+    width: 50%;
+}
+
+.calendar-wrap .cal_wrap .checkIn::after,
+.calendar-wrap .cal_wrap .checkOut::after,
+.calendar-wrap .cal_wrap .checkIn::after {
+    content: '';
+    background: var(--blue);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.calendar-wrap .cal_wrap .day:nth-child(7n -6) {
+    color: #ed2a61;
+}
+
+.calendar-wrap .cal_wrap .day:nth-child(7n) {
+    color: #3c6ffa;
+}
+
+.calendar-wrap .cal_wrap .day.disable {
+    color: #ddd;
+}
+
+.current.today {
+    background: rgb(242 242 242);
+}
+
+.checkInOutInfo>div {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkInOutInfo p {
+    font-size: 24px;
+    color: #494949;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.checkInOutInfo p.space {
+    margin-bottom: 10px;
+}
+
+.checkInOutInfo p:nth-child(1) {
+    width: 100%;
+}
+
+.checkInOutInfo p:nth-child(3) {
+    width: 100%;
+}
+
+.checkInOutInfo p span {
+    display: block;
+    font-size: 16px;
+    color: #a1a1a1;
+}
+
+
+@media screen and (max-width :1200px) {
+    .calendar-wrap {
+        flex-wrap: wrap;
+        padding: 2%;
+    }
+
+    .calendar-middle-wrap {
+        width: 49%;
+        padding: 40px 7%;
+    }
+
+    .checkInOutInfo {
+        width: 100%;
+        margin-top: 2%;
+        padding: 50px;
+    }
+
+    .checkInOutInfo>div {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .checkInOutInfo p:nth-child(1) {
+        width: 50%;
+    }
+
+    .checkInOutInfo p:nth-child(2) {
+        width: 50px;
+    }
+
+    .checkInOutInfo p:nth-child(3) {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .calendar-middle-wrap {
+        width: 100%;
+        padding: 40px 10%;
+    }
+
+    .calendar-middle-wrap:first-of-type {
+        margin-bottom: 2%;
+    }
+
+    .checkInOutInfo {
+        padding: 20px;
+    }
+
+    .checkInOutInfo>div {
+        flex-direction: column;
+    }
+
+    .checkInOutInfo p:nth-child(1) {
+        width: 100%;
+    }
+
+    .checkInOutInfo p:nth-child(2) {
+        width: 100%;
+    }
+
+    .checkInOutInfo p:nth-child(3) {
+        width: 100%;
+    }
+
+    .checkInOutInfo p.space {
+        margin-bottom: 0;
+    }
+
+    .checkInOutInfo p span {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .checkInOutInfo p label {
+        font-size: 20px;
+    }
 }
