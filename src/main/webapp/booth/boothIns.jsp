@@ -2,6 +2,8 @@
 	
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.io.File"%>
 
 <%@ include file="ssi.jsp"%>
 <%@ include file="../header.jsp"%>
@@ -29,10 +31,10 @@
 			item = (String) files.nextElement(); //name="filename"
 			filename = mr.getFilesystemName(item);
 			if (filename != null) { //실제 파일명을 가져왔다면
-		file = mr.getFile(item); //mr에서 실제 파일 가져오기
-		//if(file.exists()){ //파일이 존재한다면
-		//fileSize = file.length(); //파일 크기 가져오기
-		//}//if end
+				file = mr.getFile(item); //mr에서 실제 파일 가져오기
+				//if(file.exists()){ //파일이 존재한다면
+					//fileSize = file.length(); //파일 크기 가져오기
+				//}//if end
 			} //if end
 		} //while end
 		
@@ -68,6 +70,7 @@
 		dto.setBhour(bhour);
 		dto.setBoffday(boffday);
 		dto.setBtel(btel);
+		dto.setBimg(filename);
 
 		int cnt = dao.create(dto);
 

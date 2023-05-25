@@ -178,10 +178,16 @@ function searchCheck() { // 검색
 	return true;
 } // searchCheck() end
 
+//////////////////////////////////////////////////////////////////
+//전시관련
 
-
-
-
+function deleteCheck(){ //삭제 확인
+	if(confirm("삭제하시겠습니까?\n내용은 복구되지 않습니다.")){
+		location.href="";
+	}else{
+		return false;
+	}
+}//deleteCheck() end
 
 
 

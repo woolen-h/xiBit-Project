@@ -4,8 +4,11 @@
     <%@ include file="../header.jsp" %>
         <div class="content">
         <!-- 본문 시작 exhibitForm.jsp -->
-		<h3> * 전시 수정하기 * </h3>
-		<p><a href="exhibition_tab.jsp">[목록으로]</a></p>
+		<h3 class="booth_title"> * 전시 수정하기 * </h3>
+		<div class="exh_list_btn1">
+			<p><a href="exhibition_tab.jsp">목록</a></p>
+		</div>
+		<br>
 <%
 		int excode = Integer.parseInt(request.getParameter("excode"));
 		dto = dao.read(excode);
@@ -77,8 +80,8 @@
 			</tr>
 			<tr>
 			    <td colspan="2">
-			    	<input type="submit" value="수정">
-			    	<input type="reset" value="취소">
+			    	<input type="submit" class="exh_list_btn4" value="수정">
+			    	<input type="reset" class="exh_list_btn3" value="취소">
 			    </td>
 			</tr>
 			</table>

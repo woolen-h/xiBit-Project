@@ -5,8 +5,7 @@
 	        
 			<!-- 본문시작 agreement.jsp-->
 			<form action="memberForm.jsp" onsubmit="return send()"><!-- JavaScript는 현재페이지에 작성 -->
-			<div id="font" style="text-align: center; font-size: 30px; padding-top: 50px; padding-bottom: 40px;"><h6>Agreement</h6></div>
-			<br><br>
+			<div id="font" style="text-align: center; font-size: 30px; padding-top: 50px; padding-bottom: 50px;"><h6>Agreement</h6></div>
 				<div class="agreeCon" tabindex="0">
 					<h5>제 1 장 총 칙</h5>
 					<h6>제 1 조 (목적)</h6>
@@ -284,10 +283,10 @@
 					</div>
 				</div>
 			
-			<br>
 			<div style="text-align: center">
-			  <label><input type="checkbox" name="agree" id="agree">&nbsp;&nbsp;약관에 동의합니다</label>
-			  <br><br>
+				<div style="margin-bottom: 30px;">
+					<label><input type="checkbox" name="agree" id="agree">&nbsp;&nbsp;약관에 동의합니다</label>
+			  	</div>
 			  <input class="button" type="submit" value="sign up"> 
 			  &nbsp;&nbsp;
 			  <input class="button" type="button" value="back" onclick="javascript:history.back()">

@@ -7,10 +7,11 @@
 				
 <%
 	String bcode = request.getParameter("bcode");
+	String saveDir = application.getRealPath("/storage");
+
+	//dto.setBcode(bcode);
 	
-	dto.setBcode(bcode);
-	
-	int cnt = dao.delete(dto);
+	int cnt = dao.delete(bcode, saveDir);
 	
 	if (cnt == 0) {
 		out.println("<p>삭제 실패 했습니다.</p>");

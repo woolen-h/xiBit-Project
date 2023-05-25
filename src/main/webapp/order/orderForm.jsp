@@ -14,7 +14,7 @@
 <div class="content">
 	<div class="my_order_container">
 		<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
-		<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
+		<input type="hidden" name="mid" id="mid" value="<%=s_mid %>"
 <!-- 주문서 -->
 <!-----------전시정보------------------------------------------------------------------>
 <%
@@ -134,8 +134,6 @@
 	</table>
 	</div>
 	<hr>
-	
-	
 	</form>
 	</div> <!-- class : content -->
 	<!-- 주문 정보 -->

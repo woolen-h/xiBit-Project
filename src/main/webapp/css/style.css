@@ -477,6 +477,34 @@ body::-webkit-scrollbar-track {
     border: 0;
     cursor: pointer;
 }
+.exh_list_btn3{
+    box-sizing: border-box;
+    background-color: rgba(
+    201.8750050663948,
+    201.8750050663948,
+    201.8750050663948,
+    1);
+    width: 80px;
+    height: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 0;
+    cursor: pointer;
+}
+.exh_list_btn4{
+    box-sizing: border-box;
+    background-color: rgba(203.99998784065247, 255, 0, 1);
+    width: 80px;
+    height: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 0;
+    cursor: pointer;
+}
 .component_8_121_36 {
     width: 1700px;
     display: flex;
