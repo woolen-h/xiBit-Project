@@ -1,3 +1,7 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.time.LocalDate"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ include file="ssi.jsp" %>
@@ -5,7 +9,7 @@
         <div class="content">
         <!-- 본문 시작 exhibitRead.jsp -->
 		<h3 class="booth_title"> 전시 상세보기 </h3>
-		<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록</a></div>
+		<div><a href="javascript:history.back()" class="exh_list_btn1">목록</a></div>
 <%
 		int excode = Integer.parseInt(request.getParameter("excode"));		
 		dto = dao.read(excode);
@@ -84,19 +88,38 @@
 <%			
 			if(!s_mid.equals("guest")) {%><!-- 로그인했을때만 노출 -->	
 				<!-- 예매버튼 -->
-				<input class="exh_list_btn2" type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
-				<div class="right_area">
-				  <a href="javascript:;" class="icon heart">
-						<%if(daoz.read(s_mid, excode) == null) {%>
-							<img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
-						<%} else {%>
-							<img src="https://cdn-icons-png.flaticon.com/512/803/803087.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
-						<%}%>
-				  </a>
-				</div>
+<%
+				//오늘날짜 문자열로 구하기
+				String todayfm = new SimpleDateFormat("yyyy-MM-dd").format(new Date(System.currentTimeMillis()));
+				
+				// yyyy-mm-dd 포맷으로 변경
+				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				
+				Date today = new Date(dateFormat.parse(todayfm).getTime()); //오늘날짜
+				Date exend = new Date(dateFormat.parse(dto.getExend()).getTime()); //exend 날짜
+				Date exstart = new Date(dateFormat.parse(dto.getExstart()).getTime()); //exstart 날짜
+				
+				int compare1 = exend.compareTo(today); //오늘날짜와 exend날짜 비교 -- exend가 오늘 날짜보다 크면 1 / 같으면 0 / 작으면 -1 출력
+				int compare2 = exstart.compareTo(today); //오늘날짜와 exstart날짜 비교 -- exend가 오늘 날짜보다 크면 1 / 같으면 0 / 작으면 -1 출력
+				
+				if(compare1>=0){ 
+			
+%>
+					<input class="exh_list_btn2" type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
+					<div class="right_area">
+					  <a href="javascript:;" class="icon heart">
+							<%if(daoz.read(s_mid, excode) == null) {%>
+								<img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
+							<%} else {%>
+								<img src="https://cdn-icons-png.flaticon.com/512/803/803087.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
+							<%}%>
+					  </a>
+					</div>
+
 			</div>
-<%			
-}		
+<%
+				}		
+			}		
 		}
 %>
         <!-- 본문 끝 -->
