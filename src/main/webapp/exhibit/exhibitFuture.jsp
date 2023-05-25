@@ -19,17 +19,17 @@
             </div>
             <div class="continue_9_145">
 	            <span  class="__________9_146">
-	            	현재 진행중 전시
+	            	예정 전시
 	            </span>
             </div>
             
 	        <div>
-           		<input class="button" value="예정 전시" onclick="location.href='exhibitFuture.jsp'">
+           		<input class="button" value="현재 전시" onclick="location.href='exhibition_tab.jsp'">
             </div>
 	        
            </div>
 		<%
-		ArrayList<ExhibitDTO> list = dao.listNow();
+		ArrayList<ExhibitDTO> list = dao.listFuture();
 		if (list == null) {
 			out.println("자료없음");
 		} else {
