@@ -87,11 +87,16 @@
 				<input class="exh_list_btn2" type="button" value="예매하기" onclick="location.href='../order/orderForm.jsp?excode=<%=excode%>'">
 				<div class="right_area">
 				  <a href="javascript:;" class="icon heart">
-				     <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
+						<%if(daoz.read(s_mid, excode) == null) {%>
+							<img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
+						<%} else {%>
+							<img src="https://cdn-icons-png.flaticon.com/512/803/803087.png" alt="찜하기" onclick="location.href='zzimIns.jsp?excode=<%=excode%>'">
+						<%}%>
 				  </a>
 				</div>
 			</div>
-<%			}		
+<%			
+}		
 		}
 %>
         <!-- 본문 끝 -->
