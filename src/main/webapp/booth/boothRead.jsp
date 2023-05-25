@@ -6,22 +6,7 @@
 <div class="content">
 
 	<h3 class="booth_title">전시장 상세보기</h3>
-	
-	<div class="booth_btn_flex">	
-	<%
-	if (s_mlevel.equals("A1")) {
-	%>
-		<div class="exh_write">
-			<input class="button" value="글쓰기" onclick="location.href='boothForm.jsp'"> 
-		</div>
-	<%
-	}//if end
-	%>
-		&nbsp;&nbsp;
-		<div class="booth_write_btn">
-			<a href="boothList.jsp">글목록</a>
-		</div>
-	</div>
+	<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록</a></div>
 	
 	<%
 		String bcode = request.getParameter("bcode");
@@ -34,16 +19,15 @@
 			
 			
 		%>
-			<div>
-				
-				<br>
+		<div class="exh_cont">
 				<table>
 					<tr>
-						<th>전시장 이미지</th>
-						<td>
+					<td class="exh_read_flex">
+						<div>
 							<img src="https://xibit-bucket.s3.ap-northeast-2.amazonaws.com/<%=dto.getBimg()%>">
-						</td>
-					</tr>
+						</div>
+					<div class="exh_read_tb">
+					<table>
 					<tr>
 						<th>전시장 이름</th>
 						<td>
@@ -82,9 +66,12 @@
 						<th>전화번호</th>
 						<td><%=dto.getBtel()%></td>
 					</tr>
-				
+					</table>
+					</div>
+				</td>
+				</tr>
 				</table>
-			</div>
+		</div><!-- exh_cont end -->
 			
 <%
 			if (s_mlevel.equals("A1")) {
@@ -101,6 +88,6 @@
 			}//if end
 		} // if end
 	%>
-</div>
+</div><!-- content end -->
 
 <%@ include file="../footer.jsp" %>
