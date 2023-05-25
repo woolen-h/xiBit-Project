@@ -3,12 +3,11 @@
     <%@ include file="../header.jsp" %>
         <div class="content">
 		<!-- 본문 시작 memberForm.jsp-->
-		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
 		<form name="memfrm" id="memfrm" method="post" action="memberProc.jsp" onsubmit="return memberCheck()"><!-- myscript.js -->
 		<div id="font" style="padding-top: 50px; padding-bottom: 50px; font-size:30px; text-align: center;"><h6>Sign up</h6></div>
 			<div style="padding-bottom: 20px;" id="divId">
-				<input class="loginform" type="text" name="mid" id="mid" size="30" maxlength="10" placeholder="Type your ID"><br>
-				<input class="button" type="button" value="ID Check" onclick="idCheck()"><!-- myscript.js 작성 -->
+				<input class="loginform" type="text" name="mid" id="mid" size="30" maxlength="10" placeholder="Type your ID">&nbsp;&nbsp;<br>
+				<font id = "checkId" size = "2"></font>
 			</div>
 			<div style="padding-bottom: 20px;">
 				<input class="loginform" type="password" name="passwd" id="passwd" size="30" maxlength="10" placeholder="Type your Password" required>
@@ -25,7 +24,7 @@
 				<input class="loginform" type="password" name="jomin2" id="jomin2" size="14" maxlength="7" placeholder="Last resident number" required>
 			</div>
 			<div style="padding-bottom: 20px;">
-				<input class="loginform" type="text" name="email" id="email" size="30" maxlength="50" placeholder="Type your Email" readonly><br>
+				<input class="loginform" type="text" name="email" id="email" size="30" maxlength="50" placeholder="Type your Email" readonly>&nbsp;&nbsp;
 				<input class="button" type="button" value="E-Mail Check" onclick="emailCheck()"><!-- myscript.js 작성 -->
 			</div>
 			<div style="padding-bottom: 20px;">
@@ -41,7 +40,6 @@
 				<input type="reset" value="reset" class="button">
 			</div>
 		</form>
-		</div>
        <!-- 본문 끝 -->
        </div>
        
@@ -92,11 +90,11 @@
   			
 			$.ajax({    	   					
 			    type: 'post',
-			    url: 'idCheckProc.jsp',
+			    url: 'idCheckProc.do',
 			    data: {"mid": "mid"},
-			    //dataType: 'json',
-			    success: function(result) {
-			        if (result == 0) {
+			    dataType: 'text',
+			    success: function(data) {
+			        if (data == 0) {
 			            $("#checkId").html('사용 가능한 아이디입니다.');
 			        } else {
 			        	alert(result);
@@ -112,4 +110,10 @@
 
        </script>
 
+       
+       
+       
+       
+       
+       
    <%@ include file="../footer.jsp" %>
