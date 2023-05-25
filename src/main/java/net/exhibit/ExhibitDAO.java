@@ -102,6 +102,90 @@ public class ExhibitDAO {
 		}
 		return list;
 	}//listNow end
+	
+	public ArrayList<ExhibitDTO> listFuture(){
+		ArrayList<ExhibitDTO> list = null;
+		
+		try {
+			con = dbopen.getConnection();
+			
+			StringBuilder sql = new StringBuilder();
+			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
+	         sql.append(" FROM exh_info ");
+	         sql.append(" WHERE exstart > now() ");
+	         sql.append(" ORDER BY exstart ASC ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				list = new ArrayList<>();
+				do {
+					ExhibitDTO dto = new ExhibitDTO();
+					dto.setExcode(rs.getInt("excode"));
+					dto.setBcode(rs.getString("bcode"));
+					dto.setExname(rs.getString("exname"));
+					dto.setAuthor(rs.getString("author"));
+					dto.setExstart(rs.getString("exstart"));
+					dto.setExend(rs.getString("exend"));
+					dto.setExcnt(rs.getInt("excnt"));
+					dto.setPrice(rs.getInt("price"));
+					dto.setTel(rs.getString("tel"));
+					dto.setContents(rs.getString("contents"));
+					dto.setFilename(rs.getString("filename"));
+					list.add(dto);					
+				}while(rs.next());
+			}else {
+				list = null;
+			}			
+		}catch(Exception e) {
+			System.out.println("목록 조회 실패 : " + e);
+		}finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return list;
+	}//listFuture() end
+	
+	public ArrayList<ExhibitDTO> listPast(){
+		ArrayList<ExhibitDTO> list = null;
+		
+		try {
+			con = dbopen.getConnection();
+			
+			StringBuilder sql = new StringBuilder();
+			sql.append(" SELECT excode, bcode, exname, author, exstart, exend, excnt, price, tel, contents, filename ");
+	         sql.append(" FROM exh_info ");
+	         sql.append(" WHERE now() > exend ");
+	         sql.append(" ORDER BY exstart ASC ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				list = new ArrayList<>();
+				do {
+					ExhibitDTO dto = new ExhibitDTO();
+					dto.setExcode(rs.getInt("excode"));
+					dto.setBcode(rs.getString("bcode"));
+					dto.setExname(rs.getString("exname"));
+					dto.setAuthor(rs.getString("author"));
+					dto.setExstart(rs.getString("exstart"));
+					dto.setExend(rs.getString("exend"));
+					dto.setExcnt(rs.getInt("excnt"));
+					dto.setPrice(rs.getInt("price"));
+					dto.setTel(rs.getString("tel"));
+					dto.setContents(rs.getString("contents"));
+					dto.setFilename(rs.getString("filename"));
+					list.add(dto);					
+				}while(rs.next());
+			}else {
+				list = null;
+			}			
+		}catch(Exception e) {
+			System.out.println("목록 조회 실패 : " + e);
+		}finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		return list;
+	}//listFuture() end
 
 	public int create(ExhibitDTO dto) {
 		int cnt = 0;
