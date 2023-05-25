@@ -134,6 +134,9 @@
 	</table>
 	</div>
 	<hr>
+	<div class="ord_sub_flex">
+			<input type="submit" value="결제하기" class="ord_submit">
+		</div>
 	</form>
 	</div> <!-- class : content -->
 	<!-- 주문 정보 -->
@@ -163,9 +166,7 @@
 				<td>취소 불가</td>
 			</tr>
 		</table>
-		<div class="ord_sub_flex">
-			<input type="submit" value="결제하기" class="ord_submit">
-		</div>
+		
 	</div> <!-- class : order_cancel -->
 <!----------------------------------------------------------------------------->  
 	
