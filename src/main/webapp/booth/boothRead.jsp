@@ -6,7 +6,7 @@
 <div class="content">
 
 	<h3 class="booth_title">전시장 상세보기</h3>
-	<div><a href="exhibition_tab.jsp" class="exh_list_btn1">목록</a></div>
+	<div><a href="boothList.jsp" class="exh_list_btn1">목록</a></div>
 	
 	<%
 		String bcode = request.getParameter("bcode");

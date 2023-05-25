@@ -45,12 +45,6 @@
 				<%
 				for (int i = 0; i < list.size(); i++) {
 					dto = list.get(i);
-					if(i % 5 == 0 && i != 0) {
-						%>
-						</div> <!-- component_8_121_36 end -->
-						<div class="component_8_121_36">
-						<%
-					}
 				%>
 				
 				<!-- 추가해야 할 설정: 한 줄에 몇 개씩 출력할 건지? -->
