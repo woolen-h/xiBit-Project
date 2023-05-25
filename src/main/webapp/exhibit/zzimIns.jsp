@@ -14,7 +14,7 @@
 		daoz.create(s_mid, excode);
 		out.println("<script>");
 		out.println("alert('찜 추가되었습니다.');");
-		out.println("location.href='exhibition_tab.jsp';");
+		out.println("location.href='exhibitRead.jsp?excode=" + excode + "';");
 		out.println("</script>");
 	} else {
 			int res = daoz.delete(s_mid, excode);
@@ -25,7 +25,7 @@
 			} else {
 				out.println("<script>");
 				out.println("alert('찜 삭제 성공했습니다.');");
-				out.println("location.href='exhibition_tab.jsp';");
+				out.println("location.href='exhibitRead.jsp?excode=" + excode + "';");
 				out.println("</script>");
 			} // if end
 		} //if end
