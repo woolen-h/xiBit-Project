@@ -13,7 +13,7 @@
   
 <div class="content">
 	<div class="my_order_container">
-		<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
+		<form name="ordfrm" id="ordfrm" action="payment.jsp" >
 		<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
 <!-- 주문서 -->
 <!-----------전시정보------------------------------------------------------------------>
@@ -27,10 +27,10 @@
 	}else{
 %>
 	<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
-	<input type="hidden" name="mid" id="name" value="<%=dtoM.getMname() %>">
-	<input type="hidden" name="mid" id="email" value="<%=dtoM.getEmail() %>">
-	<input type="hidden" name="mid" id="phone" value="<%=dtoM.getTel() %>">
-	<input type="hidden" name="mid" id="exname" value="<%=dtoE.getExname() %>">
+	<input type="hidden" name="name" id="name" value="<%=dtoM.getMname() %>">
+	<input type="hidden" name="email" id="email" value="<%=dtoM.getEmail() %>">
+	<input type="hidden" name="phone" id="phone" value="<%=dtoM.getTel() %>">
+	<input type="hidden" name="exname" id="exname" value="<%=dtoE.getExname() %>">
 	
 	
 	<div style="padding-bottom:30px; border-bottom: solid 1px black;">
