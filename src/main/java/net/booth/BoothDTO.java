@@ -8,7 +8,6 @@ public class BoothDTO {
 		
 		private String bcode;		//전시장 코드
 		private String bname;		//전시장 이름
-		private String baddr;		//전시장 지역
 		private String bdays;		//운영 요일
 		private String bhour;		//운영 시간
 		private String boffday;		//휴관일
@@ -28,12 +27,6 @@ public class BoothDTO {
 		}
 		public void setBname(String bname) {
 			this.bname = bname;
-		}
-		public String getBaddr() {
-			return baddr;
-		}
-		public void setBaddr(String baddr) {
-			this.baddr = baddr;
 		}
 		public String getBdays() {
 			return bdays;
@@ -68,7 +61,7 @@ public class BoothDTO {
 		
 		@Override
 		public String toString() {
-			return "BoothDTO [bcode=" + bcode + ", bname=" + bname + ", baddr=" + baddr + ", bdays=" + bdays
+			return "BoothDTO [bcode=" + bcode + ", bname=" + bname + ", bdays=" + bdays
 					+ ", bhour=" + bhour + ", boffday=" + boffday + ", btel=" + btel + ", bimg=" + bimg + "]";
 		}		
 
