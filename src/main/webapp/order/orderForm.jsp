@@ -13,7 +13,6 @@
   
 <div class="content">
 	<div class="my_order_container">
-		<form name="ordfrm" id="ordfrm" action="orderProc.jsp" >
 		<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
 <!-- 주문서 -->
 <!-----------전시정보------------------------------------------------------------------>
@@ -26,11 +25,10 @@
 		out.print("글 없음");
 	}else{
 %>
-	<input type="hidden" name="mid" id="mid" value="<%=s_mid %>">
 	<input type="hidden" name="mid" id="name" value="<%=dtoM.getMname() %>">
-	<input type="hidden" name="mid" id="email" value="<%=dtoM.getEmail() %>">
-	<input type="hidden" name="mid" id="phone" value="<%=dtoM.getTel() %>">
-	<input type="hidden" name="mid" id="exname" value="<%=dtoE.getExname() %>">
+	<input type="hidden" name="email" id="email" value="<%=dtoM.getEmail() %>">
+	<input type="hidden" name="phone" id="phone" value="<%=dtoM.getTel() %>">
+	<input type="hidden" name="exname" id="exname" value="<%=dtoE.getExname() %>">
 	
 	
 	<div style="padding-bottom:30px; border-bottom: solid 1px black;">
@@ -178,10 +176,9 @@
 			</tr>
 		</table>
 		<div class="ord_sub_flex">
-			<input type="submit" value="결제하기" class="ord_submit">
+			<button onclick="requestPay()">결제하기</button> <!-- 결제하기 버튼 생성 -->
 		</div>
 	</div>
-	</form>
 	</div> <!-- class : order_cancel -->
 	</div>
 <!----------------------------------------------------------------------------->  
@@ -197,6 +194,8 @@
 	let totalprice=document.querySelector(".totalprice");
 	let price=document.getElementById("price");
 	
+	let Price=0;
+	
 	let total=0;
 	let i=0;
 
@@ -211,11 +210,8 @@
 		total+=aprice;
 		totalprice.textContent=total.toLocaleString();
 		price.value=total.toLocaleString();
-		
 		document.getElementById("amount1").value=i;
 	})
-	
-	console.log(cnt);
 
 	minus.addEventListener("click", () => {
 		if(i>0){
@@ -227,7 +223,7 @@
 			total-=aprice;
 			totalprice.textContent=total.toLocaleString();
 			price.value=total.toLocaleString();
-			
+
 			document.getElementById("amount1").value=i;
 			
 		}else{
@@ -252,7 +248,7 @@
 		total+=cprice;
 		totalprice.textContent=total.toLocaleString();
 		price.value=total.toLocaleString();
-		
+
 		document.getElementById("amount2").value=j;
 		
 	})
@@ -267,7 +263,7 @@
 			total-=cprice;
 			totalprice.textContent=total.toLocaleString();
 			price.value=total.toLocaleString();
-			
+
 			document.getElementById("amount2").value=j;
 			
 		}else{
@@ -276,6 +272,85 @@
 		
 	})
 </script>
+
+<!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+    <script>
+    	let name=document.getElementById("name").value;
+    	let email=document.getElementById("email").value;
+    	let phone=document.getElementById("phone").value;
+    	let exname=document.getElementById("exname").value;
+    
+    	console.log(name);
+    	console.log(email);
+    	console.log(phone);
+    	console.log(total);
+    	console.log(exname);
+    
+
+        var IMP = window.IMP; 
+        IMP.init("imp21380672"); 
+      
+        var todays = new Date();   
+        var hourss = today.getHours(); // 시
+        var minutess = today.getMinutes();  // 분
+        var secondss = today.getSeconds();  // 초
+        var milliseconds = todays.getMilliseconds();
+        var makeMerchantUid = hourss +  minutess + secondss + milliseconds;
+        
+
+        /* kg 이니시스 */
+        function requestPay() {
+            IMP.request_pay({
+                pg : 'html5_inicis',
+                pay_method : 'card',
+                merchant_uid: "IMP"+makeMerchantUid, 
+                name : exname,
+                amount : total,
+                buyer_email : email,
+                buyer_name : name,
+                buyer_tel : phone,
+                buyer_addr : '서울특별시 강남구 역삼동',
+                buyer_postcode : '123-456'
+            }, function (rsp) { // callback
+                if (rsp.success) {
+                		var msg = '결제가 완료되었습니다.';
+      	          	alert(msg);
+                } else {
+	                	var msg = '결제에 실패하였습니다.';
+      	          	msg += '에러내용 : ' + rsp.error_msg;
+      	          	alert(msg);
+                }
+            });
+        }
+        
+       
+       /* 카카오페이 */
+       <%-- function requestPay() {
+            IMP.request_pay({
+                pg : 'kakaopay',
+                merchant_uid: "merchant"+makeMerchantUid, 
+                name : '<%=exname%>',
+                amount : <%=price%>,
+                buyer_email : '<%=email%>',
+                buyer_name : '<%=name%>',
+                buyer_tel : '<%=phone%>',
+                buyer_addr : '서울특별시 강남구 삼성동',
+                buyer_postcode : '123-456'
+            }, function (rsp) { // callback
+                if (rsp.success) {
+                    console.log(rsp);
+                } else {
+                    console.log(rsp);
+                }
+            });
+        } --%>
+        
+        
+        
+    </script>
 <%			
 	}
 %>
