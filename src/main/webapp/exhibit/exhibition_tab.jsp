@@ -14,8 +14,8 @@
 	%>
 	    <div class=content_120_3>
            <div class=ex_top_bar>
-           	<select class="location_9_113">
-              <option class="___9_114">위치</option>
+           	<select class="location_9_113" name="direction" id="direction">
+              <option class="___9_114" selected>위치</option>
               <option class="___9_114">서울</option>
               <option class="___9_114">과천</option>
               <option class="___9_114">덕수궁</option>
