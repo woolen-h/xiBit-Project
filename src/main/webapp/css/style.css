@@ -506,11 +506,11 @@ body::-webkit-scrollbar-track {
     cursor: pointer;
 }
 .component_8_121_36 {
-    width: 1700px;
+    width: 1000px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 100px 50px;
 }
 .component_1_121_35 { 
 	width:300px;
