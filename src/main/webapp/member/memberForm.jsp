@@ -7,7 +7,7 @@
 		<form name="memfrm" id="memfrm" method="post" action="memberProc.jsp" onsubmit="return memberCheck()"><!-- myscript.js -->
 		<div id="font" style="padding-top: 50px; padding-bottom: 50px; font-size:30px; text-align: center;"><h6>Sign up</h6></div>
 			<div style="padding-bottom: 20px;" id="divId">
-				<input class="loginform" type="text" name="mid" id="mid" size="30" maxlength="10" placeholder="Type your ID"><br>
+				<input class="loginform" type="text" name="mid" id="mid" size="30" maxlength="10" placeholder="Type your ID" readonly><br>
 				<input class="button" type="button" value="ID Check" onclick="idCheck()"><!-- myscript.js 작성 -->
 			</div>
 			<div style="padding-bottom: 20px;">
@@ -90,7 +90,7 @@
 				$("#checkId").html("");
 		     }//if end	  	   
   			
-			$.ajax({    	   					
+/* 			$.ajax({    	   					
 			    type: 'post',
 			    url: 'idCheckProc.jsp',
 			    data: {"mid": "mid"},
@@ -107,7 +107,10 @@
 			    error: function(request,status,error) {
 			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			    }
-			})//ajax() end
+			})//ajax() end */
+			
+			
+			
     	})//end
 
        </script>
