@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/usb8ffu.css">
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tablet-style.css" />
+    <link rel="stylesheet" href="../css/mobile-style.css" />
     <link rel="stylesheet" href="../css/Like.css" />
     <script type="text/javascript" src="../js/script.js"></script> 
     <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script>
