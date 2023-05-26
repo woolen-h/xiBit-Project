@@ -14,15 +14,14 @@
     <link rel="stylesheet" href="https://use.typekit.net/usb8ffu.css">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tablet-style.css" />
     <title>Home</title>
 </head>
 <body>
 	<div class="landing_page_13_15">
-    	<a href="index.jsp" class="logo">
-    		<div class="logo">
+    	<a href="index.jsp" class="logo"><div class="logo">
     			<div  class="xibit_13_21">xiBit</div>
-    		</div>
-    	</a>
+    		</div></a>
     	<div class="nav">
 	    	<div class="nav_1">
 				<a href="index.jsp">
