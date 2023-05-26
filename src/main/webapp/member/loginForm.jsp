@@ -18,6 +18,7 @@
 	    <link rel="stylesheet" href="https://use.typekit.net/usb8ffu.css">
 	    <link rel="stylesheet" href="../css/reset.css" />
 	    <link rel="stylesheet" href="../css/login_style.css" />
+	    <link rel="stylesheet" href="../css/mobile-style.css" />
 	    <script type="text/javascript" src="../js/script.js"></script> 
 	    
 	    <title>Login</title>

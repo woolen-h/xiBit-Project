@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/******************** 반응형 웹 구현 시작(미디어 쿼리) *************************************************/
+@media screen and (max-width: 960px) {
+	.component_8_121_36 {
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+	}
+	.frame_8_i121_35_9_93 {
+	width: 300px;
+	}
+	.login_box {
+	width: 45%; 
+	}
+}/******************** 반응형 웹 구현 끝 *************************************************/
