@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/******************** 반응형 웹 구현 시작(미디어 쿼리) *************************************************/
+@media screen and (max-width: 1400px) {
+/* index */
+.logo {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.xibit_13_21 {
+	color: rgba(0, 0, 0, 1);
+  	font-family: "fit-extra-wide", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+  	font-size: 40pt;
+  	letter-spacing: 0;	
+}
+.nav_1{
+	width: 550px;
+}
+.nav_1 a div {
+	font-size: 20pt;
+}
+.nav_2 a div {
+	font-size: 9pt;
+}
+.sign_up_13_23 {
+  	width: 100px;
+  	height: 50px;
+}
+.login {
+  	width: 100px;
+  	height: 50px;
+}
+/* exhibition */
+.content {
+    padding-left: 150px;
+    padding-right: 150px;
+  	height: 1000px;
+}
+/* mylist */
+.my_component {
+    margin-right: 0px;
+    gap:44px;
+    padding-bottom: 100px;
+}
+.my_component .component_1_121_35 {
+	width: 250px;
+	height: 325px;
+}
+.my_component .component_1_121_35 img {
+	width: 250px;
+	height: 325px;
+}
+.landing_page_13_15 {
+	height: 100%;
+}
+.frame_8_i121_35_9_93 {
+	width: 250px;
+}
+}/******************** 반응형 웹 구현 끝 *************************************************/
