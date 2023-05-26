@@ -15,6 +15,7 @@
 	    <link
 	      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
 	      rel="stylesheet"/>
+	    <link rel="stylesheet" href="https://use.typekit.net/usb8ffu.css">
 	    <link rel="stylesheet" href="../css/reset.css" />
 	    <link rel="stylesheet" href="../css/login_style.css" />
 	    <script type="text/javascript" src="../js/script.js"></script> 
@@ -23,6 +24,7 @@
 	  </head>
 	  
 	  <body>
+	  <div class="content">
 	    <div class=landing_page_13_15>
 	      <div class=login_box>
 	
@@ -32,7 +34,7 @@
 		<!-- 본문 시작 findID.jsp -->
 		
 		<form name="findID" id="findID" method="post" action="findIDProc.jsp" onsubmit="return findIDCheck()">
-			<h6 id="font" style="font-size:20px;" class="mem_login">Find ID/Password</h6>
+			<h6 id="font" style="font-size:30px;" class="mem_login">Find ID/Password</h6>
 			<br><br><br>
 				<div class="form-field">
 					<input class="loginform" type="text" name="mname" id="mname" placeholder="Type your ID" maxlength="10" required>
@@ -40,6 +42,7 @@
 				<div class="form-field">
 					<input class="loginform" type="email" name="email" id="email" placeholder="Type your Email" required>
 				</div>
+				<br><br>
 					<input class="button" type="submit" value="Find ID/PW">
 					<input class="button" type="reset" value="reset">
 					<br><br><br>

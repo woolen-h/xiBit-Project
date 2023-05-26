@@ -51,7 +51,8 @@ body {
    	justify-content: center;
    	align-items: center;
 	position: absolute;
-	top: 50px;
+	top: 10%;
+	bottom: 10%;
 	left: 2em;
 	width: calc(100% - 4em);
 	height: 83%;
